@@ -1,0 +1,13 @@
+﻿[*.cs]
+
+# IDE0051: Remove unused private members
+dotnet_diagnostic.IDE0051.severity = suggestion
+
+# UNT0013: Remove invalid SerializeField attribute
+dotnet_diagnostic.UNT0013.severity = suggestion
+
+# UNT0001: Empty Unity message
+dotnet_diagnostic.UNT0001.severity = suggestion
+
+# IDE0052: Remove unread private members
+dotnet_diagnostic.IDE0052.severity = suggestion

@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c975af103df40864393632291d658f57, type: 3}
+  m_Name: CesarDaher
+  m_EditorClassIdentifier: 
+  cityDatabase: {fileID: 11400000, guid: 4076c79e92bb5804a83c1a741f5cdfa0, type: 2}
+  timezoneDb: {fileID: 11400000, guid: 4760a00a1d7b1a342bea0642f09f784b, type: 2}
+  dataName: CesarDaher
+  iday: 13
+  imon: 1
+  iyear: 1995
+  ihour: 22
+  imin: 25
+  d_timezone: -3
+  dsec: 0.00000000027284841053187847
+  tjd_et: 2449731.5180692594
+  tjd_ut: 2449731.517365362
+  hsys: 87
+  fday: 14
+  fmon: 1
+  fyear: 1995
+  fhour: 0
+  fmin: 25
+  fsec: 0
+  ftimezone: -2
+  city: "Bras\xEDlia/BR"
+  cityId: 5418
+  geolon: -47.93
+  geolat: -15.8
+  height: 1180
+  daylightSavings: 1
+  northernHemisphere: 0
+  geopos:
+  - -47.93
+  - -15.8
+  - 1180
+  houseCusps:
+  - 0
+  - 150
+  - 180
+  - 210
+  - 240
+  - 270
+  - 300
+  - 330
+  - 0
+  - 30
+  - 60
+  - 90
+  - 120
+  ascmc:
+  - 157.0695478971453
+  - 72.77648323288898
+  - 71.33095408185719
+  - 351.99032218571045
+  - 159.7830629973648
+  - 161.94169590222668
+  - 30.826192057045546
+  - 341.9416959022266
+  - 0
+  - 0
+  armc: 71.33095408185719
+  asc: 157.0695478971453
+  mc: 72.77648323288898

@@ -1,0 +1,347 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74e7954e2de1514aaf03a24889fdbbb, type: 3}
+  m_Name: AstroIdentities
+  m_EditorClassIdentifier: 
+  listOfPlanets:
+  - name: Sun
+    id: 0
+    symbol: Q
+    color: {r: 1, g: 1, b: 0, a: 1}
+    secondaryColor: {r: 1, g: 1, b: 0, a: 1}
+    domiciles: 05000000
+    exiles: 0b000000
+    exaltation: 1
+    fall: 7
+    sect: Diurnal
+    triplicityRulership: 010000000000000000000000
+  - name: Moon
+    id: 1
+    symbol: W
+    color: {r: 1, g: 1, b: 1, a: 1}
+    secondaryColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+    domiciles: 04000000
+    exiles: 0a000000
+    exaltation: 2
+    fall: 8
+    sect: Nocturnal
+    triplicityRulership: 000000000200000004000000
+  - name: Mercury
+    id: 2
+    symbol: E
+    color: {r: 0.5882353, g: 1, b: 1, a: 1}
+    secondaryColor: {r: 0.5882353, g: 1, b: 1, a: 1}
+    domiciles: 0300000006000000
+    exiles: 090000000c000000
+    exaltation: 6
+    fall: 12
+    sect: Diurnal when morning star
+    triplicityRulership: 000000000300000000000000
+  - name: Venus
+    id: 3
+    symbol: R
+    color: {r: 0.5882353, g: 1, b: 0.39215687, a: 1}
+    secondaryColor: {r: 0.5882353, g: 1, b: 0.39215687, a: 1}
+    domiciles: 0200000007000000
+    exiles: 0800000001000000
+    exaltation: 12
+    fall: 6
+    sect: Nocturnal
+    triplicityRulership: 020000000400000000000000
+  - name: Mars
+    id: 4
+    symbol: T
+    color: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+    secondaryColor: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+    domiciles: 0100000008000000
+    exiles: 0700000002000000
+    exaltation: 10
+    fall: 4
+    sect: Nocturnal
+    triplicityRulership: 000000000400000002000000
+  - name: Jupiter
+    id: 5
+    symbol: Y
+    color: {r: 1, g: 0.5882353, b: 1, a: 1}
+    secondaryColor: {r: 1, g: 0.5882353, b: 1, a: 1}
+    domiciles: 090000000c000000
+    exiles: 0300000006000000
+    exaltation: 4
+    fall: 10
+    sect: Diurnal
+    triplicityRulership: 000000000100000003000000
+  - name: Saturn
+    id: 6
+    symbol: U
+    color: {r: 0.39215687, g: 0.5882353, b: 1, a: 1}
+    secondaryColor: {r: 0.39215687, g: 0.5882353, b: 1, a: 1}
+    domiciles: 0a0000000b000000
+    exiles: 0400000005000000
+    exaltation: 7
+    fall: 1
+    sect: Diurnal
+    triplicityRulership: 000000000000000001000000
+  - name: Uranus
+    id: 7
+    symbol: I
+    color: {r: 0.39215687, g: 0.39215687, b: 0.54901963, a: 1}
+    secondaryColor: {r: 0.39215687, g: 0.39215687, b: 0.54901963, a: 1}
+    domiciles: 
+    exiles: 
+    exaltation: 0
+    fall: 0
+    sect: 
+    triplicityRulership: 
+  - name: Neptune
+    id: 8
+    symbol: O
+    color: {r: 0.3529412, g: 0.43137255, b: 0.43137255, a: 1}
+    secondaryColor: {r: 0.3529412, g: 0.43137255, b: 0.43137255, a: 1}
+    domiciles: 
+    exiles: 
+    exaltation: 0
+    fall: 0
+    sect: 
+    triplicityRulership: 
+  - name: Pluto
+    id: 9
+    symbol: P
+    color: {r: 0.50980395, g: 0.3529412, b: 0.39215687, a: 1}
+    secondaryColor: {r: 0.50980395, g: 0.3529412, b: 0.39215687, a: 1}
+    domiciles: 
+    exiles: 
+    exaltation: 0
+    fall: 0
+    sect: 
+    triplicityRulership: 
+  - name: North Node
+    id: 10
+    symbol: "\u2039"
+    color: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
+    secondaryColor: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 1}
+    domiciles: 
+    exiles: 
+    exaltation: 0
+    fall: 0
+    sect: 
+    triplicityRulership: 
+  - name: South Node
+    id: 11
+    symbol: "\u2039"
+    color: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
+    secondaryColor: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 1}
+    domiciles: 
+    exiles: 
+    exaltation: 0
+    fall: 0
+    sect: 
+    triplicityRulership: 
+  - name: Midheaven
+    id: 12
+    symbol: X
+    color: {r: 1, g: 1, b: 1, a: 1}
+    secondaryColor: {r: 1, g: 1, b: 1, a: 1}
+    domiciles: 
+    exiles: 
+    exaltation: 0
+    fall: 0
+    sect: 
+    triplicityRulership: 
+  listOfSigns:
+  - name: 
+    title: 
+    id: 0
+    rulerId: 0
+    element: 0
+    mode: 0
+    exaltation: 0
+    fall: 0
+    exile: 0
+    symbol: 
+    color: {r: 0, g: 0, b: 0, a: 1}
+    secondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  - name: Aries
+    title: Aries, the Ram
+    id: 1
+    rulerId: 4
+    element: 1
+    mode: 1
+    exaltation: 0
+    fall: 6
+    exile: 3
+    symbol: a
+    color: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+    secondaryColor: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+  - name: Taurus
+    title: Taurus, the Bull
+    id: 2
+    rulerId: 3
+    element: 2
+    mode: 2
+    exaltation: 1
+    fall: -1
+    exile: 4
+    symbol: s
+    color: {r: 0.39215687, g: 1, b: 0.39215687, a: 1}
+    secondaryColor: {r: 0.39215687, g: 1, b: 0.39215687, a: 1}
+  - name: Gemini
+    title: Gemini, the Twins
+    id: 3
+    rulerId: 2
+    element: 3
+    mode: 3
+    exaltation: -1
+    fall: -1
+    exile: 5
+    symbol: d
+    color: {r: 0.5882353, g: 1, b: 1, a: 1}
+    secondaryColor: {r: 0.5882353, g: 1, b: 1, a: 1}
+  - name: Cancer
+    title: Cancer, the Crab
+    id: 4
+    rulerId: 1
+    element: 4
+    mode: 1
+    exaltation: 5
+    fall: -1
+    exile: 6
+    symbol: f
+    color: {r: 1, g: 1, b: 1, a: 1}
+    secondaryColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  - name: Leo
+    title: Leo, the Lion
+    id: 5
+    rulerId: 0
+    element: 1
+    mode: 2
+    exaltation: -1
+    fall: -1
+    exile: 6
+    symbol: g
+    color: {r: 1, g: 1, b: 0, a: 1}
+    secondaryColor: {r: 1, g: 1, b: 0, a: 1}
+  - name: Virgo
+    title: Virgo, the Virgin
+    id: 6
+    rulerId: 2
+    element: 2
+    mode: 3
+    exaltation: 2
+    fall: 3
+    exile: 5
+    symbol: h
+    color: {r: 0.5882353, g: 1, b: 1, a: 1}
+    secondaryColor: {r: 0.5882353, g: 1, b: 1, a: 1}
+  - name: Libra
+    title: Libra, the Scales
+    id: 7
+    rulerId: 3
+    element: 3
+    mode: 1
+    exaltation: 6
+    fall: 0
+    exile: 4
+    symbol: j
+    color: {r: 0.39215687, g: 1, b: 0.39215687, a: 1}
+    secondaryColor: {r: 0.39215687, g: 1, b: 0.39215687, a: 1}
+  - name: Scorpio
+    title: Scorpio, the Scorpion
+    id: 8
+    rulerId: 4
+    element: 4
+    mode: 2
+    exaltation: -1
+    fall: 1
+    exile: 3
+    symbol: k
+    color: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+    secondaryColor: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+  - name: Sagittarius
+    title: Sagittarius, the Archer
+    id: 9
+    rulerId: 5
+    element: 1
+    mode: 3
+    exaltation: -1
+    fall: -1
+    exile: 2
+    symbol: l
+    color: {r: 1, g: 0.5882353, b: 1, a: 1}
+    secondaryColor: {r: 1, g: 0.5882353, b: 1, a: 1}
+  - name: Capricorn
+    title: Capricorn, the Goat
+    id: 10
+    rulerId: 6
+    element: 2
+    mode: 1
+    exaltation: 4
+    fall: 5
+    exile: 1
+    symbol: v
+    color: {r: 0.39215687, g: 0.5882353, b: 1, a: 1}
+    secondaryColor: {r: 0.39215687, g: 0.5882353, b: 1, a: 1}
+  - name: Aquarius
+    title: Aquarius, the Warer-Bearer
+    id: 11
+    rulerId: 6
+    element: 3
+    mode: 2
+    exaltation: -1
+    fall: -1
+    exile: 0
+    symbol: x
+    color: {r: 0.39215687, g: 0.5882353, b: 1, a: 1}
+    secondaryColor: {r: 0.39215687, g: 0.5882353, b: 1, a: 1}
+  - name: Pisces
+    title: Pisces, the Two Fish
+    id: 12
+    rulerId: 5
+    element: 4
+    mode: 3
+    exaltation: 3
+    fall: 2
+    exile: 2
+    symbol: c
+    color: {r: 1, g: 0.5882353, b: 1, a: 1}
+    secondaryColor: {r: 1, g: 0.5882353, b: 1, a: 1}
+  listOfElements:
+  - name: 
+    id: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - name: Fire
+    id: 1
+    color: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+  - name: Earth
+    id: 2
+    color: {r: 0.39215687, g: 1, b: 0.39215687, a: 1}
+  - name: Air
+    id: 3
+    color: {r: 0.78431374, g: 0.9411765, b: 0.9411765, a: 1}
+  - name: Water
+    id: 4
+    color: {r: 0.39215684, g: 0.78431374, b: 1, a: 1}
+  listOfSeasons:
+  - name: 
+    id: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - name: Spring
+    id: 1
+    color: {r: 0.78431374, g: 0.9411765, b: 0.9411765, a: 1}
+  - name: Summer
+    id: 2
+    color: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+  - name: Autumn
+    id: 3
+    color: {r: 0.39215687, g: 1, b: 0.39215687, a: 1}
+  - name: Winter
+    id: 4
+    color: {r: 0.39215684, g: 0.78431374, b: 1, a: 1}

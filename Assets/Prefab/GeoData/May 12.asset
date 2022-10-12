@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c975af103df40864393632291d658f57, type: 3}
+  m_Name: May 12
+  m_EditorClassIdentifier: 
+  dataName: CesarDaher
+  iday: 12
+  imon: 5
+  iyear: 2022
+  ihour: 0
+  imin: 0
+  d_timezone: 2
+  dsec: 0.00000000026858515411731787
+  tjd_et: 2459711.417484714
+  tjd_ut: 2459711.4166666665
+  hsys: 87
+  fday: 11
+  fmon: 5
+  fyear: 2022
+  fhour: 22
+  fmin: 0
+  fsec: 0
+  geolon: 50.927223
+  geolat: 11.586111
+  height: 220
+  northernHemisphere: 1
+  geopos:
+  - 50.927223
+  - 11.586111
+  - 220
+  cusps:
+  - 0
+  - 330
+  - 0
+  - 30
+  - 60
+  - 90
+  - 120
+  - 150
+  - 180
+  - 210
+  - 240
+  - 270
+  - 300
+  ascmc:
+  - 337.0247444314824
+  - 252.08614511572634
+  - 250.59119546839213
+  - 173.244784919219
+  - 338.9925809055686
+  - 340.66191413500707
+  - 197.18131406592525
+  - 160.66191413500707
+  - 0
+  - 0
+  armc: 250.59119546839213
+  asc: 337.0247444314824
+  mc: 252.08614511572634

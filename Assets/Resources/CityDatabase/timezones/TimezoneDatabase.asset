@@ -1,0 +1,2370 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a908973e44d27a74abad03d6f72670b2, type: 3}
+  m_Name: TimezoneDatabase
+  m_EditorClassIdentifier: 
+  textAssetData: {fileID: 4900000, guid: 0f4e0c21a6a9cb545b7ff0b6cc5ad44f, type: 3}
+  listOfTimezones:
+    timezones:
+    - timezoneName: Africa/Abidjan
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Accra
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Addis_Ababa
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Algiers
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Asmara
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Asmera
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Bamako
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Bangui
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Banjul
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Bissau
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Blantyre
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Brazzaville
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Bujumbura
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Cairo
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Casablanca
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Africa/Ceuta
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Africa/Conakry
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Dakar
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Dar_es_Salaam
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Djibouti
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Douala
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/El_Aaiun
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Africa/Freetown
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Gaborone
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Harare
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Johannesburg
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Juba
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Kampala
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Khartoum
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Kigali
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Kinshasa
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Lagos
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Libreville
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Lome
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Luanda
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Lubumbashi
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Lusaka
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Malabo
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Maputo
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Maseru
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Mbabane
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Mogadishu
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Monrovia
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Nairobi
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Africa/Ndjamena
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Niamey
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Nouakchott
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Ouagadougou
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Porto-Novo
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Sao_Tome
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Timbuktu
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Africa/Tripoli
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Africa/Tunis
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Africa/Windhoek
+      offset: 1
+      offsetDst: 2
+    - timezoneName: America/Adak
+      offset: -10
+      offsetDst: -9
+    - timezoneName: America/Anchorage
+      offset: -9
+      offsetDst: -8
+    - timezoneName: America/Anguilla
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Antigua
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Araguaina
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/Buenos_Aires
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/Catamarca
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/ComodRivadavia
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/Cordoba
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/Jujuy
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/La_Rioja
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/Mendoza
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/Rio_Gallegos
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/Salta
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/San_Juan
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/San_Luis
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/Tucuman
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Argentina/Ushuaia
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Aruba
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Asuncion
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Atikokan
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Atka
+      offset: -10
+      offsetDst: -9
+    - timezoneName: America/Bahia
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Bahia_Banderas
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Barbados
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Belem
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Belize
+      offset: -6
+      offsetDst: -6
+    - timezoneName: America/Blanc-Sablon
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Boa_Vista
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Bogota
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Boise
+      offset: -7
+      offsetDst: -6
+    - timezoneName: America/Buenos_Aires
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Cambridge_Bay
+      offset: -7
+      offsetDst: -6
+    - timezoneName: America/Campo_Grande
+      offset: -4
+      offsetDst: -3
+    - timezoneName: America/Cancun
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Caracas
+      offset: -4.5
+      offsetDst: -4.5
+    - timezoneName: America/Catamarca
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Cayenne
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Cayman
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Chicago
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Chihuahua
+      offset: -7
+      offsetDst: -6
+    - timezoneName: America/Coral_Harbour
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Cordoba
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Costa_Rica
+      offset: -6
+      offsetDst: -6
+    - timezoneName: America/Creston
+      offset: -7
+      offsetDst: -7
+    - timezoneName: America/Cuiaba
+      offset: -4
+      offsetDst: -3
+    - timezoneName: America/Curacao
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Danmarkshavn
+      offset: 0
+      offsetDst: 0
+    - timezoneName: America/Dawson
+      offset: -8
+      offsetDst: -7
+    - timezoneName: America/Dawson_Creek
+      offset: -7
+      offsetDst: -7
+    - timezoneName: America/Denver
+      offset: -7
+      offsetDst: -6
+    - timezoneName: America/Detroit
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Dominica
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Edmonton
+      offset: -7
+      offsetDst: -6
+    - timezoneName: America/Eirunepe
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/El_Salvador
+      offset: -6
+      offsetDst: -6
+    - timezoneName: America/Ensenada
+      offset: -8
+      offsetDst: -7
+    - timezoneName: America/Fort_Nelson
+      offset: -7
+      offsetDst: -7
+    - timezoneName: America/Fort_Wayne
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Fortaleza
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Glace_Bay
+      offset: -4
+      offsetDst: -3
+    - timezoneName: America/Godthab
+      offset: -3
+      offsetDst: -2
+    - timezoneName: America/Goose_Bay
+      offset: -4
+      offsetDst: -3
+    - timezoneName: America/Grand_Turk
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Grenada
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Guadeloupe
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Guatemala
+      offset: -6
+      offsetDst: -6
+    - timezoneName: America/Guayaquil
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Guyana
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Halifax
+      offset: -4
+      offsetDst: -3
+    - timezoneName: America/Havana
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Hermosillo
+      offset: -7
+      offsetDst: -7
+    - timezoneName: America/Indiana/Indianapolis
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Indiana/Knox
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Indiana/Marengo
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Indiana/Petersburg
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Indiana/Tell_City
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Indiana/Vevay
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Indiana/Vincennes
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Indiana/Winamac
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Indianapolis
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Inuvik
+      offset: -7
+      offsetDst: -6
+    - timezoneName: America/Iqaluit
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Jamaica
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Jujuy
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Juneau
+      offset: -9
+      offsetDst: -8
+    - timezoneName: America/Kentucky/Louisville
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Kentucky/Monticello
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Knox_IN
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Kralendijk
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/La_Paz
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Lima
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Los_Angeles
+      offset: -8
+      offsetDst: -7
+    - timezoneName: America/Louisville
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Lower_Princes
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Maceio
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Managua
+      offset: -6
+      offsetDst: -6
+    - timezoneName: America/Manaus
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Marigot
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Martinique
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Matamoros
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Mazatlan
+      offset: -7
+      offsetDst: -6
+    - timezoneName: America/Mendoza
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Menominee
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Merida
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Metlakatla
+      offset: -8
+      offsetDst: -8
+    - timezoneName: America/Mexico_City
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Miquelon
+      offset: -3
+      offsetDst: -2
+    - timezoneName: America/Moncton
+      offset: -4
+      offsetDst: -3
+    - timezoneName: America/Monterrey
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Montevideo
+      offset: -3
+      offsetDst: -2
+    - timezoneName: America/Montreal
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Montserrat
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Nassau
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/New_York
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Nipigon
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Nome
+      offset: -9
+      offsetDst: -8
+    - timezoneName: America/Noronha
+      offset: -2
+      offsetDst: -2
+    - timezoneName: America/North_Dakota/Beulah
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/North_Dakota/Center
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/North_Dakota/New_Salem
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Ojinaga
+      offset: -7
+      offsetDst: -6
+    - timezoneName: America/Panama
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Pangnirtung
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Paramaribo
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Phoenix
+      offset: -7
+      offsetDst: -7
+    - timezoneName: America/Port-au-Prince
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Port_of_Spain
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Porto_Acre
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Porto_Velho
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Puerto_Rico
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Rainy_River
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Rankin_Inlet
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Recife
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Regina
+      offset: -6
+      offsetDst: -6
+    - timezoneName: America/Resolute
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Rio_Branco
+      offset: -5
+      offsetDst: -5
+    - timezoneName: America/Rosario
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Santa_Isabel
+      offset: -8
+      offsetDst: -7
+    - timezoneName: America/Santarem
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Santiago
+      offset: -3
+      offsetDst: -3
+    - timezoneName: America/Santo_Domingo
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Sao_Paulo
+      offset: -3
+      offsetDst: -2
+    - timezoneName: America/Scoresbysund
+      offset: -1
+      offsetDst: 0
+    - timezoneName: America/Shiprock
+      offset: -7
+      offsetDst: -6
+    - timezoneName: America/Sitka
+      offset: -9
+      offsetDst: -8
+    - timezoneName: America/St_Barthelemy
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/St_Johns
+      offset: -3.5
+      offsetDst: -2.5
+    - timezoneName: America/St_Kitts
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/St_Lucia
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/St_Thomas
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/St_Vincent
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Swift_Current
+      offset: -6
+      offsetDst: -6
+    - timezoneName: America/Tegucigalpa
+      offset: -6
+      offsetDst: -6
+    - timezoneName: America/Thule
+      offset: -4
+      offsetDst: -3
+    - timezoneName: America/Thunder_Bay
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Tijuana
+      offset: -8
+      offsetDst: -7
+    - timezoneName: America/Toronto
+      offset: -5
+      offsetDst: -4
+    - timezoneName: America/Tortola
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Vancouver
+      offset: -8
+      offsetDst: -7
+    - timezoneName: America/Virgin
+      offset: -4
+      offsetDst: -4
+    - timezoneName: America/Whitehorse
+      offset: -8
+      offsetDst: -7
+    - timezoneName: America/Winnipeg
+      offset: -6
+      offsetDst: -5
+    - timezoneName: America/Yakutat
+      offset: -9
+      offsetDst: -8
+    - timezoneName: America/Yellowknife
+      offset: -7
+      offsetDst: -6
+    - timezoneName: Antarctica/Casey
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Antarctica/Davis
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Antarctica/DumontDUrville
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Antarctica/Macquarie
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Antarctica/Mawson
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Antarctica/McMurdo
+      offset: 12
+      offsetDst: 13
+    - timezoneName: Antarctica/Palmer
+      offset: -3
+      offsetDst: -3
+    - timezoneName: Antarctica/Rothera
+      offset: -3
+      offsetDst: -3
+    - timezoneName: Antarctica/South_Pole
+      offset: 12
+      offsetDst: 13
+    - timezoneName: Antarctica/Syowa
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Antarctica/Troll
+      offset: 0
+      offsetDst: 2
+    - timezoneName: Antarctica/Vostok
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Arctic/Longyearbyen
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Asia/Aden
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Asia/Almaty
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Amman
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Asia/Anadyr
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Asia/Aqtau
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Aqtobe
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Ashgabat
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Ashkhabad
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Baghdad
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Asia/Bahrain
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Asia/Baku
+      offset: 4
+      offsetDst: 5
+    - timezoneName: Asia/Bangkok
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Asia/Beirut
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Asia/Bishkek
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Brunei
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Calcutta
+      offset: 5.5
+      offsetDst: 5.5
+    - timezoneName: Asia/Chita
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Choibalsan
+      offset: 8
+      offsetDst: 9
+    - timezoneName: Asia/Chongqing
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Chungking
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Colombo
+      offset: 5.5
+      offsetDst: 5.5
+    - timezoneName: Asia/Dacca
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Damascus
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Asia/Dhaka
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Dili
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Asia/Dubai
+      offset: 4
+      offsetDst: 4
+    - timezoneName: Asia/Dushanbe
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Gaza
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Asia/Harbin
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Hebron
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Asia/Ho_Chi_Minh
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Asia/Hong_Kong
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Hovd
+      offset: 7
+      offsetDst: 8
+    - timezoneName: Asia/Irkutsk
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Istanbul
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Asia/Jakarta
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Asia/Jayapura
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Asia/Jerusalem
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Asia/Kabul
+      offset: 4.5
+      offsetDst: 4.5
+    - timezoneName: Asia/Kamchatka
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Asia/Karachi
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Kashgar
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Kathmandu
+      offset: 5.75
+      offsetDst: 5.75
+    - timezoneName: Asia/Katmandu
+      offset: 5.75
+      offsetDst: 5.75
+    - timezoneName: Asia/Khandyga
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Asia/Kolkata
+      offset: 5.5
+      offsetDst: 5.5
+    - timezoneName: Asia/Krasnoyarsk
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Asia/Kuala_Lumpur
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Kuching
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Kuwait
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Asia/Macao
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Macau
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Magadan
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Asia/Makassar
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Manila
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Muscat
+      offset: 4
+      offsetDst: 4
+    - timezoneName: Asia/Nicosia
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Asia/Novokuznetsk
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Asia/Novosibirsk
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Omsk
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Oral
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Phnom_Penh
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Asia/Pontianak
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Asia/Pyongyang
+      offset: 8.5
+      offsetDst: 8.5
+    - timezoneName: Asia/Qatar
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Asia/Qyzylorda
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Rangoon
+      offset: 6.5
+      offsetDst: 6.5
+    - timezoneName: Asia/Riyadh
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Asia/Riyadh87
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Asia/Riyadh88
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Asia/Riyadh89
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Asia/Saigon
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Asia/Sakhalin
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Asia/Samarkand
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Seoul
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Asia/Shanghai
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Singapore
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Srednekolymsk
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Asia/Taipei
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Tashkent
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Tbilisi
+      offset: 4
+      offsetDst: 4
+    - timezoneName: Asia/Tehran
+      offset: 3.5
+      offsetDst: 4.5
+    - timezoneName: Asia/Tel_Aviv
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Asia/Thimbu
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Thimphu
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Tokyo
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Asia/Ujung_Pandang
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Asia/Ulaanbaatar
+      offset: 8
+      offsetDst: 9
+    - timezoneName: Asia/Ulan_Bator
+      offset: 8
+      offsetDst: 9
+    - timezoneName: Asia/Urumqi
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Asia/Vientiane
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Asia/Vladivostok
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Asia/Yakutsk
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Asia/Yekaterinburg
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Asia/Yerevan
+      offset: 4
+      offsetDst: 4
+    - timezoneName: Atlantic/Azores
+      offset: -1
+      offsetDst: 0
+    - timezoneName: Atlantic/Bermuda
+      offset: -4
+      offsetDst: -3
+    - timezoneName: Atlantic/Canary
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Atlantic/Cape_Verde
+      offset: -1
+      offsetDst: -1
+    - timezoneName: Atlantic/Faeroe
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Atlantic/Faroe
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Atlantic/Jan_Mayen
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Atlantic/Madeira
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Atlantic/Reykjavik
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Atlantic/South_Georgia
+      offset: -2
+      offsetDst: -2
+    - timezoneName: Atlantic/St_Helena
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Atlantic/Stanley
+      offset: -3
+      offsetDst: -3
+    - timezoneName: Australia/ACT
+      offset: 10
+      offsetDst: 11
+    - timezoneName: Australia/Adelaide
+      offset: 9.5
+      offsetDst: 10.5
+    - timezoneName: Australia/Brisbane
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Australia/Broken_Hill
+      offset: 9.5
+      offsetDst: 10.5
+    - timezoneName: Australia/Canberra
+      offset: 10
+      offsetDst: 11
+    - timezoneName: Australia/Currie
+      offset: 10
+      offsetDst: 11
+    - timezoneName: Australia/Darwin
+      offset: 9.5
+      offsetDst: 9.5
+    - timezoneName: Australia/Eucla
+      offset: 8.75
+      offsetDst: 8.75
+    - timezoneName: Australia/Hobart
+      offset: 10
+      offsetDst: 11
+    - timezoneName: Australia/LHI
+      offset: 10.5
+      offsetDst: 11
+    - timezoneName: Australia/Lindeman
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Australia/Lord_Howe
+      offset: 10.5
+      offsetDst: 11
+    - timezoneName: Australia/Melbourne
+      offset: 10
+      offsetDst: 11
+    - timezoneName: Australia/NSW
+      offset: 10
+      offsetDst: 11
+    - timezoneName: Australia/North
+      offset: 9.5
+      offsetDst: 9.5
+    - timezoneName: Australia/Perth
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Australia/Queensland
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Australia/South
+      offset: 9.5
+      offsetDst: 10.5
+    - timezoneName: Australia/Sydney
+      offset: 10
+      offsetDst: 11
+    - timezoneName: Australia/Tasmania
+      offset: 10
+      offsetDst: 11
+    - timezoneName: Australia/Victoria
+      offset: 10
+      offsetDst: 11
+    - timezoneName: Australia/West
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Australia/Yancowinna
+      offset: 9.5
+      offsetDst: 10.5
+    - timezoneName: Brazil/Acre
+      offset: -5
+      offsetDst: -5
+    - timezoneName: Brazil/DeNoronha
+      offset: -2
+      offsetDst: -2
+    - timezoneName: Brazil/East
+      offset: -3
+      offsetDst: -2
+    - timezoneName: Brazil/West
+      offset: -4
+      offsetDst: -4
+    - timezoneName: CET
+      offset: 1
+      offsetDst: 2
+    - timezoneName: CST6CDT
+      offset: -6
+      offsetDst: -5
+    - timezoneName: Canada/Atlantic
+      offset: -4
+      offsetDst: -3
+    - timezoneName: Canada/Central
+      offset: -6
+      offsetDst: -5
+    - timezoneName: Canada/East-Saskatchewan
+      offset: -6
+      offsetDst: -6
+    - timezoneName: Canada/Eastern
+      offset: -5
+      offsetDst: -4
+    - timezoneName: Canada/Mountain
+      offset: -7
+      offsetDst: -6
+    - timezoneName: Canada/Newfoundland
+      offset: -3.5
+      offsetDst: -2.5
+    - timezoneName: Canada/Pacific
+      offset: -8
+      offsetDst: -7
+    - timezoneName: Canada/Saskatchewan
+      offset: -6
+      offsetDst: -6
+    - timezoneName: Canada/Yukon
+      offset: -8
+      offsetDst: -7
+    - timezoneName: Chile/Continental
+      offset: -3
+      offsetDst: -3
+    - timezoneName: Chile/EasterIsland
+      offset: -5
+      offsetDst: -5
+    - timezoneName: Cuba
+      offset: -5
+      offsetDst: -4
+    - timezoneName: EET
+      offset: 2
+      offsetDst: 3
+    - timezoneName: EST
+      offset: -5
+      offsetDst: -5
+    - timezoneName: EST5EDT
+      offset: -5
+      offsetDst: -4
+    - timezoneName: Egypt
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Eire
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Etc/GMT
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Etc/GMT+0
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Etc/GMT+1
+      offset: -1
+      offsetDst: -1
+    - timezoneName: Etc/GMT+10
+      offset: -10
+      offsetDst: -10
+    - timezoneName: Etc/GMT+11
+      offset: -11
+      offsetDst: -11
+    - timezoneName: Etc/GMT+12
+      offset: -12
+      offsetDst: -12
+    - timezoneName: Etc/GMT+2
+      offset: -2
+      offsetDst: -2
+    - timezoneName: Etc/GMT+3
+      offset: -3
+      offsetDst: -3
+    - timezoneName: Etc/GMT+4
+      offset: -4
+      offsetDst: -4
+    - timezoneName: Etc/GMT+5
+      offset: -5
+      offsetDst: -5
+    - timezoneName: Etc/GMT+6
+      offset: -6
+      offsetDst: -6
+    - timezoneName: Etc/GMT+7
+      offset: -7
+      offsetDst: -7
+    - timezoneName: Etc/GMT+8
+      offset: -8
+      offsetDst: -8
+    - timezoneName: Etc/GMT+9
+      offset: -9
+      offsetDst: -9
+    - timezoneName: Etc/GMT-0
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Etc/GMT-1
+      offset: 1
+      offsetDst: 1
+    - timezoneName: Etc/GMT-10
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Etc/GMT-11
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Etc/GMT-12
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Etc/GMT-13
+      offset: 13
+      offsetDst: 13
+    - timezoneName: Etc/GMT-14
+      offset: 14
+      offsetDst: 14
+    - timezoneName: Etc/GMT-2
+      offset: 2
+      offsetDst: 2
+    - timezoneName: Etc/GMT-3
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Etc/GMT-4
+      offset: 4
+      offsetDst: 4
+    - timezoneName: Etc/GMT-5
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Etc/GMT-6
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Etc/GMT-7
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Etc/GMT-8
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Etc/GMT-9
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Etc/GMT0
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Etc/Greenwich
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Etc/UCT
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Etc/UTC
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Etc/Universal
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Etc/Zulu
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Europe/Amsterdam
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Andorra
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Athens
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Belfast
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Europe/Belgrade
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Berlin
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Bratislava
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Brussels
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Bucharest
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Budapest
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Busingen
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Chisinau
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Copenhagen
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Dublin
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Europe/Gibraltar
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Guernsey
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Europe/Helsinki
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Isle_of_Man
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Europe/Istanbul
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Jersey
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Europe/Kaliningrad
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Kiev
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Lisbon
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Europe/Ljubljana
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/London
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Europe/Luxembourg
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Madrid
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Malta
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Mariehamn
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Minsk
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Europe/Monaco
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Moscow
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Europe/Nicosia
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Oslo
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Paris
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Podgorica
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Prague
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Riga
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Rome
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Samara
+      offset: 4
+      offsetDst: 4
+    - timezoneName: Europe/San_Marino
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Sarajevo
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Simferopol
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Skopje
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Sofia
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Stockholm
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Tallinn
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Tirane
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Tiraspol
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Uzhgorod
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Vaduz
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Vatican
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Vienna
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Vilnius
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Volgograd
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Europe/Warsaw
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Zagreb
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Europe/Zaporozhye
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Europe/Zurich
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Factory
+      offset: 0
+      offsetDst: 0
+    - timezoneName: GB
+      offset: 0
+      offsetDst: 1
+    - timezoneName: GB-Eire
+      offset: 0
+      offsetDst: 1
+    - timezoneName: GMT
+      offset: 0
+      offsetDst: 0
+    - timezoneName: GMT+0
+      offset: 0
+      offsetDst: 0
+    - timezoneName: GMT-0
+      offset: 0
+      offsetDst: 0
+    - timezoneName: GMT0
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Greenwich
+      offset: 0
+      offsetDst: 0
+    - timezoneName: HST
+      offset: -10
+      offsetDst: -10
+    - timezoneName: Hongkong
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Iceland
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Indian/Antananarivo
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Indian/Chagos
+      offset: 6
+      offsetDst: 6
+    - timezoneName: Indian/Christmas
+      offset: 7
+      offsetDst: 7
+    - timezoneName: Indian/Cocos
+      offset: 6.5
+      offsetDst: 6.5
+    - timezoneName: Indian/Comoro
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Indian/Kerguelen
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Indian/Mahe
+      offset: 4
+      offsetDst: 4
+    - timezoneName: Indian/Maldives
+      offset: 5
+      offsetDst: 5
+    - timezoneName: Indian/Mauritius
+      offset: 4
+      offsetDst: 4
+    - timezoneName: Indian/Mayotte
+      offset: 3
+      offsetDst: 3
+    - timezoneName: Indian/Reunion
+      offset: 4
+      offsetDst: 4
+    - timezoneName: Iran
+      offset: 3.5
+      offsetDst: 4.5
+    - timezoneName: Israel
+      offset: 2
+      offsetDst: 3
+    - timezoneName: Jamaica
+      offset: -5
+      offsetDst: -5
+    - timezoneName: Japan
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Kwajalein
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Libya
+      offset: 2
+      offsetDst: 2
+    - timezoneName: MET
+      offset: 1
+      offsetDst: 2
+    - timezoneName: MST
+      offset: -7
+      offsetDst: -7
+    - timezoneName: MST7MDT
+      offset: -7
+      offsetDst: -6
+    - timezoneName: Mexico/BajaNorte
+      offset: -8
+      offsetDst: -7
+    - timezoneName: Mexico/BajaSur
+      offset: -7
+      offsetDst: -6
+    - timezoneName: Mexico/General
+      offset: -6
+      offsetDst: -5
+    - timezoneName: Mideast/Riyadh87
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Mideast/Riyadh88
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Mideast/Riyadh89
+      offset: 0
+      offsetDst: 0
+    - timezoneName: NZ
+      offset: 12
+      offsetDst: 13
+    - timezoneName: NZ-CHAT
+      offset: 12.75
+      offsetDst: 13.75
+    - timezoneName: Navajo
+      offset: 0
+      offsetDst: 0
+    - timezoneName: PRC
+      offset: 0
+      offsetDst: 0
+    - timezoneName: PST8PDT
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Pacific/Apia
+      offset: 13
+      offsetDst: 14
+    - timezoneName: Pacific/Auckland
+      offset: 12
+      offsetDst: 13
+    - timezoneName: Pacific/Bougainville
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Pacific/Chatham
+      offset: 12.75
+      offsetDst: 13.75
+    - timezoneName: Pacific/Chuuk
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Pacific/Easter
+      offset: -5
+      offsetDst: -5
+    - timezoneName: Pacific/Efate
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Pacific/Enderbury
+      offset: 13
+      offsetDst: 13
+    - timezoneName: Pacific/Fakaofo
+      offset: 13
+      offsetDst: 13
+    - timezoneName: Pacific/Fiji
+      offset: 12
+      offsetDst: 13
+    - timezoneName: Pacific/Funafuti
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Pacific/Galapagos
+      offset: -6
+      offsetDst: -6
+    - timezoneName: Pacific/Gambier
+      offset: -9
+      offsetDst: -9
+    - timezoneName: Pacific/Guadalcanal
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Pacific/Guam
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Pacific/Honolulu
+      offset: -10
+      offsetDst: -10
+    - timezoneName: Pacific/Johnston
+      offset: -10
+      offsetDst: -10
+    - timezoneName: Pacific/Kiritimati
+      offset: 14
+      offsetDst: 14
+    - timezoneName: Pacific/Kosrae
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Pacific/Kwajalein
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Pacific/Majuro
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Pacific/Marquesas
+      offset: -9.5
+      offsetDst: -9.5
+    - timezoneName: Pacific/Midway
+      offset: -11
+      offsetDst: -11
+    - timezoneName: Pacific/Nauru
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Pacific/Niue
+      offset: -11
+      offsetDst: -11
+    - timezoneName: Pacific/Norfolk
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Pacific/Noumea
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Pacific/Pago_Pago
+      offset: -11
+      offsetDst: -11
+    - timezoneName: Pacific/Palau
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Pacific/Pitcairn
+      offset: -8
+      offsetDst: -8
+    - timezoneName: Pacific/Ponape
+      offset: 11
+      offsetDst: 11
+    - timezoneName: Pacific/Port_Moresby
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Pacific/Rarotonga
+      offset: -10
+      offsetDst: -10
+    - timezoneName: Pacific/Saipan
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Pacific/Samoa
+      offset: -11
+      offsetDst: -11
+    - timezoneName: Pacific/Tahiti
+      offset: -10
+      offsetDst: -10
+    - timezoneName: Pacific/Tarawa
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Pacific/Tongatapu
+      offset: 13
+      offsetDst: 13
+    - timezoneName: Pacific/Truk
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Pacific/Wake
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Pacific/Wallis
+      offset: 12
+      offsetDst: 12
+    - timezoneName: Pacific/Yap
+      offset: 10
+      offsetDst: 10
+    - timezoneName: Poland
+      offset: 1
+      offsetDst: 2
+    - timezoneName: Portugal
+      offset: 0
+      offsetDst: 1
+    - timezoneName: ROC
+      offset: 8
+      offsetDst: 8
+    - timezoneName: ROK
+      offset: 9
+      offsetDst: 9
+    - timezoneName: Singapore
+      offset: 8
+      offsetDst: 8
+    - timezoneName: Turkey
+      offset: 2
+      offsetDst: 3
+    - timezoneName: UCT
+      offset: 0
+      offsetDst: 0
+    - timezoneName: US/Alaska
+      offset: -9
+      offsetDst: -8
+    - timezoneName: US/Aleutian
+      offset: -10
+      offsetDst: -9
+    - timezoneName: US/Arizona
+      offset: -7
+      offsetDst: -7
+    - timezoneName: US/Central
+      offset: -6
+      offsetDst: -5
+    - timezoneName: US/East-Indiana
+      offset: -5
+      offsetDst: -4
+    - timezoneName: US/Eastern
+      offset: -5
+      offsetDst: -4
+    - timezoneName: US/Hawaii
+      offset: -10
+      offsetDst: -10
+    - timezoneName: US/Indiana-Starke
+      offset: -6
+      offsetDst: -5
+    - timezoneName: US/Michigan
+      offset: -5
+      offsetDst: -4
+    - timezoneName: US/Mountain
+      offset: -7
+      offsetDst: -6
+    - timezoneName: US/Pacific
+      offset: -8
+      offsetDst: -7
+    - timezoneName: US/Pacific-New
+      offset: -8
+      offsetDst: -7
+    - timezoneName: US/Samoa
+      offset: -11
+      offsetDst: -11
+    - timezoneName: UTC
+      offset: 0
+      offsetDst: 0
+    - timezoneName: Universal
+      offset: 0
+      offsetDst: 0
+    - timezoneName: W-SU
+      offset: 3
+      offsetDst: 3
+    - timezoneName: WET
+      offset: 0
+      offsetDst: 1
+    - timezoneName: Zulu
+      offset: 0
+      offsetDst: 0
+  listOfTimezoneNames:
+  - Africa/Abidjan
+  - Africa/Accra
+  - Africa/Addis_Ababa
+  - Africa/Algiers
+  - Africa/Asmara
+  - Africa/Asmera
+  - Africa/Bamako
+  - Africa/Bangui
+  - Africa/Banjul
+  - Africa/Bissau
+  - Africa/Blantyre
+  - Africa/Brazzaville
+  - Africa/Bujumbura
+  - Africa/Cairo
+  - Africa/Casablanca
+  - Africa/Ceuta
+  - Africa/Conakry
+  - Africa/Dakar
+  - Africa/Dar_es_Salaam
+  - Africa/Djibouti
+  - Africa/Douala
+  - Africa/El_Aaiun
+  - Africa/Freetown
+  - Africa/Gaborone
+  - Africa/Harare
+  - Africa/Johannesburg
+  - Africa/Juba
+  - Africa/Kampala
+  - Africa/Khartoum
+  - Africa/Kigali
+  - Africa/Kinshasa
+  - Africa/Lagos
+  - Africa/Libreville
+  - Africa/Lome
+  - Africa/Luanda
+  - Africa/Lubumbashi
+  - Africa/Lusaka
+  - Africa/Malabo
+  - Africa/Maputo
+  - Africa/Maseru
+  - Africa/Mbabane
+  - Africa/Mogadishu
+  - Africa/Monrovia
+  - Africa/Nairobi
+  - Africa/Ndjamena
+  - Africa/Niamey
+  - Africa/Nouakchott
+  - Africa/Ouagadougou
+  - Africa/Porto-Novo
+  - Africa/Sao_Tome
+  - Africa/Timbuktu
+  - Africa/Tripoli
+  - Africa/Tunis
+  - Africa/Windhoek
+  - America/Adak
+  - America/Anchorage
+  - America/Anguilla
+  - America/Antigua
+  - America/Araguaina
+  - America/Argentina/Buenos_Aires
+  - America/Argentina/Catamarca
+  - America/Argentina/ComodRivadavia
+  - America/Argentina/Cordoba
+  - America/Argentina/Jujuy
+  - America/Argentina/La_Rioja
+  - America/Argentina/Mendoza
+  - America/Argentina/Rio_Gallegos
+  - America/Argentina/Salta
+  - America/Argentina/San_Juan
+  - America/Argentina/San_Luis
+  - America/Argentina/Tucuman
+  - America/Argentina/Ushuaia
+  - America/Aruba
+  - America/Asuncion
+  - America/Atikokan
+  - America/Atka
+  - America/Bahia
+  - America/Bahia_Banderas
+  - America/Barbados
+  - America/Belem
+  - America/Belize
+  - America/Blanc-Sablon
+  - America/Boa_Vista
+  - America/Bogota
+  - America/Boise
+  - America/Buenos_Aires
+  - America/Cambridge_Bay
+  - America/Campo_Grande
+  - America/Cancun
+  - America/Caracas
+  - America/Catamarca
+  - America/Cayenne
+  - America/Cayman
+  - America/Chicago
+  - America/Chihuahua
+  - America/Coral_Harbour
+  - America/Cordoba
+  - America/Costa_Rica
+  - America/Creston
+  - America/Cuiaba
+  - America/Curacao
+  - America/Danmarkshavn
+  - America/Dawson
+  - America/Dawson_Creek
+  - America/Denver
+  - America/Detroit
+  - America/Dominica
+  - America/Edmonton
+  - America/Eirunepe
+  - America/El_Salvador
+  - America/Ensenada
+  - America/Fort_Nelson
+  - America/Fort_Wayne
+  - America/Fortaleza
+  - America/Glace_Bay
+  - America/Godthab
+  - America/Goose_Bay
+  - America/Grand_Turk
+  - America/Grenada
+  - America/Guadeloupe
+  - America/Guatemala
+  - America/Guayaquil
+  - America/Guyana
+  - America/Halifax
+  - America/Havana
+  - America/Hermosillo
+  - America/Indiana/Indianapolis
+  - America/Indiana/Knox
+  - America/Indiana/Marengo
+  - America/Indiana/Petersburg
+  - America/Indiana/Tell_City
+  - America/Indiana/Vevay
+  - America/Indiana/Vincennes
+  - America/Indiana/Winamac
+  - America/Indianapolis
+  - America/Inuvik
+  - America/Iqaluit
+  - America/Jamaica
+  - America/Jujuy
+  - America/Juneau
+  - America/Kentucky/Louisville
+  - America/Kentucky/Monticello
+  - America/Knox_IN
+  - America/Kralendijk
+  - America/La_Paz
+  - America/Lima
+  - America/Los_Angeles
+  - America/Louisville
+  - America/Lower_Princes
+  - America/Maceio
+  - America/Managua
+  - America/Manaus
+  - America/Marigot
+  - America/Martinique
+  - America/Matamoros
+  - America/Mazatlan
+  - America/Mendoza
+  - America/Menominee
+  - America/Merida
+  - America/Metlakatla
+  - America/Mexico_City
+  - America/Miquelon
+  - America/Moncton
+  - America/Monterrey
+  - America/Montevideo
+  - America/Montreal
+  - America/Montserrat
+  - America/Nassau
+  - America/New_York
+  - America/Nipigon
+  - America/Nome
+  - America/Noronha
+  - America/North_Dakota/Beulah
+  - America/North_Dakota/Center
+  - America/North_Dakota/New_Salem
+  - America/Ojinaga
+  - America/Panama
+  - America/Pangnirtung
+  - America/Paramaribo
+  - America/Phoenix
+  - America/Port-au-Prince
+  - America/Port_of_Spain
+  - America/Porto_Acre
+  - America/Porto_Velho
+  - America/Puerto_Rico
+  - America/Rainy_River
+  - America/Rankin_Inlet
+  - America/Recife
+  - America/Regina
+  - America/Resolute
+  - America/Rio_Branco
+  - America/Rosario
+  - America/Santa_Isabel
+  - America/Santarem
+  - America/Santiago
+  - America/Santo_Domingo
+  - America/Sao_Paulo
+  - America/Scoresbysund
+  - America/Shiprock
+  - America/Sitka
+  - America/St_Barthelemy
+  - America/St_Johns
+  - America/St_Kitts
+  - America/St_Lucia
+  - America/St_Thomas
+  - America/St_Vincent
+  - America/Swift_Current
+  - America/Tegucigalpa
+  - America/Thule
+  - America/Thunder_Bay
+  - America/Tijuana
+  - America/Toronto
+  - America/Tortola
+  - America/Vancouver
+  - America/Virgin
+  - America/Whitehorse
+  - America/Winnipeg
+  - America/Yakutat
+  - America/Yellowknife
+  - Antarctica/Casey
+  - Antarctica/Davis
+  - Antarctica/DumontDUrville
+  - Antarctica/Macquarie
+  - Antarctica/Mawson
+  - Antarctica/McMurdo
+  - Antarctica/Palmer
+  - Antarctica/Rothera
+  - Antarctica/South_Pole
+  - Antarctica/Syowa
+  - Antarctica/Troll
+  - Antarctica/Vostok
+  - Arctic/Longyearbyen
+  - Asia/Aden
+  - Asia/Almaty
+  - Asia/Amman
+  - Asia/Anadyr
+  - Asia/Aqtau
+  - Asia/Aqtobe
+  - Asia/Ashgabat
+  - Asia/Ashkhabad
+  - Asia/Baghdad
+  - Asia/Bahrain
+  - Asia/Baku
+  - Asia/Bangkok
+  - Asia/Beirut
+  - Asia/Bishkek
+  - Asia/Brunei
+  - Asia/Calcutta
+  - Asia/Chita
+  - Asia/Choibalsan
+  - Asia/Chongqing
+  - Asia/Chungking
+  - Asia/Colombo
+  - Asia/Dacca
+  - Asia/Damascus
+  - Asia/Dhaka
+  - Asia/Dili
+  - Asia/Dubai
+  - Asia/Dushanbe
+  - Asia/Gaza
+  - Asia/Harbin
+  - Asia/Hebron
+  - Asia/Ho_Chi_Minh
+  - Asia/Hong_Kong
+  - Asia/Hovd
+  - Asia/Irkutsk
+  - Asia/Istanbul
+  - Asia/Jakarta
+  - Asia/Jayapura
+  - Asia/Jerusalem
+  - Asia/Kabul
+  - Asia/Kamchatka
+  - Asia/Karachi
+  - Asia/Kashgar
+  - Asia/Kathmandu
+  - Asia/Katmandu
+  - Asia/Khandyga
+  - Asia/Kolkata
+  - Asia/Krasnoyarsk
+  - Asia/Kuala_Lumpur
+  - Asia/Kuching
+  - Asia/Kuwait
+  - Asia/Macao
+  - Asia/Macau
+  - Asia/Magadan
+  - Asia/Makassar
+  - Asia/Manila
+  - Asia/Muscat
+  - Asia/Nicosia
+  - Asia/Novokuznetsk
+  - Asia/Novosibirsk
+  - Asia/Omsk
+  - Asia/Oral
+  - Asia/Phnom_Penh
+  - Asia/Pontianak
+  - Asia/Pyongyang
+  - Asia/Qatar
+  - Asia/Qyzylorda
+  - Asia/Rangoon
+  - Asia/Riyadh
+  - Asia/Riyadh87
+  - Asia/Riyadh88
+  - Asia/Riyadh89
+  - Asia/Saigon
+  - Asia/Sakhalin
+  - Asia/Samarkand
+  - Asia/Seoul
+  - Asia/Shanghai
+  - Asia/Singapore
+  - Asia/Srednekolymsk
+  - Asia/Taipei
+  - Asia/Tashkent
+  - Asia/Tbilisi
+  - Asia/Tehran
+  - Asia/Tel_Aviv
+  - Asia/Thimbu
+  - Asia/Thimphu
+  - Asia/Tokyo
+  - Asia/Ujung_Pandang
+  - Asia/Ulaanbaatar
+  - Asia/Ulan_Bator
+  - Asia/Urumqi
+  - Asia/Vientiane
+  - Asia/Vladivostok
+  - Asia/Yakutsk
+  - Asia/Yekaterinburg
+  - Asia/Yerevan
+  - Atlantic/Azores
+  - Atlantic/Bermuda
+  - Atlantic/Canary
+  - Atlantic/Cape_Verde
+  - Atlantic/Faeroe
+  - Atlantic/Faroe
+  - Atlantic/Jan_Mayen
+  - Atlantic/Madeira
+  - Atlantic/Reykjavik
+  - Atlantic/South_Georgia
+  - Atlantic/St_Helena
+  - Atlantic/Stanley
+  - Australia/ACT
+  - Australia/Adelaide
+  - Australia/Brisbane
+  - Australia/Broken_Hill
+  - Australia/Canberra
+  - Australia/Currie
+  - Australia/Darwin
+  - Australia/Eucla
+  - Australia/Hobart
+  - Australia/LHI
+  - Australia/Lindeman
+  - Australia/Lord_Howe
+  - Australia/Melbourne
+  - Australia/NSW
+  - Australia/North
+  - Australia/Perth
+  - Australia/Queensland
+  - Australia/South
+  - Australia/Sydney
+  - Australia/Tasmania
+  - Australia/Victoria
+  - Australia/West
+  - Australia/Yancowinna
+  - Brazil/Acre
+  - Brazil/DeNoronha
+  - Brazil/East
+  - Brazil/West
+  - CET
+  - CST6CDT
+  - Canada/Atlantic
+  - Canada/Central
+  - Canada/East-Saskatchewan
+  - Canada/Eastern
+  - Canada/Mountain
+  - Canada/Newfoundland
+  - Canada/Pacific
+  - Canada/Saskatchewan
+  - Canada/Yukon
+  - Chile/Continental
+  - Chile/EasterIsland
+  - Cuba
+  - EET
+  - EST
+  - EST5EDT
+  - Egypt
+  - Eire
+  - Etc/GMT
+  - Etc/GMT+0
+  - Etc/GMT+1
+  - Etc/GMT+10
+  - Etc/GMT+11
+  - Etc/GMT+12
+  - Etc/GMT+2
+  - Etc/GMT+3
+  - Etc/GMT+4
+  - Etc/GMT+5
+  - Etc/GMT+6
+  - Etc/GMT+7
+  - Etc/GMT+8
+  - Etc/GMT+9
+  - Etc/GMT-0
+  - Etc/GMT-1
+  - Etc/GMT-10
+  - Etc/GMT-11
+  - Etc/GMT-12
+  - Etc/GMT-13
+  - Etc/GMT-14
+  - Etc/GMT-2
+  - Etc/GMT-3
+  - Etc/GMT-4
+  - Etc/GMT-5
+  - Etc/GMT-6
+  - Etc/GMT-7
+  - Etc/GMT-8
+  - Etc/GMT-9
+  - Etc/GMT0
+  - Etc/Greenwich
+  - Etc/UCT
+  - Etc/UTC
+  - Etc/Universal
+  - Etc/Zulu
+  - Europe/Amsterdam
+  - Europe/Andorra
+  - Europe/Athens
+  - Europe/Belfast
+  - Europe/Belgrade
+  - Europe/Berlin
+  - Europe/Bratislava
+  - Europe/Brussels
+  - Europe/Bucharest
+  - Europe/Budapest
+  - Europe/Busingen
+  - Europe/Chisinau
+  - Europe/Copenhagen
+  - Europe/Dublin
+  - Europe/Gibraltar
+  - Europe/Guernsey
+  - Europe/Helsinki
+  - Europe/Isle_of_Man
+  - Europe/Istanbul
+  - Europe/Jersey
+  - Europe/Kaliningrad
+  - Europe/Kiev
+  - Europe/Lisbon
+  - Europe/Ljubljana
+  - Europe/London
+  - Europe/Luxembourg
+  - Europe/Madrid
+  - Europe/Malta
+  - Europe/Mariehamn
+  - Europe/Minsk
+  - Europe/Monaco
+  - Europe/Moscow
+  - Europe/Nicosia
+  - Europe/Oslo
+  - Europe/Paris
+  - Europe/Podgorica
+  - Europe/Prague
+  - Europe/Riga
+  - Europe/Rome
+  - Europe/Samara
+  - Europe/San_Marino
+  - Europe/Sarajevo
+  - Europe/Simferopol
+  - Europe/Skopje
+  - Europe/Sofia
+  - Europe/Stockholm
+  - Europe/Tallinn
+  - Europe/Tirane
+  - Europe/Tiraspol
+  - Europe/Uzhgorod
+  - Europe/Vaduz
+  - Europe/Vatican
+  - Europe/Vienna
+  - Europe/Vilnius
+  - Europe/Volgograd
+  - Europe/Warsaw
+  - Europe/Zagreb
+  - Europe/Zaporozhye
+  - Europe/Zurich
+  - Factory
+  - GB
+  - GB-Eire
+  - GMT
+  - GMT+0
+  - GMT-0
+  - GMT0
+  - Greenwich
+  - HST
+  - Hongkong
+  - Iceland
+  - Indian/Antananarivo
+  - Indian/Chagos
+  - Indian/Christmas
+  - Indian/Cocos
+  - Indian/Comoro
+  - Indian/Kerguelen
+  - Indian/Mahe
+  - Indian/Maldives
+  - Indian/Mauritius
+  - Indian/Mayotte
+  - Indian/Reunion
+  - Iran
+  - Israel
+  - Jamaica
+  - Japan
+  - Kwajalein
+  - Libya
+  - MET
+  - MST
+  - MST7MDT
+  - Mexico/BajaNorte
+  - Mexico/BajaSur
+  - Mexico/General
+  - Mideast/Riyadh87
+  - Mideast/Riyadh88
+  - Mideast/Riyadh89
+  - NZ
+  - NZ-CHAT
+  - Navajo
+  - PRC
+  - PST8PDT
+  - Pacific/Apia
+  - Pacific/Auckland
+  - Pacific/Bougainville
+  - Pacific/Chatham
+  - Pacific/Chuuk
+  - Pacific/Easter
+  - Pacific/Efate
+  - Pacific/Enderbury
+  - Pacific/Fakaofo
+  - Pacific/Fiji
+  - Pacific/Funafuti
+  - Pacific/Galapagos
+  - Pacific/Gambier
+  - Pacific/Guadalcanal
+  - Pacific/Guam
+  - Pacific/Honolulu
+  - Pacific/Johnston
+  - Pacific/Kiritimati
+  - Pacific/Kosrae
+  - Pacific/Kwajalein
+  - Pacific/Majuro
+  - Pacific/Marquesas
+  - Pacific/Midway
+  - Pacific/Nauru
+  - Pacific/Niue
+  - Pacific/Norfolk
+  - Pacific/Noumea
+  - Pacific/Pago_Pago
+  - Pacific/Palau
+  - Pacific/Pitcairn
+  - Pacific/Ponape
+  - Pacific/Port_Moresby
+  - Pacific/Rarotonga
+  - Pacific/Saipan
+  - Pacific/Samoa
+  - Pacific/Tahiti
+  - Pacific/Tarawa
+  - Pacific/Tongatapu
+  - Pacific/Truk
+  - Pacific/Wake
+  - Pacific/Wallis
+  - Pacific/Yap
+  - Poland
+  - Portugal
+  - ROC
+  - ROK
+  - Singapore
+  - Turkey
+  - UCT
+  - US/Alaska
+  - US/Aleutian
+  - US/Arizona
+  - US/Central
+  - US/East-Indiana
+  - US/Eastern
+  - US/Hawaii
+  - US/Indiana-Starke
+  - US/Michigan
+  - US/Mountain
+  - US/Pacific
+  - US/Pacific-New
+  - US/Samoa
+  - UTC
+  - Universal
+  - W-SU
+  - WET
+  - Zulu

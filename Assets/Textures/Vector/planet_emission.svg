@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 351 351" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(-0.999998,-0.00177847,0.00177847,-0.999998,349.752,350.058)">
+        <g id="Camada-1" serif:id="Camada 1">
+            <g>
+                <path d="M277.391,170.953L285.239,174.86L277.405,178.794C279.361,176.83 279.354,172.91 277.391,170.953Z" style="fill:none;fill-rule:nonzero;"/>
+                <path d="M64.825,175.252C64.825,175.252 243.024,174.935 278.966,174.871" style="fill:none;fill-rule:nonzero;"/>
+            </g>
+        </g>
+        <g transform="matrix(-0.999999,0.00177847,-0.00177847,-0.999999,350.547,350.609)">
+            <circle cx="81.823" cy="175.865" r="5.202" style="fill:white;"/>
+        </g>
+    </g>
+</svg>

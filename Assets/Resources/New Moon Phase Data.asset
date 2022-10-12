@@ -1,0 +1,207 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28c9164f7625f5149b695c3122290682, type: 3}
+  m_Name: New Moon Phase Data
+  m_EditorClassIdentifier: 
+  listOfMoonPhases:
+  - id: 0
+    isWaxing: 1
+    minRange: 0
+    maxRange: 0.01
+    texture: {fileID: 2800000, guid: 13cee8bc15f68eb47976b993cc49a6cd, type: 3}
+    sprite: {fileID: 21300000, guid: 13cee8bc15f68eb47976b993cc49a6cd, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.01
+    maxRange: 0.08
+    texture: {fileID: 2800000, guid: 2b787f0069aae9e4faec704bd1d992cf, type: 3}
+    sprite: {fileID: 21300000, guid: 2b787f0069aae9e4faec704bd1d992cf, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.08
+    maxRange: 0.15000000000000002
+    texture: {fileID: 2800000, guid: ef79b238499a2d84c84cb64704aa1186, type: 3}
+    sprite: {fileID: 21300000, guid: ef79b238499a2d84c84cb64704aa1186, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.15000000000000002
+    maxRange: 0.22000000000000003
+    texture: {fileID: 2800000, guid: 4d5ee8c76c926cb428a25cde6c66564c, type: 3}
+    sprite: {fileID: 21300000, guid: 4d5ee8c76c926cb428a25cde6c66564c, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.22000000000000003
+    maxRange: 0.29000000000000004
+    texture: {fileID: 2800000, guid: a1efe948252be6042b0bdde1a4bf9070, type: 3}
+    sprite: {fileID: 21300000, guid: a1efe948252be6042b0bdde1a4bf9070, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.29000000000000004
+    maxRange: 0.36000000000000004
+    texture: {fileID: 2800000, guid: e70c8e880f0498c42b05731c698618db, type: 3}
+    sprite: {fileID: 21300000, guid: e70c8e880f0498c42b05731c698618db, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.36000000000000004
+    maxRange: 0.43000000000000005
+    texture: {fileID: 2800000, guid: 18631606ad19bc745be0fda59ab00d2f, type: 3}
+    sprite: {fileID: 21300000, guid: 18631606ad19bc745be0fda59ab00d2f, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.43000000000000005
+    maxRange: 0.5
+    texture: {fileID: 2800000, guid: d3fa1f9226baf2b46a25caa6670dd001, type: 3}
+    sprite: {fileID: 21300000, guid: d3fa1f9226baf2b46a25caa6670dd001, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.5
+    maxRange: 0.5700000000000001
+    texture: {fileID: 2800000, guid: 083319b29186a2244b53bd94b4543067, type: 3}
+    sprite: {fileID: 21300000, guid: 083319b29186a2244b53bd94b4543067, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.5700000000000001
+    maxRange: 0.6400000000000001
+    texture: {fileID: 2800000, guid: 0f6946124fcdf1d4cab4ceccd51510a6, type: 3}
+    sprite: {fileID: 21300000, guid: 0f6946124fcdf1d4cab4ceccd51510a6, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.6400000000000001
+    maxRange: 0.7100000000000002
+    texture: {fileID: 2800000, guid: a18e6f105beed0a4c893b9d18716e9a8, type: 3}
+    sprite: {fileID: 21300000, guid: a18e6f105beed0a4c893b9d18716e9a8, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.7100000000000001
+    maxRange: 0.78
+    texture: {fileID: 2800000, guid: 254dda22f8c6df74dbb26f41d338ef4d, type: 3}
+    sprite: {fileID: 21300000, guid: 254dda22f8c6df74dbb26f41d338ef4d, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.78
+    maxRange: 0.8500000000000001
+    texture: {fileID: 2800000, guid: 32d5625901ca5e44294b32cb46ce127e, type: 3}
+    sprite: {fileID: 21300000, guid: 32d5625901ca5e44294b32cb46ce127e, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.8500000000000001
+    maxRange: 0.9200000000000002
+    texture: {fileID: 2800000, guid: ace13c9d1635f1f4699eb4491619219f, type: 3}
+    sprite: {fileID: 21300000, guid: ace13c9d1635f1f4699eb4491619219f, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.9200000000000002
+    maxRange: 0.9900000000000002
+    texture: {fileID: 2800000, guid: 9eed024397c63ea45bbc9628f3e99fb1, type: 3}
+    sprite: {fileID: 21300000, guid: 9eed024397c63ea45bbc9628f3e99fb1, type: 3}
+  - id: 0
+    isWaxing: 1
+    minRange: 0.99
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 48f0ee96f5a583a40848d7db5b0e906f, type: 3}
+    sprite: {fileID: 21300000, guid: 48f0ee96f5a583a40848d7db5b0e906f, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.99
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 48f0ee96f5a583a40848d7db5b0e906f, type: 3}
+    sprite: {fileID: 21300000, guid: 48f0ee96f5a583a40848d7db5b0e906f, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.99
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 88704118b21c26146921773d2d5462e7, type: 3}
+    sprite: {fileID: 21300000, guid: 88704118b21c26146921773d2d5462e7, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 302f55b2bac274e4f809cc94745ec1ea, type: 3}
+    sprite: {fileID: 21300000, guid: 302f55b2bac274e4f809cc94745ec1ea, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 7c7397ab0464a2e4e98538f1497621e1, type: 3}
+    sprite: {fileID: 21300000, guid: 7c7397ab0464a2e4e98538f1497621e1, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: aca745c39a67a704facc7cc0f9944547, type: 3}
+    sprite: {fileID: 21300000, guid: aca745c39a67a704facc7cc0f9944547, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 45757a194b78e80468373dd862e36889, type: 3}
+    sprite: {fileID: 21300000, guid: 45757a194b78e80468373dd862e36889, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 49eab2a9df92e4e41b659df956412d00, type: 3}
+    sprite: {fileID: 21300000, guid: 49eab2a9df92e4e41b659df956412d00, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 7e9ea1ec720d0c746ba85dd441b82232, type: 3}
+    sprite: {fileID: 21300000, guid: 7e9ea1ec720d0c746ba85dd441b82232, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 527e7ab6971c68e408711834a8347c69, type: 3}
+    sprite: {fileID: 21300000, guid: 527e7ab6971c68e408711834a8347c69, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: f33a8310d8c42404a8a15f80b5b33c17, type: 3}
+    sprite: {fileID: 21300000, guid: f33a8310d8c42404a8a15f80b5b33c17, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: e752676e24b1d3a4091fcd5e23641fc7, type: 3}
+    sprite: {fileID: 21300000, guid: e752676e24b1d3a4091fcd5e23641fc7, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 6f77b48a27e0f9a40ab2d5c48c4cbeb0, type: 3}
+    sprite: {fileID: 21300000, guid: 6f77b48a27e0f9a40ab2d5c48c4cbeb0, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 04e66361c92c9164cb1af642e82ddde1, type: 3}
+    sprite: {fileID: 21300000, guid: 04e66361c92c9164cb1af642e82ddde1, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.9299999999999999
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 78a4a8ab1c3ee90448871a53bb8b92d5, type: 3}
+    sprite: {fileID: 21300000, guid: 78a4a8ab1c3ee90448871a53bb8b92d5, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0.99
+    maxRange: 1
+    texture: {fileID: 2800000, guid: 16afe835378ca4a439a1cb1308c8c8dc, type: 3}
+    sprite: {fileID: 21300000, guid: 16afe835378ca4a439a1cb1308c8c8dc, type: 3}
+  - id: 0
+    isWaxing: 0
+    minRange: 0
+    maxRange: 0.01
+    texture: {fileID: 2800000, guid: 13cee8bc15f68eb47976b993cc49a6cd, type: 3}
+    sprite: {fileID: 21300000, guid: 13cee8bc15f68eb47976b993cc49a6cd, type: 3}

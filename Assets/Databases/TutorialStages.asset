@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193eaab1446902047a026f565cfe0328, type: 3}
+  m_Name: TutorialStages
+  m_EditorClassIdentifier: 
+  tutorialStages:
+  - stage: 0
+    name: Instructions
+    infoTexts:
+    - 'You are now inside the Horoskopos'' dome!
+
+
+      Click and drag with the
+      <font-weight="400">right mouse button</font-weight> to move the camera
+
+
+      Click
+      and drag the top of this box with the <font-weight="400">left mouse button</font-weight>
+      to move it around'
+    - 
+  - stage: 1
+    name: FindSun
+    infoTexts:
+    - 'Let''s start with the position of the <font-weight="400"><color=#FFFF00FF>Sun</color></font-weight>,
+      which is used to define a person''s sign based on their birthday
+
+
+      Find
+      the <font-weight="400"><color=#FFFF00FF>Sun</color></font-weight> and click
+      on it to continue  '
+    - 'Let''s start with the position of the <font-weight="400"><color=#FFFF00FF>Sun</color></font-weight>,
+      which is used to define a person''s sign based on their birthday
+
+
+      Find
+      the <font-weight="400"><color=#FFFF00FF>Sun</color></font-weight> and click
+      on it to continue    '
+    - 'Let''s start with the position of the <font-weight="400"><color=#FFFF00FF>Sun</color></font-weight>,
+      which is used to define a person''s sign based on their birthday
+
+
+      Find
+      the <font-weight="400"><color=#FFFF00FF>Sun</color></font-weight> click on
+      it to continue    '
+  - stage: 2
+    name: SunExplanation
+    infoTexts:
+    - 'This is your <font-weight="400"><color=#FFFF00FF>Sun</color></font-weight>,
+      popularly known as "your sign"
+
+
+      It was <font-weight="400">{0} the horizon</font-weight>,
+      which means you were born during the<font-weight="400"> {1}</font-weight>
+
+
+      It
+      was also in the sign of <font-weight="400">{2}</font-weight>, which means you
+      were born at the <font-weight="400">{3} of {4} in the northern hemisphere</font-weight>'
+    - 'This is your <font-weight="400"><color=#FFFF00FF>Sun</color></font-weight>,
+      popularly known as "your sign"
+
+
+      It was <font-weight="400">{0} the horizon</font-weight>,
+      which means it was <font-weight="400">{1}time</font-weight>
+
+
+      It was
+      also in the sign of <font-weight="400">{2}</font-weight>, which means you were
+      born at the <font-weight="400">{3} of {4} in the northern hemisphere</font-weight>'
+    - 'This is the <font-weight="400"><color=#FFFF00FF>Sun</color></font-weight>,
+      popularly used to define a person''s sign
+
+
+      It is <font-weight="400">{0}
+      the horizon</font-weight>, which means it is currently <font-weight="400">{1}time</font-weight>
+
+
+      It
+      is also in the sign of <font-weight="400">{2}</font-weight>, which means we
+      are at the <font-weight="400">{3} of {4} in the northern hemisphere</font-weight>'
+  - stage: 3
+    name: PlanetsExplanation
+    infoTexts:
+    - 'The <color=#FFFF00FF>Sun</color> is very important in astrology, but they
+      are not the only ones we need to look out for
+
+
+      There is much we can
+      learn from the positions of the other planets as well'
+    - 
+  - stage: 4
+    name: OpenChart
+    infoTexts:
+    - 'To have an overview of the planetary positions, astrologers often use something
+      called <font-weight="400">a chart, or horoscope</font-weight>
+
+
+      <font-weight="400">Press
+      the button on the top left corner to open the horoscope</font-weight> and continue'
+    - 
+  - stage: 5
+    name: ExplainChart
+    infoTexts:
+    - "Horoscopes are astrology\u2019s most important tool, and its development marks
+      the origin of western astrology\n\nThey are <font-weight=\"400\">flattened
+      drawings of the sky</font-weight> that make it easier to read and identify
+      the <font-weight=\"400\">positions</font-weight> of the planets and astrological
+      points"
+    - 
+  - stage: 6
+    name: ChartViewPrompt
+    infoTexts:
+    - 'You can learn more about how to read a horoscope by using the <font-weight="400">Chart
+      View</font-weight>. It makes it easier to visualize the astrological lines
+      and positions in the sky, similar to a regular horoscope
+
+
+      <font-weight="400">You
+      can use the top left buttons to toggle between sky and chart views</font-weight>'
+    - 
+  - stage: 7
+    name: EclipticExplanation
+    infoTexts:
+    - 'The most important astrological line is the <font-weight="400"><color=#ffffffff>ecliptic</color></font-weight>.
+      It represents the <font-weight="400">cyclical path that the <color=#FFFF00FF>Sun</color>
+      makes around the sky during the year</font-weight>
+
+
+      The <color=#FFFFFFFF>Moon</color>
+      and the planets also move along the ecliptic. Because each of them has its
+      own orbit, they can be located <font-weight="400">slightly above or below the
+      line</font-weight>'
+    - 
+  - stage: 8
+    name: ZodiacExplanation
+    infoTexts:
+    - 'Expanding the ecliptic 8 degrees on each side results in a belt which all
+      the visible planets go through. It is called the <font-weight="400">Zodiac</font-weight>
+
+
+      Dividing
+      the zodiac in 4 equal parts results in <font-weight="400">4 seasons, marked
+      by the solstices and equinoxes.</font-weight>'
+    - 
+  - stage: 9
+    name: ZodiacDivision
+    infoTexts:
+    - 'Dividing each season into 3 equal parts results in the <font-weight="400">12
+      signs of the zodiac</font-weight>. Each sign represents the <font-weight="400">beginning,
+      middle and end</font-weight> of its corresponding season
+
+
+      This division
+      makes the zodiac a suitable reference for measuring positions in the sky. <font-weight="400">Each
+      sign has 30 degrees in length</font-weight>, and planetary positions are read
+      according to them'
+    - 
+  - stage: 10
+    name: ConstellationPrompt
+    infoTexts:
+    - "But what about the zodiac constellations?\n\nLet\u2019s go back to the sky
+      view for a moment"
+    - 
+  - stage: 11
+    name: ConstellationAndZodiacExplanation
+    infoTexts:
+    - 'When horoscopes were invented, <font-weight="400">around 2000 years ago</font-weight>,
+      the constellations and the signs of the zodiac coincided with each other
+
+
+      However,
+      a phenomenon process called <font-weight="400">precession of the equinoxes</font-weight>
+      makes the constellations move slowly over the years'
+    - 
+  - stage: 12
+    name: ConstellationAndZodiacExplanation2
+    infoTexts:
+    - 'Because the seasons are the reference for the zodiac division, the <font-weight="400">constellations
+      of the zodiac are no longer equivalent to the signs</font-weight>
+
+
+      The
+      Indian tradition of astrology, however, also uses the <font-weight="400">sidereal
+      zodiac, which follows the positions of the constellations more closely</font-weight>'
+    - 
+  - stage: 13
+    name: ConstellationAndZodiacExplanation3
+    infoTexts:
+    - '<font-weight="400">Now that you know the basic concepts, you can start exploring
+      the sky by yourself!
+
+
+      You can click over the symbols to know more about
+      the planets and signs
+
+
+      Using the panels on the bottom-left corner, you
+      can change the time, date and location and play with different settings</font-weight>'
+    - 
+  unusedTutorialStages:
+  - stage: 0
+    name: FindMoon
+    infoTexts:
+    - "Let\u2019s look for the <font-weight=\"400\"><color=#FFFFFFFF>Moon</color></font-weight>
+      now\n\nClick on it to continue"
+  - stage: 0
+    name: MoonExplanation
+    infoTexts:
+    - "The <color=#FFFFFFFF>Moon</color> was <font-weight=\"400\">moving {0} the
+      <color=#FFFF00FF>Sun</color></font-weight> at that moment, which means it was
+      <font-weight=\"400\">{1}</font-weight>\n\nIt was also in the sign of <font-weight=\"400\">{2}</font-weight>,
+      which represents the <color=#FFFF00FF>Sun</color>\u2019s path in <font-weight=\"400\">the
+      {3} of {4}</font-weight> in the northern hemisphere"
+    - "The <color=#FFFFFFFF>Moon</color> was <font-weight=\"400\">moving {0} the
+      <color=#FFFF00FF>Sun</color></font-weight> at that moment, which means it was
+      <font-weight=\"400\">{1}</font-weight>\n\nIt was also in the sign of <font-weight=\"400\">{2}</font-weight>,
+      which represents the <color=#FFFF00FF>Sun</color>\u2019s path in <font-weight=\"400\">the
+      {3} of {4}</font-weight> in the northern hemisphere"
+    - "The <color=#FFFFFFFF>Moon</color> is currently <font-weight=\"400\">moving
+      {0} the <color=#FFFF00FF>Sun</color></font-weight>, which means it is <font-weight=\"400\">{1}</font-weight>\n\nIt
+      is also in the sign of <font-weight=\"400\">{2}</font-weight>, which represents
+      the <color=#FFFF00FF>Sun</color>\u2019s path in <font-weight=\"400\">the {3}
+      of {4}</font-weight> in the northern hemisphere"
