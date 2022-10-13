@@ -11897,7 +11897,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 565968066}
   _maskableObjects:
-  - {fileID: 0}
   - {fileID: 476503560}
   - {fileID: 361683545}
   - {fileID: 513742977}
@@ -13035,7 +13034,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 621125122}
   _maskableObjects:
-  - {fileID: 0}
   - {fileID: 1532273450}
   - {fileID: 928996905}
   - {fileID: 1413023604}
@@ -22741,7 +22739,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 1110401187}
   _maskableObjects:
-  - {fileID: 0}
   - {fileID: 65957913}
   - {fileID: 391788241}
   - {fileID: 810089072}
