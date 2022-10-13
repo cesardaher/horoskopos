@@ -8,6 +8,13 @@ public class TimeManager : MonoBehaviour
     public DateTime ActiveDateTime { get; private set; }
     GeoData _tempGeoData;
     [SerializeField] int _speed;
+    public int Speed {
+        get { return _speed; }
+        private set
+        {
+            _speed = value;
+        }
+    }
     readonly int _maxSpeed = 86400000 * 3;
     readonly int _minSpeed = 1000;
 
