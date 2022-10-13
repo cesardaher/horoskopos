@@ -29,7 +29,7 @@ public class ButtonColorToggler : MonoBehaviour
 
     void ToggleColor(bool val)
     {
-        if(!val)
+        if(val)
         {
             foreach (MaskableGraphic graphic in _maskableObjects)
             {
