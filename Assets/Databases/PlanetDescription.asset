@@ -15,196 +15,218 @@ MonoBehaviour:
   planetInformationTexts:
   - id: 0
     name: Sun
-    description: The Sun is the leader, the center, the ruler of the day. Hot and
-      dry, he emits a warm golden glow. When above the horizon, his light brings
-      in the day. However, when he falls beneath it, he goes to sleep and lets the
-      other stars illuminate instead. He rules the middle of Summer and is weakened
-      mid-Winter. He represents centrality, leadership, spirit, the drive and the
-      intentions and the heart.
+    description: "The <color=#FFFF00FF>Sun</color> is the leader, the center, the
+      ruler of the day. Hot and dry, he emits a warm golden glow. When above the
+      horizon, his light brings in the day. When he falls beneath it, however, he
+      goes to sleep and lets the other stars illuminate instead. He represents centrality,
+      leadership, spirit, drive and intentions. These traits are strengthened in
+      <color=#FFFF00FF>Leo</color> and weakened in <color=#6496FFFF>Aquarius</color>.
+      \r"
   - id: 1
     name: Moon
-    description: "The Moon is the body, the mind, the ruler of the night. Cold and
-      wet, she emits a gentle silvery glow. She moves quickly through the sky, her
-      light changing as she approaches and leaves the Sun\u2019s side. She takes
-      over while the Sun is asleep, and allows us to rest under her caring embrace.
-      She rules the start of Summer and is weakened in the beginning of Winter. She
-      represents movement, shapeshifting, emotions, sensitivity, the breasts and
-      the stomach."
+    description: "The <color=#FFFFFFFF>Moon</color> is the body, the mind, the ruler
+      of the night. Cold and wet, she emits a gentle silvery glow. She moves quickly
+      through the sky, her light changing as she approaches and leaves the <color=#FFFF00FF>Sun</color>\u2019s
+      side. She takes over while the <color=#FFFF00FF>Sun</color> is asleep, and
+      allows us to rest under her caring embrace. She represents movement, shapeshifting,
+      emotions, and sensitivity. These traits are strengthened in <color=#FFFFFFFF>Cancer</color>
+      and weakened in <color=#6496FFFF>Capricorn</color>."
   - id: 2
     name: Mercury
-    description: "Mercury is intellect, language, the messenger. They are cold and
-      dry, their light ever-changing. They are unpredictable and hard to find, moving
-      backwards almost as often as forward. They are the closest to the Sun and are
-      always within its reach. You can sometimes find them at dawn and dusk, but
-      don\u2019t expect it to be easy. They rule the end of Spring and Summer but
-      don\u2019t function well at the end of Autumn and Winter. They represent thoughts,
-      reason, numbers, codes, the tongue and the bowels."
+    description: "<color=#96FFFFFF>Mercury</color> is intellect, language, the messenger.
+      They are cold and dry, their light ever-changing. They are unpredictable and
+      hard to find, moving backwards almost as often as forward. They are the closest
+      to the <color=#FFFF00FF>Sun</color> and are always within its reach. You can
+      sometimes find them at either dawn and dusk, but don\u2019t expect it to be
+      easy. When seen at dawn, they are diurnal, otherwise they are nocturnal. They
+      represent reason, codes, exchange, communication. These traits are strengthened
+      in <color=#96FFFFFF>Gemini</color> and <color=#96FFFFFF>Virgo</color> and weakened
+      in <color=#FF96FFFF>Sagittarius</color> and <color=#FF96FFFF>Pisces</color>."
   - id: 3
     name: Venus
-    description: "Venus is love, pleasure, beauty. She is warm and wet, her white
-      light shining the brightest. She can be found at either sunrise or sundown
-      among the gentle colors of the twilight. When she appears, her presence is
-      unmistakable, but she won\u2019t stay for long. She rules the middle of Spring
-      and start of Autumn, and is weak mid-Autumn and at the beginning of Spring.
-      She represents connection, friendship, desire, arts, the neck and the back."
+    description: <color=#96FF64FF>Venus</color> is love, pleasure, beauty. She is
+      primarily moist, but also warm, her white light shining the brightest. She
+      can be found at either sunrise or sundown and her presence is unmistakable
+      among the gentle colors of the twilight. She prefers the night time, when she
+      can enjoy intimacy. She represents art, harmony, union, desire, delight. These
+      traits are strengthened in <color=#96FF64FF>Taurus</color> and <color=#96FF64FF>Libra</color>
+      and weakened in <color=#FF6464FF>Scorpio</color> and <color=#FF6464FF>Aries</color>.
   - id: 4
     name: Mars
-    description: Mars is strength, aggression and power. Hot and dry, his light is
-      scorching red. He is slower than the Sun and the first to reach independence,
-      wandering through the sky at his own will. He is more functional when the Sun
-      is down, for his hot temper is cooled by the night. He rules the beginning
-      of Spring and middle of Autumn and is weakened by the coming of Autumn and
-      mid-Spring. He represents separation, violence, conflict, resistance, the head
-      and the blood.
+    description: <color=#FF6464FF>Mars</color> is strength, aggression and power.
+      Very dry and also hot, his light is scorching red. He is slower than the <color=#FFFF00FF>Sun</color>
+      and the first to reach independence, wandering through the sky at his own will.
+      He is more functional when the <color=#FFFF00FF>Sun</color> is down, for his
+      hot temper is cooled by the night. He represents separation, violence, conflict,
+      resistance, conquest. These traits are strengthened in <color=#FF6464FF>Aries</color>
+      and <color=#FF6464FF>Scorpio</color> and weakened in <color=#96FF64FF>Libra</color>
+      and <color=#96FF64FF>Taurus</color>.
   - id: 5
     name: Jupiter
-    description: "Jupiter is luck, freedom and order. Warm and wet, he emits a gentle
-      yellow glow. He moves as a pilgrim through the sky, exploring, connecting and
-      growing. He prefers the day, when the ideas are given clarity. He rules the
-      end of Autumn and Winter and is misunderstood at the end of Spring and Summer.
-      He represents growth, prosperity, law, fertility, the thighs and the feet.\r"
+    description: <color=#FF96FFFF>Jupiter</color> is luck, freedom and growth. Both
+      hot and moist, he emits a gentle yellow glow. He moves as a pilgrim through
+      the sky, exploring, connecting and growing. He prefers the day, when the ideas
+      are given clarity. He represents optimism, education, spirituality, fertility,
+      community, law. These traits are strengthened in <color=#FF96FFFF>Sagittarius</color>
+      and <color=#FF96FFFF>Pisces</color> and weakened in <color=#96FFFFFF>Gemini</color>
+      and <color=#96FFFFFF>Virgo</color>.
   - id: 6
     name: Saturn
-    description: Saturn is solitude, boundaries and death. Very cold and moderately
-      dry, his light is a sullen brown. He is the oldest and darkest of all, the
-      one that bows to no other star. He takes his time as he moves through the sky,
-      slowing down time and demanding patience. He prefers the day, when the boundaries
-      of the world are clear. He rules the first stages of Winter, when the Sun is
-      the weakest, and dislikes the first stages of Summer, when the Sun is the strongest.
-      He represents time, decay, patience, discipline, the bones and the knees.
+    description: <color=#6496FFFF>Saturn</color> is solitude, boundaries and death.
+      Very cold and moderately dry, his light is a sullen brown. He is the oldest
+      and darkest of all, the one that bows to no other star. He takes his time as
+      he moves through the sky, slowing down time and demanding patience. He prefers
+      the day, when the boundaries of the world are clear. He represents pessimism,
+      time, duty, decay, discipline. These traits are strengthened in <color=#6496FFFF>Capricorn</color>
+      and <color=#6496FFFF>Aquarius</color> and weakened in <color=#FFFFFFFF>Cancer</color>
+      and <color=#FFFF00FF>Leo</color>.
   - id: 7
     name: Uranus
-    description: Uranus is revolution and rebellion. An outer planet, it is invisible
-      and exists outside the boundaries of human perception. It brings change wherever
-      it goes, releasing the existing tensions in unpredictable and unexpected ways.
+    description: <color=#64648CFF>Uranus</color> is revolution and rebellion. An
+      outer planet, it is invisible and exists outside the boundaries of human perception.
+      It brings change wherever it goes, releasing the existing tensions in unpredictable
+      and unexpected ways.
   - id: 8
-    name: Saturn
-    description: Neptune is dreaming and fantasy. An outer planet, it is invisible
-      and exists outside the boundaries of human perception. It transcends the limits
-      of reality into other realms of existence. It can bring enlightenment as much
-      as it can bring delusions.
+    name: Neptune
+    description: <color=#5A6E6EFF>Neptune</color> is dreaming and fantasy. An outer
+      planet, it is invisible and exists outside the boundaries of human perception.
+      It transcends the limits of reality into other realms of existence. It can
+      bring enlightenment as much as it can bring delusions.
   - id: 9
     name: Pluto
-    description: Pluto is destruction and rebirth. An outer planet, it is invisible
-      and exists outside the boundaries of human perception. It crumbles down whatever
-      has no more use in order to welcome the new.
+    description: <color=#825A64FF>Pluto</color> is destruction and rebirth. An outer
+      planet, it is invisible and exists outside the boundaries of human perception.
+      It shatters the old and paves the way for a new order.
+  - id: 10
+    name: North Node
+    description: "The <color=#787878FF>North Node</color> is known as the dragon\u2019s
+      head. It is radical and unstable, amplifying whatever it touches. Its nature
+      is extroverted, ambitious and materialistic.\r\nThe nodes are the places where
+      the <color=#FFFF00FF>Sun</color> and <color=#FFFFFFFF>Moon</color> will eventually
+      meet. The power of the nodes is greatest when touched by the new or full <color=#FFFFFFFF>Moon</color>,
+      as they rob the light and cause eclipses. \r\n"
+  - id: 11
+    name: South Node
+    description: "The <color=#787878FF>South Node</color> is known as the dragon\u2019s
+      tail. It is radical and unstable, diminishing whatever it touches. Its nature
+      is introverted, negligent and renouncing.\r\nThe nodes are the places where
+      the <color=#FFFF00FF>Sun</color> and <color=#FFFFFFFF>Moon</color> will eventually
+      meet. The power of the nodes is greatest when touched by the new or full <color=#FFFFFFFF>Moon</color>,
+      as they rob the light and cause eclipses.\r\n"
   signInformationTexts:
   - id: 0
     name: 
     description: 
   - id: 1
     name: Aries
-    description: <color=#FF6464FF>Aries</color> is the first sign of the zodiac.
-      It is hot and dry, a sign of fire. It is cardinal, the beginning of Spring
-      in the northern hemisphere, representing the time when days become longer than
-      nights. <color=#FF6464FF>Aries</color> represents the first spark, the energy
-      that is required to initiate new processes. The domain of <color=#FF6464FF>Mars</color>
-      and the exalting place of the <color=#FFFF00FF>Sun</color>. It is active, reactive,
-      energetic, impulsive and carefree. Its opposite is <color=#96FF64FF>Libra,
-      the Scales</color>.
+    description: "<color=#FF6464FF>Aries</color> is the first sign of the zodiac.
+      It is the cardinal sign of fire and the beginning of Spring in the northern
+      hemisphere, representing the time when days become longer than nights. <color=#FF6464FF>Aries</color>
+      represents the first spark required to start something new. It\u2019s the domain
+      of <color=#FF6464FF>Mars</color> and the exalting place of the <color=#FFFF00FF>Sun</color>.Its
+      influence brings activity, reactivity, energy, impulsivity and carefreeness.
+      Its opposite is <color=#96FF64FF>Libra, the Scales.</color>"
   - id: 2
     name: Taurus
     description: <color=#96FF64FF>Taurus</color> is the second sign of the zodiac.
-      It is cold and dry, a sign of earth. It is fixed, the middle of Spring in the
-      northern hemisphere, when nature is awake and the flowers in full bloom. <color=#96FF64FF>Taurus</color>
-      represents the ability to sit down and enjoy the pleasant things in life. The
-      domain of <color=#96FF64FF>Venus</color> and the exalting place of the <color=#FFFFFFFF>Moon</color>.
-      It is stable, indulgent, rooted, robust and pleasant. Its opposite is <color=#FF6464FF>Scorpio,
-      the Scorpion</color>.
+      It is the fixed sign of earth, and the middle of Spring in the northern hemisphere,
+      when nature is awake and the flowers in full bloom. <color=#96FF64FF>Taurus</color>
+      represents the ability to take a break and enjoy the pleasant things in life.
+      The domain of <color=#96FF64FF>Venus</color> and the exalting place of the
+      <color=#FFFFFFFF>Moon</color>.  Its influence brings stability, indulgence,
+      rootedness, consistency and joyfulness. Its opposite is <color=#FF6464FF>Scorpio,
+      the Scorpion.</color>
   - id: 3
     name: Gemini
     description: <color=#96FFFFFF>Gemini</color> is the third sign of the zodiac.
-      It is hot and wet, a sign of air. It is mutable, the end of Spring in the northern
-      hemisphere, when the days are reaching their peak and we prepare for the coming
-      heat. <color=#96FFFFFF>Gemini</color> represents the drive to reach out for
-      knowledge, new languages and new skills. It is the domain of <color=#96FFFFFF>Mercury</color>.
-      It is dual, unpredictable, intelligent, skilled, disorienting. Its opposite
-      is <color=#FF96FFFF>Sagittarius, the Archer</color>.
+      It is the mutable sign of air, and the end of Spring in the northern hemisphere,
+      when the days are reaching their peak and we prepare for the coming heat. <color=#96FFFFFF>Gemini</color>
+      represents the drive to reach out for knowledge, new languages and new skills.
+      It is the domain of <color=#96FFFFFF>Mercury</color>. Its influence brings
+      duality, unpredictability, intelligence, skill and disorientation. Its opposite
+      is <color=#FF96FFFF>Sagittarius, the Archer.</color>
   - id: 4
     name: Cancer
     description: <color=#FFFFFFFF>Cancer</color> is the fourth sign of the zodiac.
-      It is cold and wet, a sign of water. It is cardinal, the start of Summer in
-      the northern hemisphere, when the days are longest and nights are shortest.
+      It is the cardinal sign of water, and the beginning of Summer in the northern
+      hemisphere, when days are the longest, and evenings are warm and pleasant.
       <color=#FFFFFFFF>Cancer</color> represents the need for protecting and nurturing
-      special and meaningful relationships. It is the domain of the <color=#FFFFFFFF>Moon</color>
-      and the exalting place of <color=#FF96FFFF>Jupiter</color>. It is sensitive,
-      wandering, predictable and caring. Its opposite is <color=#6496FFFF>Capricorn,
-      the Goat</color>.
+      special relationships. It is the domain of the <color=#FFFFFFFF>Moon</color>
+      and the exalting place of <color=#FF96FFFF>Jupiter</color>.Its influence brings
+      sensitivity, wandering, predictability and caring. Its opposite is <color=#6496FFFF>Capricorn,
+      the Goat.</color>
   - id: 5
     name: Leo
     description: "<color=#FFFF00FF>Leo</color> is the fifth sign of the zodiac. It
-      is hot and dry, a sign of fire. It is fixed, the middle of Summer in the northern
-      hemisphere, when the <color=#FFFF00FF>Sun</color> is the most powerful and
-      the days are the hottest. <color=#FFFF00FF>Leo</color> represents the drive
-      for expressing one\u2019s ideas and principles. It is the domain of the <color=#FFFF00FF>Sun</color>.
-      It is proud, generous, illuminating, glorious and self-centered. Its opposite
-      is <color=#6496FFFF>Aquarius, the Water-Bearer</color>."
+      is the fixed sign of fire, and the middle of Summer in the northern hemisphere,
+      when the <color=#FFFF00FF>Sun</color> is most powerful and days are the hottest.
+      <color=#FFFF00FF>Leo</color> represents the drive for expressing one\u2019s
+      ideas and principles. It is the domain of the <color=#FFFF00FF>Sun</color>.
+      Its influence brings pride, generosity, illumination, glory and self-centeredness.
+      Its opposite is <color=#6496FFFF>Aquarius, the Water-Bearer.</color>"
   - id: 6
     name: Virgo
     description: <color=#96FFFFFF>Virgo</color> is the sixth sign of the zodiac.
-      It is cold and dry, a sign of earth. It is mutable, the end of Summer in the
-      northern hemisphere, when the heat has subsided, tempered by the coming of
-      the next season. <color=#96FFFFFF>Virgo</color> represents the ability to break
-      down matter into its smaller components, transforming it into something that
-      can be used. It is the domain and exaltation of <color=#96FFFFFF>Mercury</color>.
-      It is rational, discerning, diagnostic, critical and controlling. Its opposite
-      is <color=#FF96FFFF>Pisces, the Two Fish</color>.
+      It is the mutable sign of earth, and the end of Summer in the northern hemisphere,
+      when the heat has subsided, tempered by the coming of Autumn. <color=#96FFFFFF>Virgo</color>
+      represents the ability to break down matter into smaller components and transform
+      it into something useful. It is the domain and exaltation of <color=#96FFFFFF>Mercury</color>.
+      Its influence brings rationality, discernment, diagnosys, criticism and control.
+      Its opposite is <color=#FF96FFFF>Pisces, the Two Fish.</color>
   - id: 7
     name: Libra
     description: <color=#96FF64FF>Libra</color> is the seventh sign of the zodiac.
-      It is hot and wet, a sign of air. It is cardinal, the beginning of Autumn in
-      the northern hemisphere, when days and nights have once again reached equilibrium.
-      <color=#96FF64FF>Libra</color> represents the drive to connect with others
-      and understand the world from a different perspective. It is the domain of
-      <color=#96FF64FF>Venus</color> and the exalting place of <color=#6496FFFF>Saturn</color>.
-      It is selfless, judging, connecting, magnetic and artistic. Its opposite is
-      <color=#FF6464FF>Aries, the Ram</color>.
+      It is the cardinal sign of air, and the beginning of Autumn in the northern
+      hemisphere, when days and nights have once again reached equilibrium. <color=#96FF64FF>Libra</color>
+      represents the drive to connect with others and understand different perspectives.
+      It is the domain of <color=#96FF64FF>Venus</color> and the exalting place of
+      <color=#6496FFFF>Saturn</color>. Its influence brings selflessness, judgment,
+      connection, indecisiveness and creativity. Its opposite is <color=#FF6464FF>Aries,
+      the Ram.</color>
   - id: 8
     name: Scorpio
-    description: "<color=#FF6464FF>Scorpio</color> is the eighth sign of the zodiac.
-      It is cold and wet, a sign of water. It is fixed, the middle of Autumn in the
-      northern hemisphere, when the leaves are falling and nature\u2019s growth comes
-      to a halt. <color=#FF6464FF>Scorpio</color> represents the ability to diagnose
-      the fragilities of structures in order to crumble them down. It is the domain
-      of <color=#FF6464FF>Mars</color>. It is patient, diagnostic, intuitive, intense
-      and vindictive. Its opposite is <color=#96FF64FF>Taurus, the Bull</color>."
+    description: <color=#FF6464FF>Scorpio</color> is the eighth sign of the zodiac.
+      It is the fixed sign of water, and the middle of Autumn in the northern hemisphere,
+      when nature ceases to grow and focuses on survival. <color=#FF6464FF>Scorpio</color>
+      represents the ability to diagnose and exploit weaknesses. It is the domain
+      of <color=#FF6464FF>Mars</color>. Its influence brings patience, analysis,
+      intuition, intensity and vindictiveness. Its opposite is <color=#96FF64FF>Taurus,
+      the Bull.</color>
   - id: 9
     name: Sagittarius
     description: "<color=#FF96FFFF>Sagittarius</color> is the ninth sign of the zodiac.
-      It is hot and dry, a sign of fire. It is mutable, the end of Autumn in the
-      northern hemisphere, when the nights are reaching their peak and nature shows
-      its last hints of color.  <color=#FF96FFFF>Sagittarius</color> represents the
-      drive to go outside one\u2019s own domain in order to learn about the world
-      and grow from it. It is the domain of  <color=#FF96FFFF>Jupiter</color>. It
-      is optimistic, free, growing, curious and honest. Its opposite is <color=#96FFFFFF>Gemini,
-      the Twins</color>."
+      It is the mutable sign of fire, and the end of Autumn in the northern hemisphere,
+      when nights are reaching their peak and nature shows its last hints of color.
+      <color=#FF96FFFF>Sagittarius</color> represents the drive to go outside one\u2019s
+      own domain in order to learn and grow. It is the domain of <color=#FF96FFFF>Jupiter</color>.
+      Its influence brings optimism, freedom, expansion, curiosity and honesty. Its
+      opposite is <color=#96FFFFFF>Gemini, the Twins.</color>"
   - id: 10
     name: Capricorn
-    description: "<color=#6496FFFF>Capricorn</color> is the tenth sign of the zodiac.
-      It is cold and dry, a sign of earth. It is cardinal, the beginning of Winter
-      in the northern hemisphere, when nights are the longest and days are the shortest.
-      <color=#6496FFFF>Capricorn</color> represents the discipline to set a goal
-      and concentrate all resources to see it to fruition. It is the domain of <color=#6496FFFF>Saturn</color>
-      and the exalting place of <color=#FF6464FF>Mars</color>. It is rational, planning,
-      direct, goal-driven and calculating. Its opposite is <color=#FFFFFFFF>Cancer,
-      the Crab</color>.\r"
+    description: <color=#6496FFFF>Capricorn</color> is the tenth sign of the zodiac.
+      It is the cardinal sign of earth, and the beginning of Winter in the northern
+      hemisphere, when nights are the longest and the coldest. <color=#6496FFFF>Capricorn</color>
+      represents the discipline to set a goal and concentrate all resources to see
+      it to fruition. It is the domain of <color=#6496FFFF>Saturn</color> and the
+      exalting place of <color=#FF6464FF>Mars</color>. Its influence brings rationality,
+      planning, direction, drive and calculation. Its opposite is <color=#FFFFFFFF>Cancer,
+      the Crab.</color>
   - id: 11
     name: Aquarius
     description: "<color=#6496FFFF>Aquarius</color> is the eleventh sign of the zodiac.
-      It is hot and wet, a sign of air. It is fixed, the middle of Winter in the
-      northern hemisphere, when the Sun is weakest and days are coldest. <color=#6496FFFF>Aquarius</color>
-      represents humanity\u2019s tendency to be loyal to their own ideas and traditions.
-      It is the domain of <color=#6496FFFF>Saturn</color>. It is irreverent, eccentric,
-      insensitive, stubborn and traditional. Its opposite is <color=#FFFF00FF>Leo,
-      the Lion</color>.\r\n"
+      It is the fixed sign of air, and the middle of Winter in the northern hemisphere,
+      when the <color=#FFFF00FF>Sun</color> is weakest and days are coldest. <color=#6496FFFF>Aquarius</color>
+      represents the loyalty to one\u2019s ideas and traditions. It is the domain
+      of <color=#6496FFFF>Saturn</color>. Its influence brings irreverence, eccentricity,
+      insensitivity, stubbornness and traditionalism. Its opposite is <color=#FFFF00FF>Leo,
+      the Lion.</color>\r"
   - id: 12
     name: Pisces
     description: <color=#FF96FFFF>Pisces</color> is the twelfth sign of the zodiac.
-      It is cold and wet, a sign of water. It is mutable, the end of Winter in the
-      northern hemisphere, when the ice begins to melt as the days and nights come
-      to balance. <color=#FF96FFFF>Pisces</color> represents the want to lose oneself
-      in the vastness of the world. It is the domain of <color=#FF96FFFF>Jupiter</color>
-      and the exaltation of <color=#96FF64FF>Venus</color>. It is dreaming, idealistic,
-      romantic, embracing and fertile. Its opposite is <color=#96FFFFFF>Virgo, the
-      Virgin</color>.
+      It is the mutable sign of water, and the end of Winter in the northern hemisphere,
+      when ice begins to melt as days and nights come to balance. <color=#FF96FFFF>Pisces</color>
+      represents the want to lose oneself by merging with a greater world. It is
+      the domain of <color=#FF96FFFF>Jupiter</color> and the exaltation of <color=#96FF64FF>Venus</color>.
+      Its influence brings contemplation, idealism, romance, acceptance and fertility.
+      Its opposite is <color=#96FFFFFF>Virgo, the Maiden.</color>
   houseInformationTexts: []

@@ -230,7 +230,7 @@ MonoBehaviour:
     color: {r: 1, g: 1, b: 0, a: 1}
     secondaryColor: {r: 1, g: 1, b: 0, a: 1}
   - name: Virgo
-    title: Virgo, the Virgin
+    title: Virgo, the Maiden
     id: 6
     rulerId: 2
     element: 2
