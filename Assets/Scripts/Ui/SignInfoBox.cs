@@ -223,6 +223,7 @@ public class SignInfoBox : InfoBox
     private void OnDestroy()
     {
         InfoBoxSpawner.signInfoBoxes.Remove(this);
+        EventManager.Instance.OnRecalculationOfGeoData -= ChangeValues;
     }
 
 }

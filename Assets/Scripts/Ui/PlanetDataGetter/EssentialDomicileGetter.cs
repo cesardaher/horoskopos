@@ -1,9 +1,12 @@
+using UnityEngine;
+
 public class EssentialDomicileGetter : PlanetDataGetter
 {
     public int id;
 
     protected override void GetPlanetInfo(int planetId, PlanetInfoBox box)
     {
+        Debug.Log("domicile");
         base.GetPlanetInfo(planetId, box);
 
         // turn object off from parent

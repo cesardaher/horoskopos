@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class HouseFromSignGetter : PlanetDataGetter
 {
     protected override void GetSignInfo(int signId, SignInfoBox box)
