@@ -16,7 +16,7 @@ public class SignInfoBox : InfoBox
     [SerializeField] List<TextMeshProUGUI> _rulerComponents = new List<TextMeshProUGUI>();
     [SerializeField] List<GameObject> currentPlanetObjs = new List<GameObject>();
 
-    List<CurrentPlanetTextGroup> planetTextGroups = new List<CurrentPlanetTextGroup>() ;
+    List<CurrentPlanetTextGroup> planetTextGroups = new List<CurrentPlanetTextGroup>();
 
     override public int AstroID
     {

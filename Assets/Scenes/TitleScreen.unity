@@ -1104,8 +1104,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 530.6, y: 107.86182}
-  m_SizeDelta: {x: 282.851, y: 374.2764}
+  m_AnchoredPosition: {x: 644.2742, y: 104.134735}
+  m_SizeDelta: {x: 510.1993, y: 724.6164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &859059540
 MonoBehaviour:
@@ -1124,7 +1124,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 6
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -1462,7 +1462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 141.4255, y: -496.8372}
+  m_AnchoredPosition: {x: 141.4255, y: -667.23706}
   m_SizeDelta: {x: 282.851, y: 114.758804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270151735
@@ -1982,8 +1982,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 246.99956, y: -219.7289}
-  m_SizeDelta: {x: 493.9991, y: 439.4578}
+  m_AnchoredPosition: {x: 246.99956, y: -304.92883}
+  m_SizeDelta: {x: 493.9991, y: 566.1765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997638759
 MonoBehaviour:
@@ -2005,9 +2005,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>v. 1.0.0</b>\n\n<b>C\xE9sar Daher</b>\nProgramming, interaction design\n\n<b>Pedro
-    Joffily</b>\nVisual design, visual identity\n\n<b>Development tools and libraries:</b>\nAstrodienst\nDominic
-    Ford\nJasper Meiners\nNASA/SVS\nOccaSoftware\nYan Grenier"
+  m_text: "<font-weight=\"300\">v. 1.0.0\n\n<font-weight=\"400\">C\xE9sar Daher</font-weight>\nProgramming,
+    interaction design\n\n<font-weight=\"400\">Pedro Joffily</font-weight>\nVisual
+    design\n\n<font-weight=\"400\">Development tools and libraries:</font-weight>\nAstrodienst\nDominic
+    Ford\nJasper Meiners\nNASA/SVS\nOccaSoftware\nYan Grenier\n\nThe written content
+    was mainly inspired by Hellenistic astrological texts, namely Valens\u2019 Anthologies
+    and Ptolemy\u2019s Tetrabiblos. </font-weight>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a68d624246a222f4bba735dae5c5a373, type: 2}
   m_sharedMaterial: {fileID: 2891299546332823560, guid: a68d624246a222f4bba735dae5c5a373, type: 2}
