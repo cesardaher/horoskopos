@@ -5,7 +5,7 @@ Hōroskopos is the project for a virtual astrological planetarium. It is a learn
 
 ## Development
 
-This project is being developed in Unity3D with the help of the SwissEphemeris code library. 
+This project is being developed in Unity3D with the help of SwissEphNet, a C# port of the Swiss Ephemeris code library. 
 
 ## Team
 
