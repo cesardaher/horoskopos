@@ -74,7 +74,7 @@ public class ChartManager : MonoBehaviour
 
         // if scene start on exploration mode, get current time
         if (GeoData.ActiveData is null)
-            _geodata = CreateCurrentTimeInWeimar();
+            _geodata = CreateCurrentTimeInBerlin();
         // else get data from tutorial
         else
             _geodata = GeoData.ActiveData;
@@ -123,11 +123,11 @@ public class ChartManager : MonoBehaviour
             GeoData.ActiveData.InitializeData(_geodata.DataName, _day, _month, _year, _hour, _min, _sec, _geodata.D_timezone, _lat, _lon, _height, _hsys, _geodata.DaylightSavings);
     }
 
-    GeoData CreateCurrentTimeInWeimar()
+    GeoData CreateCurrentTimeInBerlin()
     {
         DateTime moment = DateTime.Now;
         GeoData gd = ScriptableObject.CreateInstance<GeoData>();
-        gd.InitializeDataWithCityIdDateTime("", moment, 10336, 'W', true);
+        gd.InitializeDataWithCityIdDateTime("", moment, 12638, 'W', true);
         return gd;
     }
 
