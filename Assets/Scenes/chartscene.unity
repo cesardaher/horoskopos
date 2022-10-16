@@ -33620,12 +33620,16 @@ PrefabInstance:
       value: Sun3D
       objectReference: {fileID: 0}
     - target: {fileID: 3997806215643787095, guid: cc4cba89b46faef43b2b273801a9ac36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997806215643787095, guid: cc4cba89b46faef43b2b273801a9ac36, type: 3}
       propertyPath: isFlickering
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3997806215643787095, guid: cc4cba89b46faef43b2b273801a9ac36, type: 3}
       propertyPath: flickerIncrement
-      value: 0.1
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 3997806215643787098, guid: cc4cba89b46faef43b2b273801a9ac36, type: 3}
       propertyPath: planetData
