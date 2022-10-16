@@ -9,8 +9,7 @@ This project is being developed in Unity3D with the help of the SwissEphemeris c
 
 ## Team
 
-César Daher - Design, Programming
-
+César Daher - Development, interface design
 Pedro Joffily - Visual identity
 
 ## Credits
