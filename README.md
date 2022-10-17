@@ -21,4 +21,4 @@ Pedro Joffily - Visual identity
 * Deep Star Maps 2020 by [NASA/Goddard Space Flight Center Scientific Visualization Studio](https://svs.gsfc.nasa.gov/4851)
 * Moon phases textures by [Scientific Visualization Studio](https://svs.gsfc.nasa.gov/4955)
 * Constellation texture by [Dominic Ford](https://in-the-sky.org) (used only for testing)
-* Screenshot Companion by [Jasper Meiners](https://github.com/Pfannkuchen/ScreenshotCompanion)
+* Screenshot Companion by [Jasper Meiners](https://github.com/Pfannkuchen/ScreenshotCompanion) (editor only)
