@@ -58,6 +58,9 @@ namespace UnityTemplateProjects
                 t.position = new Vector3(x, y, z);
             }
         }
+
+        float inputX;
+        float inputZ;
         
         CameraState m_TargetCameraState = new CameraState();
         CameraState m_InterpolatingCameraState = new CameraState();
@@ -133,6 +136,10 @@ namespace UnityTemplateProjects
 
 #if ENABLE_LEGACY_INPUT_MANAGER
 
+
+            inputX = Input.GetAxis("Horizontal");
+            inputZ = Input.GetAxis("Vertical");
+                
             // Hide and lock cursor when right mouse button pressed
             if (Input.GetMouseButtonDown(1))
             {
@@ -149,23 +156,11 @@ namespace UnityTemplateProjects
             // Rotation
             if (Input.GetMouseButton(1))
             {
-                var mouseMovement = new Vector2(Input.GetAxis("Mouse X") * (invertX ? 1 : -1), Input.GetAxis("Mouse Y") * (invertY ? 1 : -1));
-
-                var mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(mouseMovement.magnitude);
-
-                m_TargetCameraState.pitch += mouseMovement.y * mouseSensitivityFactor;
-                m_TargetCameraState.yaw += mouseMovement.x * mouseSensitivityFactor;
-
-                // maintain pitch within vertical restriction
-                // value will be clamped if it doesn't pass both as positive and negative value (within 360 range)
-                if (m_TargetCameraState.pitch > verticalRestriction || m_TargetCameraState.pitch < -verticalRestriction)
-                {
-                    if (m_TargetCameraState.pitch - 360 > verticalRestriction || m_TargetCameraState.pitch - 360 < -verticalRestriction)
-                    {
-                        m_TargetCameraState.pitch = Mathf.Clamp(m_TargetCameraState.pitch, -verticalRestriction, verticalRestriction);
-                    }
-                }
-                
+                RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            } 
+            else if(inputX != 0 || inputZ != 0)
+            {
+                RotateCamera(-inputX, -inputZ);
             }
 
 #elif USE_INPUT_SYSTEM 
@@ -177,6 +172,26 @@ namespace UnityTemplateProjects
             m_InterpolatingCameraState.LerpTowards(m_TargetCameraState, positionLerpPct, rotationLerpPct);
 
             m_InterpolatingCameraState.UpdateTransform(transform);
+        }
+
+        void RotateCamera(float horizontal, float vertical)
+        {
+            var arrowMovement = new Vector2(horizontal * (invertX ? 1 : -1), vertical * (invertY ? 1 : -1));
+
+            var mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(arrowMovement.magnitude);
+
+            m_TargetCameraState.pitch += arrowMovement.y * mouseSensitivityFactor;
+            m_TargetCameraState.yaw += arrowMovement.x * mouseSensitivityFactor;
+
+            // maintain pitch within vertical restriction
+            // value will be clamped if it doesn't pass both as positive and negative value (within 360 range)
+            if (m_TargetCameraState.pitch > verticalRestriction || m_TargetCameraState.pitch < -verticalRestriction)
+            {
+                if (m_TargetCameraState.pitch - 360 > verticalRestriction || m_TargetCameraState.pitch - 360 < -verticalRestriction)
+                {
+                    m_TargetCameraState.pitch = Mathf.Clamp(m_TargetCameraState.pitch, -verticalRestriction, verticalRestriction);
+                }
+            }
         }
 
         void ToggleCameraControls(bool val)
