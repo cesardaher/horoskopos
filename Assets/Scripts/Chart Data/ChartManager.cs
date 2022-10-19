@@ -5,8 +5,6 @@ using System;
 using UnityEngine;
 using AstroResources;
 
-// TODO: check calc azalt
-
 public class ChartManager : MonoBehaviour
 {
     //flag to track whether game was started

@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 4218295364391855376}
   - component: {fileID: 4218295364391855377}
   - component: {fileID: 7978385673863388987}
+  - component: {fileID: 2832522036739407220}
   m_Layer: 5
   m_Name: Input Field
   m_TagString: Untagged
@@ -244,6 +245,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.78431374, g: 0.7058824, b: 0.23529412, a: 1}
   m_EffectDistance: {x: -1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &2832522036739407220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218295364391855471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8785c1f205b1a46ac269197eddf31a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 4218295364391855377}
 --- !u!1 &4218295364495325207
 GameObject:
   m_ObjectHideFlags: 0

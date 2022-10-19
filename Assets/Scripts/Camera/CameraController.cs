@@ -139,7 +139,9 @@ namespace UnityTemplateProjects
 
             inputX = Input.GetAxis("Horizontal");
             inputZ = Input.GetAxis("Vertical");
-                
+
+            if (InputFieldTracker.usingInput) return;
+
             // Hide and lock cursor when right mouse button pressed
             if (Input.GetMouseButtonDown(1))
             {

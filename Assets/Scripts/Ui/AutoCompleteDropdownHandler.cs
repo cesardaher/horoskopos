@@ -19,7 +19,6 @@ public class AutoCompleteDropdownHandler : MonoBehaviour
     public RectTransform item;
     public CsvReader database;
 
-    // TODO: CHANGE THIS TO EVENT MANAGER
     private void Start()
     {
         inputField.onValueChanged.AddListener(OnInputValueChanged);
