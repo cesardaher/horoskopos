@@ -7,7 +7,8 @@ public class ButtonColorToggler : MonoBehaviour
 {
     [SerializeField] Button _button;
     [SerializeField] List<MaskableGraphic> _maskableObjects = new List<MaskableGraphic>();
-    
+
+    float _opacity = 0.3f;
     bool _buttonInteractable;
 
     private void Start()
@@ -34,7 +35,7 @@ public class ButtonColorToggler : MonoBehaviour
             foreach (MaskableGraphic graphic in _maskableObjects)
             {
                 var color = graphic.color;
-                color.a = 0.5f;
+                color.a = _opacity;
                 graphic.color = color;
             }
 
