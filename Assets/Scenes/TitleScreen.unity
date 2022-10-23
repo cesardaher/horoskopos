@@ -2005,7 +2005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<font-weight=\"300\">v1.1.0\n\n<font-weight=\"400\">C\xE9sar Daher</font-weight>\nProgramming,
+  m_text: "<font-weight=\"300\">v1.0.1\n\n<font-weight=\"400\">C\xE9sar Daher</font-weight>\nProgramming,
     interaction design\n\n<font-weight=\"400\">Pedro Joffily</font-weight>\nVisual
     design\n\n<font-weight=\"400\">Development tools and libraries:</font-weight>\nAstrodienst\nDominic
     Ford\nJasper Meiners\nNASA/SVS\nOccaSoftware\nYan Grenier\n\nThe written content
