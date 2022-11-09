@@ -105,7 +105,7 @@ public class GeoData : ScriptableObject
     {
         if (cityDatabase is null) cityDatabase = Resources.Load<CsvReader>("CityDatabase/CityDatabase");
         if (timezoneDb is null) timezoneDb = Resources.Load<TimezoneReader>("CityDatabase/timezones/TimezoneDatabase");
-        //ResetCalculationsOnValidate();
+        ResetCalculationsOnValidate();
     }
 
     public void InitializeData(string name, int iday, int imon, int iyear, int ihour, int imin, double dsec, double d_timezone, double lat, double lon, double height, char houseSys, bool daylight)
