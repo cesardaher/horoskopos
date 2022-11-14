@@ -15,7 +15,7 @@ public class TimeManager : MonoBehaviour
             _speed = value;
         }
     }
-    readonly int _maxSpeed = 86400000 * 3;
+    readonly int _maxSpeed = 86400000 * 5;
     readonly int _minSpeed = 1000;
 
     [SerializeField] PlayMenu _playMenu;
@@ -165,12 +165,12 @@ public class TimeManager : MonoBehaviour
             // for positive speeds double them
             if (_speed > 0)
             {
-                newSpeed = _speed * 3;
+                newSpeed = _speed * 5;
                 if (newSpeed > _maxSpeed) return;
             }
             else // for negative speeds, halve them
             {
-                newSpeed = _speed / 3;
+                newSpeed = _speed / 5;
                 if (newSpeed > -_minSpeed) newSpeed = _minSpeed;
             }
 
@@ -190,12 +190,12 @@ public class TimeManager : MonoBehaviour
             // for positive speeds halve them
             if (_speed > 0)
             {
-                newSpeed = _speed / 3;
+                newSpeed = _speed / 5;
                 if (newSpeed < _minSpeed) newSpeed = -_minSpeed;
             }
             else // for negative speeds, multiply
             {
-                newSpeed = _speed * 3;
+                newSpeed = _speed * 5;
                 if (newSpeed < -_maxSpeed) return;
             }
 
