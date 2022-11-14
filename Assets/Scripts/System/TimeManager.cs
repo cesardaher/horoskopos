@@ -7,16 +7,17 @@ public class TimeManager : MonoBehaviour
     public static TimeManager Instance { get; private set; }
     public DateTime ActiveDateTime { get; private set; }
     GeoData _tempGeoData;
-    [SerializeField] int _speed;
-    public int Speed {
+    [SerializeField] long _speed;
+    public long Speed {
         get { return _speed; }
         private set
         {
             _speed = value;
         }
     }
-    readonly int _maxSpeed = 86400000 * 5;
-    readonly int _minSpeed = 1000;
+    readonly long _maxSpeed = 5000000000;
+    readonly long _minSpeed = 1000;
+    const int defaultIncrement = 3;
 
     [SerializeField] PlayMenu _playMenu;
 
@@ -115,7 +116,7 @@ public class TimeManager : MonoBehaviour
     }
 
 
-    IEnumerator RunTimeAtSetSpeed(int secRate)
+    IEnumerator RunTimeAtSetSpeed(long secRate)
     {
         IsTimeRunning = true;
         EventManager.Instance.StartAnimation();
@@ -139,7 +140,7 @@ public class TimeManager : MonoBehaviour
         ReassignGeoData();
 
 
-        void TimeStep(int secRate)
+        void TimeStep(long secRate)
         {
             if(secRate == _minSpeed) ActiveDateTime = ActiveDateTime.AddSeconds(1);
             else if(secRate == -_minSpeed) ActiveDateTime = ActiveDateTime.AddSeconds(-1);
@@ -161,16 +162,16 @@ public class TimeManager : MonoBehaviour
     {
         if (IsTimeRunning)
         {
-            int newSpeed;
+            long newSpeed;
             // for positive speeds double them
             if (_speed > 0)
             {
-                newSpeed = _speed * 5;
+                newSpeed = _speed * defaultIncrement;
                 if (newSpeed > _maxSpeed) return;
             }
             else // for negative speeds, halve them
             {
-                newSpeed = _speed / 5;
+                newSpeed = _speed / defaultIncrement;
                 if (newSpeed > -_minSpeed) newSpeed = _minSpeed;
             }
 
@@ -186,16 +187,16 @@ public class TimeManager : MonoBehaviour
 
         if (IsTimeRunning)
         {
-            int newSpeed;
+            long newSpeed;
             // for positive speeds halve them
             if (_speed > 0)
             {
-                newSpeed = _speed / 5;
+                newSpeed = _speed / defaultIncrement;
                 if (newSpeed < _minSpeed) newSpeed = -_minSpeed;
             }
             else // for negative speeds, multiply
             {
-                newSpeed = _speed * 5;
+                newSpeed = _speed * defaultIncrement;
                 if (newSpeed < -_maxSpeed) return;
             }
 
