@@ -66,7 +66,7 @@ Material:
     - Vector1_e2fea0e22be344a383951df1b3e82f03: 1
     - Vector1_e67a418e9d63484ea9702fc39e874478: 270
     - _LineThickness: 0.002
-    - _SunsetIntensity: 1
+    - _SunsetIntensity: 0.1
     - _UseAtmosphere: 1
     - _UseConstellations: 0
     - _UseGround: 1
