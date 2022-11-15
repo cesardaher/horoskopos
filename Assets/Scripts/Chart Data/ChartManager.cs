@@ -123,9 +123,22 @@ public class ChartManager : MonoBehaviour
 
     GeoData CreateCurrentTimeInBerlin()
     {
+        int BerlinCityId = 12638;
+        char hSys = 'W'; // whole sign houses
+
+        // get local time and date
         DateTime moment = DateTime.Now;
+
+        // get reference timezone (Berlin)
+        TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById("W. Europe Standard Time");
+
+        // convert local time and date to berlin time
+        // check for daylight savings
+        DateTime dtInBerlin = TimeZoneInfo.ConvertTime(moment, timeZoneInfo);
+        bool isDST = timeZoneInfo.IsDaylightSavingTime(moment);
+
         GeoData gd = ScriptableObject.CreateInstance<GeoData>();
-        gd.InitializeDataWithCityIdDateTime("", moment, 12638, 'W', true);
+        gd.InitializeDataWithCityIdDateTime("", moment, BerlinCityId, hSys, isDST);
         return gd;
     }
 
