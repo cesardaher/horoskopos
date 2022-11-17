@@ -238,6 +238,8 @@ public class ChartManager : MonoBehaviour
             // calculate azimuth and altitude for latitude 0 (chart mode)
             SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, _tempX2, _secAz);
             southNode.ChartAz = _secAz;
+
+            EventManager.Instance.ApplyPlanetInfo(southNode.planetID);
         }
 
         void AssignMC()

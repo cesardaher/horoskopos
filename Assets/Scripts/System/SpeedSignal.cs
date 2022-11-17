@@ -50,4 +50,10 @@ public class SpeedSignal : MonoBehaviour
         return finalSpeed;
     }
 
+    private void OnDestroy()
+    {
+        EventManager.Instance.OnAnimationStart -= SetSpeedText;
+        EventManager.Instance.OnAnimationEnd -= SetPauseText;
+    }
+
 }
