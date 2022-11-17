@@ -135,10 +135,11 @@ public class ChartManager : MonoBehaviour
         // convert local time and date to berlin time
         // check for daylight savings
         DateTime dtInBerlin = TimeZoneInfo.ConvertTime(moment, timeZoneInfo);
-        bool isDST = timeZoneInfo.IsDaylightSavingTime(moment);
+        bool isDST = timeZoneInfo.IsDaylightSavingTime(dtInBerlin);
 
         GeoData gd = ScriptableObject.CreateInstance<GeoData>();
         gd.InitializeDataWithCityIdDateTime("", moment, BerlinCityId, hSys, isDST);
+
         return gd;
     }
 
