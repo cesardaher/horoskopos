@@ -15,7 +15,8 @@ public class TimeManager : MonoBehaviour
             _speed = value;
         }
     }
-    readonly long _maxSpeed = 5000000000;
+
+    readonly long _maxSpeed = 600000000;
     readonly long _minSpeed = 1000;
     const int defaultIncrement = 3;
 
