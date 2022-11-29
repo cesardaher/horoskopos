@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,7 +32,7 @@ public class SpeedSignal : MonoBehaviour
 
     string ConvertSpeedString()
     {
-        int formatSpeed = Mathf.Abs(TimeManager.Instance.Speed)/1000;
+        long formatSpeed = Math.Abs(TimeManager.Instance.Speed)/1000;
         string finalSpeed = formatSpeed.ToString() + speedText;
 
         if (TimeManager.Instance.Speed < 0) finalSpeed = "-" + finalSpeed;
@@ -40,7 +41,7 @@ public class SpeedSignal : MonoBehaviour
 
     string ConvertSpeedPerSec()
     {
-        int formatSpeed = Mathf.Abs(TimeManager.Instance.Speed) / 1000;
+        long formatSpeed = Math.Abs(TimeManager.Instance.Speed) / 1000;
         string finalSpeed = "";
 
         if(formatSpeed < 60)
