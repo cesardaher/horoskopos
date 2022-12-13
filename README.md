@@ -26,3 +26,5 @@ Pedro Joffily - Visual identity
 * Moon phases textures by [Scientific Visualization Studio](https://svs.gsfc.nasa.gov/4955)
 * Constellation texture by [Dominic Ford](https://in-the-sky.org) (used only for testing)
 * Screenshot Companion by [Jasper Meiners](https://github.com/Pfannkuchen/ScreenshotCompanion) (editor only)
+* Database of cities by [GeoNames](http://download.geonames.org/)
+* Database of timezones by [iana](https://www.iana.org/time-zones)
