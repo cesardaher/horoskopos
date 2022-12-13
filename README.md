@@ -13,10 +13,14 @@ César Daher - Development, interface design
 
 Pedro Joffily - Visual identity
 
-## Credits
+## Dependencies
 
 * Swiss Ephemeris by [Astrodienst](https://www.astro.com/swisseph/)
 * SwissEphNet by [Yan Grenier](https://github.com/ygrenier/SwissEphNet)
+* TimeZoneConverter by [Matt Johnson-Pint](https://github.com/mattjohnsonpint/TimeZoneConverter)
+
+## Credits
+
 * SuperSimpleSkybox shader (adapted) by [OccaSoftware](https://occasoftware.com/skybox-for-unity), covered by [EULA](https://occasoftware.com/license-for-paid-assets)
 * Deep Star Maps 2020 by [NASA/Goddard Space Flight Center Scientific Visualization Studio](https://svs.gsfc.nasa.gov/4851)
 * Moon phases textures by [Scientific Visualization Studio](https://svs.gsfc.nasa.gov/4955)

@@ -1,14 +1,16 @@
 ﻿using System.Linq;
-using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using SwissEphNet;
 using System;
 using UnityEngine;
 using AstroResources;
+using TimeZoneConverter;
 
 public class ChartManager : MonoBehaviour
 {
     //flag to track whether game was started
     bool _wasInitiated = false;
+    bool _isWindows;
 
     public GeoData _geodata;
     [SerializeField] Zodiac _zodiac;
@@ -51,7 +53,7 @@ public class ChartManager : MonoBehaviour
 
     private void Awake()
     {
-        // add event to Event Manager
+        // add events to Event Manager
         EventManager.Instance.OnRecalculationOfGeoData += ReCalculateChart;
         EventManager.Instance.OnChartMode += PlacePlanetSymbols;
         EventManager.Instance.OnMultiplePlanetsToggle += PlanetData.RessignAllPlanets;
@@ -59,6 +61,7 @@ public class ChartManager : MonoBehaviour
 
     void OnDestroy()
     {
+        // remove events from EventManager
         EventManager.Instance.OnRecalculationOfGeoData -= ReCalculateChart;
         EventManager.Instance.OnChartMode -= PlacePlanetSymbols;
         EventManager.Instance.OnMultiplePlanetsToggle -= PlacePlanetSymbols;
@@ -67,6 +70,10 @@ public class ChartManager : MonoBehaviour
 
     void Start()
     {
+        // check if operating system is Windows
+        // required for TimeZoneConversion
+        _isWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+
         // this is put on start so that it doesn't come before ConjunctionManager's action
         EventManager.Instance.OnMultiplePlanetsToggle += PlacePlanetSymbols;
 
@@ -125,12 +132,13 @@ public class ChartManager : MonoBehaviour
     {
         int BerlinCityId = 12638;
         char hSys = 'W'; // whole sign houses
+        string timezone = _isWindows ? "W. Europe Standard Time" : TZConvert.WindowsToIana("W. Europe Standard Time"); //get appropriate timezone format according to OS
 
         // get local time and date
         DateTime moment = DateTime.Now;
 
         // get reference timezone (Berlin)
-        TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById("W. Europe Standard Time");
+        TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timezone);
 
         // convert local time and date to berlin time
         // check for daylight savings
