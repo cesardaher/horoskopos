@@ -107,7 +107,9 @@ namespace UnityTemplateProjects
             EventManager.Instance.OnAnimationEnd += AnimationStateOff;
             EventManager.Instance.On2DPlanetClicked += TargetPlanet;
             EventManager.Instance.On2DSignClicked += TargetSign;
+            EventManager.Instance.OnSelectFollowedPlanet += ChangeTargetPlanet;
             EventManager.Instance.OnFollowPlanet += ToggleCameraControls;
+            
 
             m_TargetCameraState.SetFromTransform(transform);
             m_InterpolatingCameraState.SetFromTransform(transform);
@@ -119,6 +121,7 @@ namespace UnityTemplateProjects
             EventManager.Instance.OnAnimationEnd -= AnimationStateOff;
             EventManager.Instance.On2DPlanetClicked -= TargetPlanet;
             EventManager.Instance.On2DSignClicked -= TargetSign;
+            EventManager.Instance.OnSelectFollowedPlanet -= ChangeTargetPlanet;
             EventManager.Instance.OnFollowPlanet -= ToggleCameraControls;
         }
 
@@ -280,6 +283,11 @@ namespace UnityTemplateProjects
         void ToggleFollowPlanet(bool val)
         {
             followObject = val;
+        }
+
+        void ChangeTargetPlanet(int planetID)
+        {
+            targetObject = PlanetData.PlanetDataList[planetID].realPlanet.planet.transform.GetChild(0);
         }
 
         void AnimationStateOn()

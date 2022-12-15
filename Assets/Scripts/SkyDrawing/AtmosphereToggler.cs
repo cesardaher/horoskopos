@@ -16,14 +16,11 @@ public class AtmosphereToggler : MonoBehaviour
     [ColorUsage(true, true)] [SerializeField] Color chartDayColor;
     [ColorUsage(true, true)] [SerializeField] Color chartNightColor;
 
-    /*
+   
     private void OnValidate()
     {
-        dayZenithColor = material.GetColor("_DayZenithColor");
-        dayHorizonColor = material.GetColor("_DayHorizonColor");
-        nightZenithColor = material.GetColor("_NightZenithColor");
-        nightHorizonColor = material.GetColor("_NightHorizonColor");
-    }*/
+
+    }
 
     private void Start()
     {
@@ -76,7 +73,7 @@ public class AtmosphereToggler : MonoBehaviour
     public void SetSunsetIntensity(bool val)
     {
         if(val)
-            material.SetFloat("_SunsetIntensity", 1);
+            material.SetFloat("_SunsetIntensity", sunsetIntensity);
         else
             material.SetFloat("_SunsetIntensity", 0);
     }

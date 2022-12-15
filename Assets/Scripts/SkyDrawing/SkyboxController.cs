@@ -59,6 +59,7 @@ public class SkyboxController : MonoBehaviour
         EventManager.Instance.OnUseConstellations -= ToggleConstellation;
     }
 
+
     void ToggleConstellation(bool val)
     {
         UseConstellations = val;

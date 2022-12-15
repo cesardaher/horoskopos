@@ -189,6 +189,14 @@ public class EventManager : MonoBehaviour
     }
 
     // ANIMATION
+
+    public event Action<int> OnSelectFollowedPlanet;
+
+    public void SelectPlanetToFollow(int val)
+    {
+        OnSelectFollowedPlanet?.Invoke(val);
+    }
+    
     public event Action<bool> OnFollowPlanet;
     public void ToggleFollowPlanet(bool val)
     {
