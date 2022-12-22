@@ -2,6 +2,7 @@ using SwissEphNet;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using AstroResources;
 
 public class HousesDrawer : MonoBehaviour
 {
@@ -155,6 +156,9 @@ public class HousesDrawer : MonoBehaviour
             houseMarker.transform.transform.localEulerAngles = Vector3.zero;
             houseMarker.RotateAzimuth(xaz[0]);
             houseMarker.RotateAltitude(xaz[2]);
+
+            // REVERT
+            AstroFunctions.HorizontalToCartesian(xaz[0], xaz[2]);
         }
 
         void AssignTextField(Point3D houseMarker, int i)

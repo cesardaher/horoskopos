@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using AstroResources;
 
 public class MeridianDrawer : EllipseRenderer, IAzalt
 {
@@ -25,12 +26,18 @@ public class MeridianDrawer : EllipseRenderer, IAzalt
         {
             double rotation = i * arcStep;
             
-            RotateAltitude(rotation);
+
+            // REVERT
+
+            //RotateAltitude(rotation);
 
             // register value
-            meridianPoints.Add(pointer.position);
+            //meridianPoints.Add(pointer.position);
 
-            RotateAltitude(-rotation);
+            //RotateAltitude(-rotation);
+
+            meridianPoints.Add(AstroFunctions.HorizontalToCartesian(0, rotation));
+
         }
 
         DrawEllipse(meridianPoints);
@@ -51,20 +58,6 @@ public class MeridianDrawer : EllipseRenderer, IAzalt
         var rotationVector = transform.localRotation.eulerAngles;
         rotationVector.z += (float)rotation;
         transform.localRotation = Quaternion.Euler(rotationVector);
-    }
-
-    public Vector3 RotateCartesian(double azimuth, double altitude)
-    {
-        double x, y, z;
-
-        double alt = 90 - altitude;
-        double az = 180 + azimuth;
-
-        x = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Cos(az * Mathf.Deg2Rad);
-        y = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
-        z = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Sin(az * Mathf.Deg2Rad);
-
-        return new Vector3((float)x, (float)y, (float)z);
     }
 }
 

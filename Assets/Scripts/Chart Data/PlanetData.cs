@@ -108,6 +108,9 @@ public class PlanetData : PointData
             realPlanet.TrAlt = _xaz[1];
             realPlanet.AppAlt = _xaz[2];
 
+            // REVERT
+            realPlanet.planet.transform.GetChild(0).position = AstroFunctions.HorizontalToCartesian(realPlanet.Azimuth, realPlanet.AppAlt);
+
             EventManager.Instance.ApplyPlanetPosition(planetID);
         }
     }

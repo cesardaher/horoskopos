@@ -98,27 +98,19 @@ public class EclipticDrawer : EllipseRenderer, IAzalt
                 signIndex++;
             }
 
+
+            //REVERT
+            eclipticPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
+
             // rotate this
-            RotateAzimuth(azimuth);
-            RotateAltitude(appAlt);
+            //RotateAzimuth(azimuth);
+            //RotateAltitude(appAlt);
 
             // register value
-            eclipticPositions.Add(pointer.transform.position);
+            //eclipticPositions.Add(pointer.transform.position);
         }
 
         DrawEllipse(eclipticPositions);
-
-
-        Vector3 RotateCartesian(float az, float alt)
-        {
-            float x, y, z;
-
-            x = 10000 * Mathf.Sin(alt * Mathf.Deg2Rad) * Mathf.Cos(az * Mathf.Deg2Rad);
-            y = 10000 * Mathf.Cos(alt * Mathf.Deg2Rad);
-            z = 10000 * Mathf.Sin(alt * Mathf.Deg2Rad) * Mathf.Sin(az * Mathf.Deg2Rad);
-
-            return new Vector3(x, y, z);
-        }
     }
 
     void CreateHalfEclipticObjects()
@@ -153,11 +145,14 @@ public class EclipticDrawer : EllipseRenderer, IAzalt
      
     void RotateMidSign(int i, double azimuth, double appAlt)
     {
+        // REVERT 
         // rotate
-        midSignsObjects[i + 1].GetComponent<Point3D>().RotateAzimuth(azimuth);
-        midSignsObjects[i + 1].GetComponent<Point3D>().RotateAltitude(appAlt);
+        // midSignsObjects[i + 1].GetComponent<Point3D>().RotateAzimuth(azimuth);
+        // midSignsObjects[i + 1].GetComponent<Point3D>().RotateAltitude(appAlt);
 
-        midSignsPositions.Add(midSignsObjects[i + 1].transform.GetChild(0).position);
+        //midSignsPositions.Add(midSignsObjects[i + 1].transform.GetChild(0).position);
+        midSignsObjects[i + 1].transform.GetChild(0).position = AstroFunctions.HorizontalToCartesian(azimuth, appAlt);
+        midSignsPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
     }
 
     public void RotateAzimuth(double rotation)
@@ -185,12 +180,16 @@ public class EclipticDrawer : EllipseRenderer, IAzalt
     {
         double x, y, z;
 
-        double alt = 90 - altitude;
-        double az = 180 + azimuth;
+        double alt = altitude;
+        double az = -azimuth;
 
-        x = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Cos(az * Mathf.Deg2Rad);
-        y = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
-        z = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Sin(az * Mathf.Deg2Rad);
+        //x = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Cos(az * Mathf.Deg2Rad);
+        //y = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
+        //z = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Sin(az * Mathf.Deg2Rad);
+        double a = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
+        x = a * Math.Cos(az * Mathf.Deg2Rad);
+        y = 10000 * Math.Sin(alt * Mathf.Deg2Rad);
+        z = a * Math.Sin(az * Mathf.Deg2Rad);
 
         return new Vector3((float)x, (float)y, (float)z);
     }

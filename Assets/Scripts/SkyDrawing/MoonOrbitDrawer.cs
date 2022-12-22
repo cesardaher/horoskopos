@@ -2,6 +2,7 @@ using SwissEphNet;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using AstroResources;
 
 public class MoonOrbitDrawer : EllipseRenderer, IAzalt
 {
@@ -60,10 +61,13 @@ public class MoonOrbitDrawer : EllipseRenderer, IAzalt
 
             SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, x2, xaz);
 
-            RotateAzimuth(xaz[0]);
-            RotateAltitude(xaz[1]);
+            // REVERT
 
-            cuspPoints.Add(pointer.position);
+            //RotateAzimuth(xaz[0]);
+            //RotateAltitude(xaz[1]);
+
+            //cuspPoints.Add(pointer.position);
+            cuspPoints.Add(AstroFunctions.HorizontalToCartesian(xaz[0], xaz[1]));
         }
 
         DrawEllipse(cuspPoints);
@@ -159,20 +163,6 @@ public class MoonOrbitDrawer : EllipseRenderer, IAzalt
         var rotationVector = transform.localRotation.eulerAngles;
         rotationVector.z = (float)rotation;
         transform.localRotation = Quaternion.Euler(rotationVector);
-    }
-
-    public Vector3 RotateCartesian(double azimuth, double altitude)
-    {
-        double x, y, z;
-
-        double alt = 90 - altitude;
-        double az = 180 + azimuth;
-
-        x = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Cos(az * Mathf.Deg2Rad);
-        y = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
-        z = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Sin(az * Mathf.Deg2Rad);
-
-        return new Vector3((float)x, (float)y, (float)z);
     }
 
     void OnDestroy()
