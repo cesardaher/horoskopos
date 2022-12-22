@@ -1,4 +1,5 @@
-﻿using SwissEphNet;
+﻿using System;
+using SwissEphNet;
 using System.Collections.Generic;
 using UnityEngine;
 using AstroResources;
@@ -102,10 +103,22 @@ public class EclipticDrawer : EllipseRenderer, IAzalt
             RotateAltitude(appAlt);
 
             // register value
-            eclipticPositions.Add(pointer.position);
+            eclipticPositions.Add(pointer.transform.position);
         }
 
         DrawEllipse(eclipticPositions);
+
+
+        Vector3 RotateCartesian(float az, float alt)
+        {
+            float x, y, z;
+
+            x = 10000 * Mathf.Sin(alt * Mathf.Deg2Rad) * Mathf.Cos(az * Mathf.Deg2Rad);
+            y = 10000 * Mathf.Cos(alt * Mathf.Deg2Rad);
+            z = 10000 * Mathf.Sin(alt * Mathf.Deg2Rad) * Mathf.Sin(az * Mathf.Deg2Rad);
+
+            return new Vector3(x, y, z);
+        }
     }
 
     void CreateHalfEclipticObjects()
@@ -167,6 +180,19 @@ public class EclipticDrawer : EllipseRenderer, IAzalt
         var rotationVector = transform.localRotation.eulerAngles;
         rotationVector.z = (float)rotation;
         transform.localRotation = Quaternion.Euler(rotationVector);
+    }
+    public void RotateCartesian(double azimuth, double altitude)
+    {
+        double x, y, z;
+
+        double alt = 90 - altitude;
+        double az = 180 + azimuth;
+
+        x = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Cos(az * Mathf.Deg2Rad);
+        y = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
+        z = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Sin(az * Mathf.Deg2Rad);
+
+        transform.position = new Vector3((float)x, (float)y, (float)z);
     }
 
     void AnimationVertexCount()

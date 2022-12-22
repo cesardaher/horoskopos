@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using SwissEphNet;
@@ -85,14 +85,28 @@ public class EquatorDrawer : EllipseRenderer, IAzalt
         transform.localRotation = Quaternion.Euler(rotationVector);
     }
 
-        void AnimationVertexCount()
-        {
-            vertexCount = animVertexCount;
-        }
-
-        void StaticVertexCount()
-        {
-            vertexCount = staticVertexCount;
-        }
-
+    void AnimationVertexCount()
+    {
+        vertexCount = animVertexCount;
     }
+
+    void StaticVertexCount()
+    {
+        vertexCount = staticVertexCount;
+    }
+
+    public void RotateCartesian(double azimuth, double altitude)
+    {
+        double x, y, z;
+
+        double alt = 90 - altitude;
+        double az = 180 + azimuth;
+
+        x = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Cos(az * Mathf.Deg2Rad);
+        y = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
+        z = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Sin(az * Mathf.Deg2Rad);
+
+        transform.position = new Vector3((float)x, (float)y, (float)z);
+    }
+
+}
