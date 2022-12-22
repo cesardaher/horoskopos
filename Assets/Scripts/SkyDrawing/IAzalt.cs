@@ -1,7 +1,9 @@
-﻿interface IAzalt
+﻿using UnityEngine;
+
+interface IAzalt
 {
     void RotateAzimuth(double azimuth);
     void RotateAltitude(double altitude);
-    void RotateCartesian(double azimuth, double altitude);
+    Vector3 RotateCartesian(double azimuth, double altitude);
 
 }

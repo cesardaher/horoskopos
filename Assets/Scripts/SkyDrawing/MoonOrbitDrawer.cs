@@ -161,7 +161,7 @@ public class MoonOrbitDrawer : EllipseRenderer, IAzalt
         transform.localRotation = Quaternion.Euler(rotationVector);
     }
 
-    public void RotateCartesian(double azimuth, double altitude)
+    public Vector3 RotateCartesian(double azimuth, double altitude)
     {
         double x, y, z;
 
@@ -172,7 +172,7 @@ public class MoonOrbitDrawer : EllipseRenderer, IAzalt
         y = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
         z = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Sin(az * Mathf.Deg2Rad);
 
-        transform.position = new Vector3((float)x, (float)y, (float)z);
+        return new Vector3((float)x, (float)y, (float)z);
     }
 
     void OnDestroy()

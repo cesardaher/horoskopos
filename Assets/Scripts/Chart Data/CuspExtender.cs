@@ -58,7 +58,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
             RotateAzimuth(azimuth);
             RotateX(30 * houseId);
 
-
+            // REVERT
             cuspPoints.Add(pointer.position);
 
             // reverse rotation to prepare for next iteration
@@ -183,7 +183,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
 
     }
 
-    public void RotateCartesian(double azimuth, double altitude)
+    public Vector3 RotateCartesian(double azimuth, double altitude)
     {
         double x, y, z;
 
@@ -194,7 +194,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
         y = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
         z = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Sin(az * Mathf.Deg2Rad);
 
-        transform.position = new Vector3((float)x, (float)y, (float)z);
+        return new Vector3((float)x, (float)y, (float)z);
     }
 
 #if UNITY_EDITOR
