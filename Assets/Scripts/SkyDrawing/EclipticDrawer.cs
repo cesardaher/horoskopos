@@ -44,6 +44,8 @@ public class EclipticDrawer : EllipseRenderer
     // MidSign prefab
     [SerializeField] GameObject midSignModel;
 
+    // Subscribes events
+    // Prepares ecliptic objects
     void Awake()
     {
         EventManager.Instance.OnRecalculationOfGeoData += DrawLines;
@@ -55,6 +57,7 @@ public class EclipticDrawer : EllipseRenderer
         CreateHalfEclipticObjects();
     }
 
+    // Dettaches events
     void OnDestroy()
     {
         EventManager.Instance.OnRecalculationOfGeoData -= DrawLines;
@@ -75,7 +78,6 @@ public class EclipticDrawer : EllipseRenderer
         // clears existing positions, if there are any
         eclipticPositions.Clear();
         midSignsPositions.Clear();
-
 
         // defines the step for each calculation based on desired number of vertices
         float arcStep = 180 / vertexCount;
@@ -190,7 +192,7 @@ public class EclipticDrawer : EllipseRenderer
     // Positions MidSign objects for symbols
     void RotateMidSign(int i, double azimuth, double appAlt)
     {
-        midSignsObjects[i + 1].transform.GetChild(0).position = AstroFunctions.HorizontalToCartesian(azimuth, appAlt);
+        midSignsObjects[i + 1].transform.position = AstroFunctions.HorizontalToCartesian(azimuth, appAlt);
         midSignsPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
     }
 
