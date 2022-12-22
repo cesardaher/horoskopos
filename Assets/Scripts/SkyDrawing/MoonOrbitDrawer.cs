@@ -25,13 +25,18 @@ public class MoonOrbitDrawer : EllipseRenderer
         EventManager.Instance.OnRecalculationOfGeoData += CalculateMoonPositions;
         EventManager.Instance.OnPlanetSelect += ShowMoonOrbit;
         EventManager.Instance.OnPlanetBoxClose += HideMoonOrbit;
-        //EventManager.instance.OnAnimationStart += HideMoonOrbit;
 
         orbitMarkerToggler.OutsideStart();
 
         gameObject.SetActive(false);
     }
 
+    void OnDestroy()
+    {
+        EventManager.Instance.OnRecalculationOfGeoData -= CalculateMoonPositions;
+        EventManager.Instance.OnPlanetSelect -= ShowMoonOrbit;
+        EventManager.Instance.OnPlanetBoxClose -= HideMoonOrbit;
+    }
 
     void CalculateMoonPositions()
     {
@@ -65,10 +70,6 @@ public class MoonOrbitDrawer : EllipseRenderer
         }
 
         DrawEllipse(cuspPoints);
-
-        // reset position completely
-        transform.eulerAngles = Vector3.zero;
-        transform.position = Vector3.zero;
 
         // set position of Moon marker to match real position
         moonOnOrbit.transform.position = PlanetData.PlanetDataList[1].realPlanet.planet.transform.position;
@@ -137,10 +138,4 @@ public class MoonOrbitDrawer : EllipseRenderer
         return dret[1];
     }
 
-    void OnDestroy()
-    {
-        EventManager.Instance.OnRecalculationOfGeoData -= CalculateMoonPositions;
-        EventManager.Instance.OnPlanetSelect -= ShowMoonOrbit;
-        EventManager.Instance.OnPlanetBoxClose -= HideMoonOrbit;
-    }
 }

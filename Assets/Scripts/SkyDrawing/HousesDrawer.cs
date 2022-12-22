@@ -102,31 +102,35 @@ public class HousesDrawer : MonoBehaviour
             if (hSys == 'C')
             {
                 if (areCampanusHousesCalculated) break;
+                AssignTextField(houseMarker, i);
                 RotateCampanus(houseMarker, i);
             }
             else
+            {
                 CalculateHouseAzAlt(houseMarker, i);
+                AssignTextField(houseMarker, i);
+            }
+                
         }
 
         void RotateCampanus(Point3D houseMarker, int i)
         {
             int signRange = 30;
             int midSignRange = signRange/2;
-            int signIncrement = (signRange * (i - 1));
+            int signIncrement = -(signRange * (i));
 
             // place at correct distance from pole
             float azimuth = campanusHouseMarkerRange;
-            float xRotation = - midSignRange - signIncrement;
+            float xRotation = -midSignRange - signIncrement;
+            
             if (i > 12)
             {
                 azimuth += 180;
-            }
-            else
-            {
                 xRotation += 180;
             }
 
             houseMarker.transform.localEulerAngles = Vector3.zero;
+            houseMarker.transform.GetChild(0).position = new Vector3(10000,0,0);
             houseMarker.RotateAzimuth(azimuth);
             houseMarker.RotateWorldX(xRotation);
         }
@@ -154,17 +158,14 @@ public class HousesDrawer : MonoBehaviour
 
             //reset rotation, then rotate
             houseMarker.transform.transform.localEulerAngles = Vector3.zero;
-            houseMarker.RotateAzimuth(xaz[0]);
-            houseMarker.RotateAltitude(xaz[2]);
-
-            // REVERT
-            AstroFunctions.HorizontalToCartesian(xaz[0], xaz[2]);
+            houseMarker.transform.GetChild(0).position = AstroFunctions.HorizontalToCartesian(xaz[0], xaz[1]);
         }
 
         void AssignTextField(Point3D houseMarker, int i)
         {
             TextMeshPro textField = houseMarker.transform.GetChild(0).GetComponent<TextMeshPro>();
             if (i > 12) i -= 12;
+
             string houseName = i switch
             {
                 1 => "I",
@@ -173,6 +174,7 @@ public class HousesDrawer : MonoBehaviour
                 10 => "X",
                 _ => i.ToString(),
             };
+
             textField.text = houseName;
         }
 
