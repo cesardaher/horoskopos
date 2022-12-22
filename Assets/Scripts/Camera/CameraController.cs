@@ -216,14 +216,14 @@ namespace UnityTemplateProjects
         public void TargetPlanet(int planetID)
         {
             if (followObject) return;
-            Vector3 position = PlanetData.PlanetDataList[planetID].realPlanet.planet.transform.GetChild(0).position;
+            Vector3 position = PlanetData.PlanetDataList[planetID].realPlanet.planet.transform.position;
             LookAtPlanet(position);
         }
 
         public void TargetAngle(int angleID)
         {
             if (followObject) return;
-            Vector3 position = AngleData.AngleDataList[angleID].Angle3D.planet.transform.GetChild(0).position;
+            Vector3 position = AngleData.AngleDataList[angleID].Angle3D.planet.transform.position;
             LookAtPlanet(position);
         }
 
@@ -231,7 +231,7 @@ namespace UnityTemplateProjects
         public void TargetSign(int signID)
         {
             if (followObject) return;
-            Vector3 position = EclipticDrawer.midSignsObjects[signID].transform.GetChild(0).position;
+            Vector3 position = EclipticDrawer.midSignsObjects[signID].transform.position;
             LookAtPlanet(position);
         }
 
