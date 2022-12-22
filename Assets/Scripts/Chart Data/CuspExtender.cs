@@ -183,20 +183,6 @@ public class CuspExtender : EllipseRenderer, IAzalt
 
     }
 
-    public Vector3 RotateCartesian(double azimuth, double altitude)
-    {
-        double x, y, z;
-
-        double alt = 90 - altitude;
-        double az = 180 + azimuth;
-
-        x = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Cos(az * Mathf.Deg2Rad);
-        y = 10000 * Math.Cos(alt * Mathf.Deg2Rad);
-        z = 10000 * Math.Sin(alt * Mathf.Deg2Rad) * Math.Sin(az * Mathf.Deg2Rad);
-
-        return new Vector3((float)x, (float)y, (float)z);
-    }
-
 #if UNITY_EDITOR
     void OnValidate()
     {

@@ -181,8 +181,7 @@ public class SpacePoint
             {
                 // REVERT
                 //planet.RotateAltitude(appAlt);
-            }
-                
+            }     
 
         }
     }
