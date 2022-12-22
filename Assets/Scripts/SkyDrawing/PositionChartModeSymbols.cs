@@ -120,9 +120,7 @@ public class PositionChartModeSymbols : Point3D
 
     void RotatePoint(Point3D point, double az, double alt)
     {
-        // REVERT
         point.transform.GetChild(0).position = AstroFunctions.HorizontalToCartesian(az, alt);
-        //point.RotateAzimuth(az);
-        //point.RotateAltitude(alt);
+
     }
 }

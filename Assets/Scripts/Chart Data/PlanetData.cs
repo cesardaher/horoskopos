@@ -109,7 +109,7 @@ public class PlanetData : PointData
             realPlanet.AppAlt = _xaz[2];
 
             // REVERT
-            realPlanet.planet.transform.GetChild(0).position = AstroFunctions.HorizontalToCartesian(realPlanet.Azimuth, realPlanet.AppAlt);
+            realPlanet.planet.transform.position = AstroFunctions.HorizontalToCartesian(realPlanet.Azimuth, realPlanet.AppAlt);
 
             EventManager.Instance.ApplyPlanetPosition(planetID);
         }
@@ -167,6 +167,9 @@ public class PlanetData : PointData
             chartPlanet.Azimuth = _chartAz[0];
             chartPlanet.TrAlt = _chartAz[1];
             chartPlanet.AppAlt = _chartAz[2];
+
+            // REVERT
+            chartPlanet.planet.transform.position = AstroFunctions.HorizontalToCartesian(chartPlanet.Azimuth, chartPlanet.AppAlt);
         }
     }
     public double[] Attr

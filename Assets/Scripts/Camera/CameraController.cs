@@ -131,7 +131,7 @@ namespace UnityTemplateProjects
 
             if (followObject)
             {
-                LookAtSun();
+                LookAtObject();
                 return;
             }
 
@@ -205,13 +205,14 @@ namespace UnityTemplateProjects
             if(!val) CollectCameraState();
         }
 
-        void LookAtSun()
+        void LookAtObject()
         {
             if(GeoData.ActiveData.NorthernHemisphere)
                 transform.LookAt(targetObject, eclipticPoles.northPolePosition);
             else
                 transform.LookAt(targetObject, eclipticPoles.southPolePosition);
         }
+
         public void TargetPlanet(int planetID)
         {
             if (followObject) return;
@@ -287,7 +288,7 @@ namespace UnityTemplateProjects
 
         void ChangeTargetPlanet(int planetID)
         {
-            targetObject = PlanetData.PlanetDataList[planetID].realPlanet.planet.transform.GetChild(0);
+            targetObject = PlanetData.PlanetDataList[planetID].realPlanet.planet.transform;
         }
 
         void AnimationStateOn()

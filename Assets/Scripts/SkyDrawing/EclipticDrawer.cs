@@ -31,18 +31,18 @@ public class EclipticDrawer : EllipseRenderer
     const int animVertexCount = 12;
 
     // Auxiliary variables for holding ecliptic and horizontal positions
-    double[] x2 = new double[6];
-    double[] xaz = new double[6];
+    double[] _x2 = new double[6];
+    double[] _xaz = new double[6];
 
     // Holders of ecliptic positions
-    [SerializeField] List<Vector3> eclipticPositions = new List<Vector3>();
-    [SerializeField] List<Vector3> midSignsPositions = new List<Vector3>();
+    [SerializeField] List<Vector3> _eclipticPositions = new List<Vector3>();
+    [SerializeField] List<Vector3> _midSignsPositions = new List<Vector3>();
 
     // Holder of mid sign objects
     public static GameObject[] midSignsObjects = new GameObject[13];
 
     // MidSign prefab
-    [SerializeField] GameObject midSignModel;
+    [SerializeField] GameObject _midSignModel;
 
     // Subscribes events
     // Prepares ecliptic objects
@@ -76,8 +76,8 @@ public class EclipticDrawer : EllipseRenderer
     public void FindHalfEclipticPoints()
     {
         // clears existing positions, if there are any
-        eclipticPositions.Clear();
-        midSignsPositions.Clear();
+        _eclipticPositions.Clear();
+        _midSignsPositions.Clear();
 
         // defines the step for each calculation based on desired number of vertices
         float arcStep = 180 / vertexCount;
@@ -102,31 +102,31 @@ public class EclipticDrawer : EllipseRenderer
             int maxLong = 180 + idIncrement;
             
             // incremets
-            x2[0] = (i * arcStep) + idIncrement;
+            _x2[0] = (i * arcStep) + idIncrement;
 
             // overflowing values go back to the first point
-            if (x2[0] > maxLong) x2[0] = 0;
+            if (_x2[0] > maxLong) _x2[0] = 0;
 
             // calculates horizontal coordinates (AzAlt) based on ecliptic positions
-            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, x2, xaz);
-            double azimuth = xaz[0];
-            double appAlt = xaz[2];
+            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, _x2, _xaz);
+            double azimuth = _xaz[0];
+            double appAlt = _xaz[2];
 
             // register values for sign cusps
             // doesn't allow 360
-            if (x2[0] % 30 == 0 && x2[0] != 180)
+            if (_x2[0] % 30 == 0 && _x2[0] != 180)
             {
                 // might be usable in the future for extending sign cusps
             }
 
             // register values for mid signs (%15)
             // this is for positioning the sign symbols
-            if (x2[0] % 30 == 15)
+            if (_x2[0] % 30 == 15)
             {
                 // presets current sign position
                 double[] tempxaz = new double[6];
                 double[] tempx2 = new double[6];
-                tempx2[0] = x2[0];
+                tempx2[0] = _x2[0];
 
                 // adds 5 to altitude, so that the symbol floats above ecliptic
                 // up or down according to hemisphere
@@ -143,11 +143,11 @@ public class EclipticDrawer : EllipseRenderer
             }
 
             // adds horizontal position to list
-            eclipticPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
+            _eclipticPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
         }
 
         // draws ellipse using calculated ecliptic positions
-        DrawEllipse(eclipticPositions);
+        DrawEllipse(_eclipticPositions);
     }
 
     // Creates objects for sign symbols
@@ -163,7 +163,7 @@ public class EclipticDrawer : EllipseRenderer
             int signId = signIncrement + i + 1;
 
             // creates object
-            var newSign = Instantiate(midSignModel, transform.parent);
+            var newSign = Instantiate(_midSignModel, transform.parent);
             var signPoint = newSign.GetComponent<Point3D>();
 
             // give proper name in the inspector
@@ -193,7 +193,7 @@ public class EclipticDrawer : EllipseRenderer
     void RotateMidSign(int i, double azimuth, double appAlt)
     {
         midSignsObjects[i + 1].transform.position = AstroFunctions.HorizontalToCartesian(azimuth, appAlt);
-        midSignsPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
+        _midSignsPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
     }
 
     // Lowers number of vertices to be used/calculated when animation is used

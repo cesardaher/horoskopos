@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using AstroResources;
 using UnityEngine;
 using SwissEphNet;
 
@@ -97,17 +96,14 @@ public class EclipticPoles : MonoBehaviour
         // calculate azalt positions
         SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, poleX2, poleAzalt);
 
-        // generate rotation
-        var rotationVector = transform.localRotation.eulerAngles;
-        rotationVector.y = (float)poleAzalt[0] + 180;
-        rotationVector.z = (float)poleAzalt[1];
-        pole.localRotation = Quaternion.Euler(rotationVector);
+        // calculates cartesian positions
+        var pos = AstroFunctions.HorizontalToCartesian(poleAzalt[0], poleAzalt[2]);
 
         //retrieve pole position
         if(isNorth)
-            northPolePosition = northPolePointer.position;
+            northPolePosition = pos;
         else
-            southPolePosition = southPolePointer.position;
+            southPolePosition = pos;
 
     }
 
