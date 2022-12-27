@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AstroFunctions : MonoBehaviour
+public static class AstroFunctions
 {
     // This function gives an absolute distance between two longitude points, regardless of the order
     // this considers a 360 circle
@@ -105,5 +105,21 @@ public class AstroFunctions : MonoBehaviour
 
         return val;
 
+    }
+
+    public static Vector3 HorizontalToCartesian(double azimuth, double altitude)
+    {
+        double x, y, z;
+        float radius = 10000;
+
+        double alt = altitude;
+        double az = -azimuth;
+
+        double a = radius * Math.Cos(alt * Mathf.Deg2Rad);
+        x = a * Math.Cos(az * Mathf.Deg2Rad);
+        y = radius * Math.Sin(alt * Mathf.Deg2Rad);
+        z = a * Math.Sin(az * Mathf.Deg2Rad);
+
+        return new Vector3((float)x, (float)y, (float)z);
     }
 }

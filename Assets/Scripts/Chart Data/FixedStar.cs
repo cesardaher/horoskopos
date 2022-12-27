@@ -1,4 +1,5 @@
 using SwissEphNet;
+using AstroResources;
 
 public class FixedStar : Point3D
 { 
@@ -28,7 +29,7 @@ public class FixedStar : Point3D
         get { return positionData; }
         set {
             positionData = value;
-            AzAlt = CalculateAzalt(positionData);
+            //AzAlt = CalculateAzalt(positionData);
         }
     }
 
@@ -39,8 +40,10 @@ public class FixedStar : Point3D
         set
         {
             azAlt = value;
-            RotateAzimuth(azAlt[0]);
-            RotateAltitude(azAlt[1]);
+            //RotateAzimuth(azAlt[0]);
+            //RotateAltitude(azAlt[1]);
+            transform.position = AstroFunctions.HorizontalToCartesian(azAlt[0], azAlt[1]);
+
         }
     }
 
@@ -52,4 +55,6 @@ public class FixedStar : Point3D
         return xaz;
 
     }
+
+
 }
