@@ -1,5 +1,6 @@
 using SwissEphNet;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -19,6 +20,7 @@ public class FixedStarsGenerator : MonoBehaviour
     [Serializable]
     public class FixedStarObject
     {
+        public int starIndex;
         public string nameOfConstellation;
         public string name;
         public double magnitude;
@@ -30,38 +32,43 @@ public class FixedStarsGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        CreateStarObjects();
+        CalculateFixedStars();
+
+        StartCoroutine("Coroutine");
+
+        //CreateStarObjects();
+
         //tjd_ut = GeoData.ActiveData.Tjd_ut;
         //CalculateStarByNumber();
         //CalculateFixedStars();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        //CalculateFixedStars();
+        //CalculateFixedStars();
         //if (tjd_ut != GeoData.ActiveData.Tjd_ut)
         //{
-            //tjd_ut = GeoData.ActiveData.Tjd_ut;
-            //CalculateFixedStars();
+        //tjd_ut = GeoData.ActiveData.Tjd_ut;
+        //CalculateFixedStars();
         //}
 
         //CalculateFixedStars();
     }
 
-    private void OnValidate()
+    IEnumerator Coroutine()
     {
-        CreateStarObjects();
-        CalculateFixedStars();
+        while(true)
+        {
+            CalculateFixedStars();
+            yield return new WaitForFixedUpdate();
+        }
     }
 
-    void CalculateStarByNumber()
+    private void OnValidate()
     {
-        string starForCalc = "1";
-        iflgret = SwissEphemerisManager.swe.swe_fixstar2_ut(ref starForCalc, GeoData.ActiveData.Tjd_ut, iflag, x2, ref serr);
 
-        if (iflgret < 0)
-            Debug.Log("error: " + serr);
-
-        Debug.Log(starForCalc);
     }
 
     void CreateStarObjects()
@@ -70,8 +77,14 @@ public class FixedStarsGenerator : MonoBehaviour
 
         listOfStarObjects.Clear();
 
-        for (int i = 0; i < 1140; i++)
+        for (int i = 1; i < 1139; i++)
         {
+            string starForCalc = i.ToString();
+            double mag = 0;
+            iflgret = SwissEphemerisManager.swe.swe_fixstar2_mag(ref starForCalc, ref mag, ref serr);
+
+            if (mag > 3) continue;
+
             FixedStarObject fixedStarObject = new FixedStarObject
             {
                 starObject = SpawnStar("")
@@ -79,6 +92,16 @@ public class FixedStarsGenerator : MonoBehaviour
 
             fixedStarObject.starComponent = fixedStarObject.starObject.GetComponent<FixedStar>();
             fixedStarObject.starComponent.starName = "";
+
+            fixedStarObject.magnitude = mag;
+            float linearMag = StarSize(mag);
+
+            fixedStarObject.linearMagnitude = linearMag;
+
+            Vector3 magScale = new Vector3(linearMag, linearMag, linearMag);
+            fixedStarObject.starComponent.transform.GetChild(0).localScale = magScale;
+
+            fixedStarObject.starIndex = i;
 
             listOfStarObjects.Add(fixedStarObject);
         }
@@ -95,12 +118,16 @@ public class FixedStarsGenerator : MonoBehaviour
 
     public void CalculateFixedStars()
     {
+        SwissEph swe = SwissEphemerisManager.swe;
         var watch = System.Diagnostics.Stopwatch.StartNew();
         if (geodata is null) return;
-        for (int i = 1; i < 1140; i++)
+
+        for (int i = 0; i < listOfStarObjects.Count; i++)
         {
-            string starForCalc = i.ToString();
-            iflgret = SwissEphemerisManager.swe.swe_fixstar2_ut(ref starForCalc, geodata.Tjd_ut, iflag, x2, ref serr);
+            
+            string starForCalc = listOfStarObjects[i].starIndex.ToString();
+
+            iflgret = swe.swe_fixstar2_ut(ref starForCalc, geodata.Tjd_ut, iflag, x2, ref serr);
 
             if (iflgret < 0)
                 Debug.Log("error: " + serr);
@@ -108,9 +135,6 @@ public class FixedStarsGenerator : MonoBehaviour
             serr = "";
 
             listOfStarObjects[i].starComponent.positionData = x2;
-
-            double mag = 0;
-            //iflgret = SwissEphemerisManager.swe.swe_fixstar2_mag(ref starForCalc, ref mag, ref serr);
 
             if (iflgret < 0)
                 Debug.Log("error: " + serr);
@@ -120,24 +144,15 @@ public class FixedStarsGenerator : MonoBehaviour
             x2ToXaz[0] = x2[0];
             x2ToXaz[1] = x2ToXaz[2] = x2[1];
 
-            // removed in favor of using ecliptic coordinates
-            //SwissEphemerisManager.swe.swe_azalt(geodata.Tjd_ut, SwissEph.SE_ECL2HOR, geodata.Geopos, 0, 0, x2, xaz);
-
             listOfStarObjects[i].starComponent.AzAlt = x2ToXaz;
-            //listOfStarObjects[i].magnitude = mag;
-
-            //listOfStarObjects[i].linearMagnitude = StarSize(mag);
-
-            //Vector3 magScale = new Vector3((float)listOfStarObjects[i].linearMagnitude, (float)listOfStarObjects[i].linearMagnitude, (float)listOfStarObjects[i].linearMagnitude);
-            //Vector3 magScale = new Vector3((float)mag, (float)mag, (float)mag);
-            //listOfStarObjects[i].starComponent.transform.GetChild(0).localScale = magScale;
         }
 
         watch.Stop();
-        Debug.Log(watch.ElapsedMilliseconds);
+        //Debug.Log("count: " + listOfStarObjects.Count);
+        Debug.Log("elapsed: " + watch.ElapsedMilliseconds);
     }
 
-    double StarSize(double magnitude)
+    float StarSize(double magnitude)
     {
         double size = magnitude;
         double mag_max = 0;
@@ -151,6 +166,6 @@ public class FixedStarsGenerator : MonoBehaviour
         size = mag_size_norm * 46.6 * Math.Pow(mag_alpha, size);
         size = 0.75 * 3 * size * 0.0014552083 * 60;
 
-        return size;
+        return (float)size;
     }
 }
