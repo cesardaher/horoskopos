@@ -9,6 +9,7 @@ public class FixedStarsGenerator : MonoBehaviour
 {
     public GeoData geodata;
     double tjd_ut;
+    double[] stardata;
     [SerializeField] ConstellationDatabase constellationDatabase;
     Int32 iflag = SwissEph.SEFLG_SWIEPH, iflgret;
     double[] x2 = new double[6];
@@ -32,12 +33,28 @@ public class FixedStarsGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        double epoch = 1950;
+        double ra_h = 18;
+        double ra_m = 03;
+        double ra_s = 50.2;
+        double de_d = 30;
+        double de_m = 00;
+        double de_s = 16.8;
+        double ra_pm = 0.000;
+        double de_pm = 0.00;
+        double radv = -16.5;
+        double parall = 0.0000;
+        double mag = 999.99;
+        double[] star = { epoch, ra_h, ra_m, ra_s, de_d, de_m, de_s, ra_pm, de_pm, radv, parall, mag };
+        stardata = fixstar_prepare_data(star);
+
+
         CreateStarObjects();
         CalculateFixedStars();
 
-        //StartCoroutine("Coroutine");
+        StartCoroutine("Coroutine");
 
-        CompareValues();
+        //CompareValues();
 
         //CreateStarObjects();
 
@@ -63,6 +80,7 @@ public class FixedStarsGenerator : MonoBehaviour
     {
         while(true)
         {
+            //CalculateFixedStarsTest();
             CalculateFixedStars();
             yield return new WaitForFixedUpdate();
         }
@@ -79,12 +97,13 @@ public class FixedStarsGenerator : MonoBehaviour
 
         listOfStarObjects.Clear();
 
-        for (int i = 1; i < 500; i++)
+        for (int i = 1; i < 1139; i++)
         {
             string starForCalc = i.ToString();
             double mag = 0;
             iflgret = SwissEphemerisManager.swe.swe_fixstar2_mag(ref starForCalc, ref mag, ref serr);
 
+            // stars bigger than mag 3
             if (mag > 3) continue;
 
             FixedStarObject fixedStarObject = new FixedStarObject
@@ -264,7 +283,6 @@ public class FixedStarsGenerator : MonoBehaviour
 
         for (int i = 0; i < listOfStarObjects.Count; i++)
         {
-            
             string starForCalc = listOfStarObjects[i].starIndex.ToString();
 
             iflgret = SwissEphemerisManager.swe.swe_fixstar2_ut(ref starForCalc, geodata.Tjd_ut, iflag, x2, ref serr);
@@ -279,14 +297,44 @@ public class FixedStarsGenerator : MonoBehaviour
             if (iflgret < 0)
                 Debug.Log("error: " + serr);
 
-            double[] x2ToXaz = new double[6];
+            SwissEphemerisManager.swe.swe_azalt(geodata.Tjd_ut, SwissEph.SE_ECL2HOR, geodata.Geopos, 0, 0, x2, xaz);
 
-            x2ToXaz[0] = x2[0];
-            x2ToXaz[1] = x2ToXaz[2] = x2[1];
+            listOfStarObjects[i].starComponent.AzAlt = xaz;
+            if (i == listOfStarObjects.Count - 1) Debug.Log("index: " + i);
+        }
 
-            listOfStarObjects[i].starComponent.AzAlt = x2ToXaz;
+        watch.Stop();
+        //Debug.Log("count: " + listOfStarObjects.Count);
+        Debug.Log("elapsed: " + watch.ElapsedMilliseconds);
+    }
+
+    public void CalculateFixedStarsTest()
+    {
+
+        var watch = System.Diagnostics.Stopwatch.StartNew();
+        if (geodata is null) return;
+
+        for (int i = 0; i < listOfStarObjects.Count; i++)
+        {
+            string starForCalc = listOfStarObjects[i].starIndex.ToString();
+
+            iflgret = SwissEphemerisManager.swe.swe_fixstar2_ut_array(ref stardata, geodata.Tjd_ut, iflag, x2, ref serr);
+            //iflgret = SwissEphemerisManager.swe.swe_fixstar2_ut(ref starForCalc, geodata.Tjd_ut, iflag, x2, ref serr);
+
+            if (iflgret < 0)
+                Debug.Log("error: " + serr);
+
+            serr = "";
+
+            listOfStarObjects[i].starComponent.positionData = x2;
+
+            if (iflgret < 0)
+                Debug.Log("error: " + serr);
+
+            //listOfStarObjects[i].starComponent.AzAlt = x2ToXaz;
 
             SwissEphemerisManager.swe.swe_azalt(geodata.Tjd_ut, SwissEph.SE_ECL2HOR, geodata.Geopos, 0, 0, x2, xaz);
+            if (i == listOfStarObjects.Count - 1) Debug.Log("index: " + i );
         }
 
         watch.Stop();
