@@ -80,8 +80,8 @@ public class FixedStarsGenerator : MonoBehaviour
     {
         while(true)
         {
-            //CalculateFixedStarsTest();
-            CalculateFixedStars();
+            CalculateFixedStarsTest();
+            //CalculateFixedStars();
             yield return new WaitForFixedUpdate();
         }
     }
@@ -104,7 +104,7 @@ public class FixedStarsGenerator : MonoBehaviour
             iflgret = SwissEphemerisManager.swe.swe_fixstar2_mag(ref starForCalc, ref mag, ref serr);
 
             // stars bigger than mag 3
-            if (mag > 3) continue;
+            if (mag > 3.3) continue;
 
             FixedStarObject fixedStarObject = new FixedStarObject
             {
@@ -311,7 +311,7 @@ public class FixedStarsGenerator : MonoBehaviour
     public void CalculateFixedStarsTest()
     {
 
-        var watch = System.Diagnostics.Stopwatch.StartNew();
+        //var watch = System.Diagnostics.Stopwatch.StartNew();
         if (geodata is null) return;
 
         for (int i = 0; i < listOfStarObjects.Count; i++)
@@ -337,9 +337,9 @@ public class FixedStarsGenerator : MonoBehaviour
             if (i == listOfStarObjects.Count - 1) Debug.Log("index: " + i );
         }
 
-        watch.Stop();
+        //watch.Stop();
         //Debug.Log("count: " + listOfStarObjects.Count);
-        Debug.Log("elapsed: " + watch.ElapsedMilliseconds);
+        //Debug.Log("elapsed: " + watch.ElapsedMilliseconds);
     }
 
     float StarSize(double magnitude)
