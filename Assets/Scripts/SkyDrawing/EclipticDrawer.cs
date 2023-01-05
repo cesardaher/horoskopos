@@ -110,7 +110,7 @@ public class EclipticDrawer : EllipseRenderer
             // calculates horizontal coordinates (AzAlt) based on ecliptic positions
             SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, _x2, _xaz);
             double azimuth = _xaz[0];
-            double appAlt = _xaz[2];
+            double trAlt = _xaz[1];
 
             // register values for sign cusps
             // doesn't allow 360
@@ -136,14 +136,14 @@ public class EclipticDrawer : EllipseRenderer
                 // calculates horizontal coordinates of sign symbol
                 // places midsign object
                 SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, tempx2, tempxaz);
-                RotateMidSign(signIndex + (6 * objectID), tempxaz[0], tempxaz[2]);
+                RotateMidSign(signIndex + (6 * objectID), tempxaz[0], tempxaz[1]);
 
                 // count next sign index
                 signIndex++;
             }
 
             // adds horizontal position to list
-            _eclipticPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
+            _eclipticPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, trAlt));
         }
 
         // draws ellipse using calculated ecliptic positions
@@ -190,10 +190,10 @@ public class EclipticDrawer : EllipseRenderer
     }
      
     // Positions MidSign objects for symbols
-    void RotateMidSign(int i, double azimuth, double appAlt)
+    void RotateMidSign(int i, double azimuth, double trAlt)
     {
-        midSignsObjects[i + 1].transform.position = AstroFunctions.HorizontalToCartesian(azimuth, appAlt);
-        _midSignsPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
+        midSignsObjects[i + 1].transform.position = AstroFunctions.HorizontalToCartesian(azimuth, trAlt);
+        _midSignsPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, trAlt));
     }
 
     // Lowers number of vertices to be used/calculated when animation is used

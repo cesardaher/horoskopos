@@ -26,11 +26,6 @@ public class HorizonDrawer : EllipseRenderer, IAzalt
         {
             double rotation = i * arcStep;
 
-            // REVERT
-            //RotateAzimuth(rotation);
-
-            // register value
-            //horizonPoints.Add(pointer.position);
             horizonPoints.Add(AstroFunctions.HorizontalToCartesian(rotation, 0));
         }
 

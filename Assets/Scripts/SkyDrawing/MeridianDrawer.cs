@@ -25,19 +25,8 @@ public class MeridianDrawer : EllipseRenderer, IAzalt
         for (int i = 0; i <= vertexCount; i++)
         {
             double rotation = i * arcStep;
-            
-
-            // REVERT
-
-            //RotateAltitude(rotation);
-
-            // register value
-            //meridianPoints.Add(pointer.position);
-
-            //RotateAltitude(-rotation);
 
             meridianPoints.Add(AstroFunctions.HorizontalToCartesian(0, rotation));
-
         }
 
         DrawEllipse(meridianPoints);

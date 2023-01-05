@@ -56,20 +56,9 @@ public class EquatorDrawer : EllipseRenderer, IAzalt
             double azimuth = xaz[0];
             double appAlt = xaz[2];
 
-
-            // REVERT
-
-
-            // rotate this
-            //RotateAzimuth(azimuth);
-            //RotateAltitude(appAlt);
-
             // register value
-            //equatorPositions.Add(pointer.position);
             equatorPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
 
-            // revert rotation
-            //transform.localEulerAngles = Vector3.zero;
         }
 
 

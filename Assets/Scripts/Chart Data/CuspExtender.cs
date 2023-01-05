@@ -52,7 +52,6 @@ public class CuspExtender : EllipseRenderer, IAzalt
             RotateAzimuth(azimuth);
             RotateX(30 * houseId);
 
-            // REVERT
             cuspPoints.Add(pointer.position);
 
             // reverse rotation to prepare for next iteration
