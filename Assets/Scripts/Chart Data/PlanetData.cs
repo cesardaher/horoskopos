@@ -1,8 +1,7 @@
-﻿using System;
+﻿using AstroResources;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using AstroResources;
 
 public class PlanetData : PointData
 {
@@ -352,13 +351,7 @@ public class PlanetData : PointData
         // ignores Sun, as planetary phases are defined by proximity to it
         if (PlanetDataList[0] == this) return 0;
 
-        // if positive value, waxing
-        if (AstroFunctions.Get360Distance(_longitude, PlanetDataList[0]._longitude) >= 0)
-            return 1;
-
-        // negative, waning
-        return -1;
-
+        return AstroFunctions.AssignPhaseState(_longitude, PlanetDataList[0]._longitude);
     }
 
     // Enable/disable planetary objects when active/inactive

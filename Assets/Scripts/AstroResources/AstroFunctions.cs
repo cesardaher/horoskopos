@@ -25,6 +25,23 @@ namespace AstroResources
             return Math.Abs(diff);
         }
 
+        // Assigns a phase for the planet (waning, waxing)
+        public static int AssignPhaseState(double planetLong, double sunLong)
+        {
+            // put both longitudes relative to sun longitude
+            planetLong -= sunLong;
+            sunLong -= sunLong;
+
+            // normalize negative longitude
+            if (planetLong < 0) planetLong = planetLong + 360;
+
+            // planet is waxing before opposition with Sun
+            if (planetLong - sunLong <= 180) return 1;
+
+            // planet is waning after opposition with sun
+            return -1;
+        }
+
         // Gives a distance between two longitude points in 360, taking the order into account
         public static double Get360Distance(double firstLon, double secondLon)
         {

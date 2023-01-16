@@ -65,11 +65,11 @@ Material:
     - Vector1_d489d32639924d8189c0f08ece7ad279: 0
     - Vector1_e2fea0e22be344a383951df1b3e82f03: 1
     - Vector1_e67a418e9d63484ea9702fc39e874478: 90
-    - _LineThickness: 0.002
+    - _LineThickness: 0
     - _SunsetIntensity: 0
     - _UseAtmosphere: 1
     - _UseConstellations: 0
-    - _UseGround: 1
+    - _UseGround: 0
     m_Colors:
     - Color_0197f7de88654ee8b34249a3a7d8f895: {r: 0.9024564, g: 0.9250059, b: 0.9433962, a: 0}
     - Color_2: {r: 0.07247217, g: 0.06087575, b: 0.09433961, a: 0}
