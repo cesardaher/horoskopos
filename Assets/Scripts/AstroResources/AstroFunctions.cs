@@ -7,6 +7,12 @@ namespace AstroResources
 {
     public class AstroFunctions : MonoBehaviour
     {
+        /* This class stores useful functions that might be used
+         * across various classes and functions, most of them related
+         * to mathematical operations.
+         
+         */
+
         // Gives an absolute distance between two longitude points, regardless of the order
         // This considers a 360 cycle
         public static double GetAbsolute360Distance(double x, double y)
