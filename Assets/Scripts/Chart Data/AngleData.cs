@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using AstroResources;
 
 public class AngleData : PointData
 {
@@ -33,6 +34,8 @@ public class AngleData : PointData
             Angle3D.Azimuth = _xaz[0];
             Angle3D.TrAlt = _xaz[1];
             Angle3D.AppAlt = _xaz[2];
+
+            Angle3D.planet.transform.position = AstroFunctions.HorizontalToCartesian(Angle3D.Azimuth, Angle3D.TrAlt);
         }
     }
 
