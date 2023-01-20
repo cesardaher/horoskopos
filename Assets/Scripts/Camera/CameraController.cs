@@ -62,7 +62,8 @@ namespace UnityTemplateProjects
 
         float inputX;
         float inputZ;
-        
+        float scrollInput;
+
         CameraState m_TargetCameraState = new CameraState();
         CameraState m_InterpolatingCameraState = new CameraState();
 
@@ -96,7 +97,10 @@ namespace UnityTemplateProjects
         [Tooltip("The maximum Zoom in and Zoom out")]
         public float minFov = 30;
         public float maxFov = 95;
-        public float sensitivity = 10f;
+        public float zoomSensitivity = 10f;
+
+        [Tooltip("The amount that the camera will rotate when using arrow keys"), Range(0, 1)]
+        public float arrowSensitivity;
 
         public EclipticPoles eclipticPoles;
         public EclipticDrawer eclipticDrawer;
@@ -115,6 +119,7 @@ namespace UnityTemplateProjects
             EventManager.Instance.On2DSignClicked += TargetSign;
             EventManager.Instance.OnSelectFollowedPlanet += ChangeTargetPlanet;
             EventManager.Instance.OnFollowPlanet += ToggleCameraControls;
+            EventManager.Instance.OnMainClickHeld += RotateCamera;
             
 
             m_TargetCameraState.SetFromTransform(transform);
@@ -129,11 +134,14 @@ namespace UnityTemplateProjects
             EventManager.Instance.On2DSignClicked -= TargetSign;
             EventManager.Instance.OnSelectFollowedPlanet -= ChangeTargetPlanet;
             EventManager.Instance.OnFollowPlanet -= ToggleCameraControls;
+            EventManager.Instance.OnMainClickHeld -= RotateCamera;
         }
 
         void Update()
         {
-            ScrollCamera();
+            scrollInput = Input.GetAxis("Mouse ScrollWheel");
+            if(scrollInput != 0)
+                ScrollCamera();
 
             if (cameraFollow != null && !cameraFollow.IsCompleted) return;
 
@@ -143,37 +151,16 @@ namespace UnityTemplateProjects
                 return;
             }
 
-            Vector3 translation = Vector3.zero;
-
 #if ENABLE_LEGACY_INPUT_MANAGER
-
 
             inputX = Input.GetAxis("Horizontal");
             inputZ = Input.GetAxis("Vertical");
 
             if (InputFieldTracker.usingInput) return;
 
-            // Hide and lock cursor when right mouse button pressed
-            if (Input.GetMouseButtonDown(1))
+            if(inputX != 0 || inputZ != 0)
             {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-
-            // Unlock and show cursor when right mouse button released
-            if (Input.GetMouseButtonUp(1))
-            {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-            }
-
-            // Rotation
-            if (Input.GetMouseButton(1))
-            {
-                RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-            } 
-            else if(inputX != 0 || inputZ != 0)
-            {
-                RotateCamera(-inputX, -inputZ);
+                RotateCameraKeys(inputX, inputZ);
             }
 #endif
 
@@ -192,6 +179,22 @@ namespace UnityTemplateProjects
 
             m_TargetCameraState.pitch += arrowMovement.y * mouseSensitivityFactor;
             m_TargetCameraState.yaw += arrowMovement.x * mouseSensitivityFactor;
+
+            // maintain pitch within vertical restriction
+            // value will be clamped if it doesn't pass both as positive and negative value (within 360 range)
+            if (m_TargetCameraState.pitch > verticalRestriction || m_TargetCameraState.pitch < -verticalRestriction)
+            {
+                if (m_TargetCameraState.pitch - 360 > verticalRestriction || m_TargetCameraState.pitch - 360 < -verticalRestriction)
+                {
+                    m_TargetCameraState.pitch = Mathf.Clamp(m_TargetCameraState.pitch, -verticalRestriction, verticalRestriction);
+                }
+            }
+        }
+
+        void RotateCameraKeys(float horizontal, float vertical)
+        {
+            m_TargetCameraState.pitch += -vertical * arrowSensitivity;
+            m_TargetCameraState.yaw += horizontal * arrowSensitivity;
 
             // maintain pitch within vertical restriction
             // value will be clamped if it doesn't pass both as positive and negative value (within 360 range)
@@ -270,7 +273,7 @@ namespace UnityTemplateProjects
         void ScrollCamera()
         {
             var fov = childCamera.fieldOfView;
-            fov -= Input.GetAxis("Mouse ScrollWheel") * sensitivity;
+            fov -= Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity;
             fov = Mathf.Clamp(fov, minFov, maxFov);
             childCamera.fieldOfView = fov;
         }

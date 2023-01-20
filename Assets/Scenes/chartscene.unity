@@ -18267,7 +18267,8 @@ MonoBehaviour:
   isAnimating: 0
   minFov: 30
   maxFov: 95
-  sensitivity: 20
+  zoomSensitivity: 10
+  arrowSensitivity: 0.5
   eclipticPoles: {fileID: 1913666156}
   eclipticDrawer: {fileID: 1871809037}
   childCamera: {fileID: 1935810132}
@@ -30713,16 +30714,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Click and drag with the <font-weight="400">right mouse button</font-weight>
-    to move the camera
+  m_text: 'Click and drag with <font-weight="400">either mouse button</font-weight>,
+    or use the <font-weight="400">arrow keys</font-weight> to move the camera
 
 
-    Click with the <font-weight="400">left mouse button</font-weight>
-    to interact with planets
+    Click
+    with the <font-weight="400">left mouse button</font-weight> to interact with
+    planets
 
 
-    Click and drag the top of information boxes with
-    the <font-weight="400">left mouse button</font-weight> to move them'
+    Click and drag the top of information boxes with the <font-weight="400">left
+    mouse button</font-weight> to move them'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a68d624246a222f4bba735dae5c5a373, type: 2}
   m_sharedMaterial: {fileID: 2891299546332823560, guid: a68d624246a222f4bba735dae5c5a373, type: 2}
@@ -47825,6 +47827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4d2207ae08a6f49905e9fcfb266947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraController: {fileID: 787799955}
 --- !u!4 &1962342983
 Transform:
   m_ObjectHideFlags: 0
