@@ -1,0 +1,5 @@
+
+interface IClickable
+{
+    void Interact();
+}

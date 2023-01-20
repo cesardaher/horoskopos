@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SignTarget : MonoBehaviour
+public class SignTarget : MonoBehaviour, IClickable
 {
     public static bool inTutorial;
 
@@ -13,41 +13,6 @@ public class SignTarget : MonoBehaviour
     {
         infoBox = FindObjectOfType<SignInfoBox>();
         coll = GetComponent<Collider>();
-    }
-
-    private void Start()
-    {
-        EventManager.Instance.OnTutorialToggle += ToggleTutorialNonStatic;
-
-        //ToggleInfoBox(false);
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            //cancel interaction on tutorial
-            if (inTutorial) return;
-
-            // cancel interaction when something is on top
-            if (EventSystem.current.IsPointerOverGameObject()) return;
-
-            // get ray and check for collider
-            // open info box
-            {
-                Vector3 pos = Input.mousePosition;
-                Ray ray = Camera.main.ScreenPointToRay(pos);
-
-                if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity))
-                {
-                    if (hitInfo.collider == coll)
-                    {
-                        ToggleInfoBox(true, pos);
-                    }
-                }
-            }
-
-        }
     }
 
     void ToggleInfoBox(bool value, Vector3 pos)
@@ -67,17 +32,22 @@ public class SignTarget : MonoBehaviour
         }
     }
 
-    void ToggleTutorialNonStatic(bool val)
+    public void Interact()
     {
-        if (inTutorial != val) ToggleTutorial(val);
-    }
-    static void ToggleTutorial(bool val)
-    {
-        inTutorial = val;
-    }
+        // cancel interaction when something is on top
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
-    private void OnDestroy()
-    {
-        EventManager.Instance.OnTutorialToggle -= ToggleTutorialNonStatic;
+        // get ray and check for collider
+        // open info box
+        {
+            Vector3 pos = Input.mousePosition;
+            Ray ray = Camera.main.ScreenPointToRay(pos);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity))
+            {
+                if (hitInfo.collider == coll)
+                    ToggleInfoBox(true, pos);
+
+            }
+        }
     }
 }
