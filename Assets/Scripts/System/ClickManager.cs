@@ -13,8 +13,12 @@ public class ClickManager : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            time += Time.deltaTime;
-            EventManager.Instance.HoldClickOnScreen(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            // cancel interaction when something is on top
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                time += Time.deltaTime;
+                EventManager.Instance.HoldClickOnScreen(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            }
         }
 
         if(Input.GetMouseButton(1))

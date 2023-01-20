@@ -19,7 +19,6 @@ public class ClickTracker : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
- 
             image.enabled = true;
         }
 
