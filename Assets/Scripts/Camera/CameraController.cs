@@ -21,6 +21,7 @@ namespace UnityTemplateProjects
             public float x;
             public float y;
             public float z;
+            public float fov;
 
             public void SetFromTransform(Transform t)
             {
@@ -92,6 +93,11 @@ namespace UnityTemplateProjects
         public bool followObject = false;
         public bool isAnimating = false;
 
+        [Tooltip("The maximum Zoom in and Zoom out")]
+        public float minFov = 30;
+        public float maxFov = 95;
+        public float sensitivity = 10f;
+
         public EclipticPoles eclipticPoles;
         public EclipticDrawer eclipticDrawer;
         public Camera childCamera;
@@ -127,6 +133,8 @@ namespace UnityTemplateProjects
 
         void Update()
         {
+            ScrollCamera();
+
             if (cameraFollow != null && !cameraFollow.IsCompleted) return;
 
             if (followObject)
@@ -167,9 +175,6 @@ namespace UnityTemplateProjects
             {
                 RotateCamera(-inputX, -inputZ);
             }
-
-#elif USE_INPUT_SYSTEM 
-            // TODO: make the new input system work
 #endif
 
             var positionLerpPct = 1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / positionLerpTime) * Time.deltaTime);
@@ -262,6 +267,14 @@ namespace UnityTemplateProjects
 
         }
 
+        void ScrollCamera()
+        {
+            var fov = childCamera.fieldOfView;
+            fov -= Input.GetAxis("Mouse ScrollWheel") * sensitivity;
+            fov = Mathf.Clamp(fov, minFov, maxFov);
+            childCamera.fieldOfView = fov;
+        }
+
 
         void CollectCameraState()
         {
@@ -299,7 +312,6 @@ namespace UnityTemplateProjects
         void AnimationStateOff()
         {
             isAnimating = false;
-            childCamera.transform.localEulerAngles = Vector3.zero;
         }
 
     }

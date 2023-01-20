@@ -32,13 +32,6 @@ public class Target : MonoBehaviour
                 {
                     if (hitInfo.collider == coll)
                     {
-                        //cancel interaction on tutorial
-                        if (inTutorial)
-                        {
-                            FindSunOnTutorial();
-                            return;
-                        }
-
                         ToggleInfoBox(true, pos);
                         TargetWithCamera();
 

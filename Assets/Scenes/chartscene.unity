@@ -18265,6 +18265,9 @@ MonoBehaviour:
   verticalRestriction: 85
   followObject: 0
   isAnimating: 0
+  minFov: 30
+  maxFov: 95
+  sensitivity: 20
   eclipticPoles: {fileID: 1913666156}
   eclipticDrawer: {fileID: 1871809037}
   childCamera: {fileID: 1935810132}
