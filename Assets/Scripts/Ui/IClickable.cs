@@ -1,5 +1,7 @@
 
+using UnityEngine;
+
 interface IClickable
 {
-    void Interact();
+    void Interact(Vector3 pos);
 }

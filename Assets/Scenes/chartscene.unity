@@ -13890,7 +13890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 324.02655, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &616815781
@@ -17165,6 +17165,7 @@ MonoBehaviour:
   followObject: 0
   isAnimating: 0
   minFov: 30
+  defaultFov: 58.71551
   maxFov: 95
   zoomSensitivity: 10
   arrowSensitivity: 0.5
@@ -20910,8 +20911,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 213.1777, y: 0}
-  m_SizeDelta: {x: 426.3554, y: 45}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &938801842
 MonoBehaviour:
@@ -28418,7 +28419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 186.85, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234035942
@@ -28572,7 +28573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 213.1777, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1239472125
@@ -29109,7 +29110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 25, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1253279073
@@ -29171,7 +29172,7 @@ MonoBehaviour:
     Click and drag with <font-weight="400">either
     mouse button</font-weight>, or use the <font-weight="400">arrow keys</font-weight>
 
-    
+
 
     <font-weight="400">INTERACTION
     WITH PLANETS AND SIGNS</font-weight>
@@ -29179,7 +29180,7 @@ MonoBehaviour:
     Click with the <font-weight="400">left
     mouse button</font-weight>
 
-    
+
 
     <font-weight="400">MOVING TEXT BOXES</font-weight>
 
@@ -37199,8 +37200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 141.49875, y: 0}
-  m_SizeDelta: {x: 282.9975, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1713065638
 MonoBehaviour:
@@ -43745,7 +43746,7 @@ Camera:
   m_BackGroundColor: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 1
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -44034,7 +44035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 102.04885, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1944675107
@@ -44606,7 +44607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4d2207ae08a6f49905e9fcfb266947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 787799955}
 --- !u!4 &1962342983
 Transform:
   m_ObjectHideFlags: 0
@@ -46899,7 +46899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 175.081, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077580599

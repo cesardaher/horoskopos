@@ -96,6 +96,7 @@ namespace UnityTemplateProjects
 
         [Tooltip("The maximum Zoom in and Zoom out")]
         public float minFov = 30;
+        public float defaultFov = 58.71551f;
         public float maxFov = 95;
         public float zoomSensitivity = 10f;
 
@@ -139,9 +140,13 @@ namespace UnityTemplateProjects
 
         void Update()
         {
-            scrollInput = Input.GetAxis("Mouse ScrollWheel");
+            scrollInput = Input.mouseScrollDelta.y;
+
             if(scrollInput != 0)
-                ScrollCamera();
+                ZoomCamera();
+
+            if (Input.GetMouseButtonDown(2))
+                ResetZoom();
 
             if (cameraFollow != null && !cameraFollow.IsCompleted) return;
 
@@ -270,12 +275,17 @@ namespace UnityTemplateProjects
 
         }
 
-        void ScrollCamera()
+        void ZoomCamera()
         {
             var fov = childCamera.fieldOfView;
             fov -= Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity;
             fov = Mathf.Clamp(fov, minFov, maxFov);
             childCamera.fieldOfView = fov;
+        }
+
+        void ResetZoom()
+        {
+            childCamera.fieldOfView = defaultFov;
         }
 
 
