@@ -220,6 +220,8 @@ namespace UnityTemplateProjects
 
         void LookAtObject()
         {
+            if (GeoData.ActiveData == null) return;
+
             if(GeoData.ActiveData.NorthernHemisphere)
                 transform.LookAt(targetObject, eclipticPoles.northPolePosition);
             else
