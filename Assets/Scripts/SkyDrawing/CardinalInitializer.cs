@@ -29,13 +29,13 @@ public class CardinalInitializer : MonoBehaviour
         switch (cardinal)
         {
             case Cardinal.North:
-                azimuth = 180; 
+                azimuth = 180 - 2.5f; // slightly to the left as to not clash with meridian
                 break;
             case Cardinal.East:
                 azimuth = 270;
                 break;
             case Cardinal.South:
-                azimuth = 0;
+                azimuth = -2.5f; // slightly to the left as to not clash with meridian
                 break;
             case Cardinal.West:
                 azimuth = 90;
