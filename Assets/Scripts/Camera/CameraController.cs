@@ -142,7 +142,7 @@ namespace UnityTemplateProjects
         {
             scrollInput = Input.mouseScrollDelta.y;
 
-            if(scrollInput != 0)
+            if(scrollInput != 0 && !DropdownFieldTracker.usingDropdown)
                 ZoomCamera();
 
             if (Input.GetMouseButtonDown(2))
