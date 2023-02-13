@@ -1,3 +1,5 @@
+using AstroResources;
+
 public class AverageSpeedGetter : PlanetDataGetter
 {
     protected override void GetPlanetInfo(int planetId, PlanetInfoBox box)

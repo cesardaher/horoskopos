@@ -9,7 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3997806215516912362}
+  - component: {fileID: 5305356475800733525}
   - component: {fileID: 3997806215516912361}
+  - component: {fileID: 2452715311559520763}
+  - component: {fileID: 3678381955487596533}
+  - component: {fileID: 4151635837620342425}
+  - component: {fileID: 4126023078382211624}
+  - component: {fileID: 778687308817208812}
   m_Layer: 0
   m_Name: RealPanet3D
   m_TagString: Untagged
@@ -26,69 +32,18 @@ Transform:
   m_GameObject: {fileID: 3997806215516912363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3997806215643787101}
+  m_LocalScale: {x: 450, y: 450, z: 450}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3997806215516912361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997806215516912363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cfbcd57bb0edd34c8fc4776cd38fa97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentPlanet: {fileID: 0}
-  spriteRenderer: {fileID: 0}
---- !u!1 &3997806215643787102
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3997806215643787101}
-  - component: {fileID: 3997806215643787099}
-  - component: {fileID: 3997806215643787100}
-  - component: {fileID: 3997806215643787098}
-  - component: {fileID: 3997806215643787097}
-  - component: {fileID: 3997806215643787096}
-  - component: {fileID: 3997806215643787095}
-  m_Layer: 0
-  m_Name: Texture
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3997806215643787101
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997806215643787102}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10000, y: 0, z: 0}
-  m_LocalScale: {x: 450, y: 450, z: 450}
-  m_Children: []
-  m_Father: {fileID: 3997806215516912362}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3997806215643787099
+--- !u!212 &5305356475800733525
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997806215643787102}
+  m_GameObject: {fileID: 3997806215516912363}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -133,27 +88,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3997806215643787100
+--- !u!114 &3997806215516912361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997806215643787102}
+  m_GameObject: {fileID: 3997806215516912363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfbcd57bb0edd34c8fc4776cd38fa97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentPlanet: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+--- !u!114 &2452715311559520763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997806215516912363}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba9b816d059ce3f4c91f5284c5a85f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  eclipticPoles: {fileID: 0}
---- !u!114 &3997806215643787098
+--- !u!135 &3678381955487596533
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997806215516912363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.65
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4151635837620342425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997806215643787102}
+  m_GameObject: {fileID: 3997806215516912363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1909e08c5cc877c4eab198224a557346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFlickering: 0
+  material: {fileID: 0}
+  flickerIncrement: 0.005
+--- !u!114 &4126023078382211624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997806215516912363}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1af594a2bb39aa4d9662bbcbf7ea6cc, type: 3}
@@ -161,26 +157,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoBox: {fileID: 0}
   planetData: {fileID: 0}
---- !u!135 &3997806215643787097
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997806215643787102}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.65
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3997806215643787096
+--- !u!114 &778687308817208812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997806215643787102}
+  m_GameObject: {fileID: 3997806215516912363}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
@@ -192,18 +175,3 @@ MonoBehaviour:
   glowIncrement: 0.6
   targetTextGlow: {fileID: 0}
   flickerStar: {fileID: 0}
---- !u!114 &3997806215643787095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997806215643787102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1909e08c5cc877c4eab198224a557346, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFlickering: 0
-  material: {fileID: 0}
-  flickerIncrement: 0.005

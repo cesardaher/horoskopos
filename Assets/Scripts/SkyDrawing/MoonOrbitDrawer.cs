@@ -2,8 +2,9 @@ using SwissEphNet;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using AstroResources;
 
-public class MoonOrbitDrawer : EllipseRenderer, IAzalt
+public class MoonOrbitDrawer : EllipseRenderer
 {
     // final date
     [SerializeField] int fday;
@@ -24,13 +25,18 @@ public class MoonOrbitDrawer : EllipseRenderer, IAzalt
         EventManager.Instance.OnRecalculationOfGeoData += CalculateMoonPositions;
         EventManager.Instance.OnPlanetSelect += ShowMoonOrbit;
         EventManager.Instance.OnPlanetBoxClose += HideMoonOrbit;
-        //EventManager.instance.OnAnimationStart += HideMoonOrbit;
 
         orbitMarkerToggler.OutsideStart();
 
         gameObject.SetActive(false);
     }
 
+    void OnDestroy()
+    {
+        EventManager.Instance.OnRecalculationOfGeoData -= CalculateMoonPositions;
+        EventManager.Instance.OnPlanetSelect -= ShowMoonOrbit;
+        EventManager.Instance.OnPlanetBoxClose -= HideMoonOrbit;
+    }
 
     void CalculateMoonPositions()
     {
@@ -60,20 +66,13 @@ public class MoonOrbitDrawer : EllipseRenderer, IAzalt
 
             SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, x2, xaz);
 
-            RotateAzimuth(xaz[0]);
-            RotateAltitude(xaz[1]);
-
-            cuspPoints.Add(pointer.position);
+            cuspPoints.Add(AstroFunctions.HorizontalToCartesian(xaz[0], xaz[1]));
         }
 
         DrawEllipse(cuspPoints);
 
-        // reset position completely
-        transform.eulerAngles = Vector3.zero;
-        transform.position = Vector3.zero;
-
         // set position of Moon marker to match real position
-        moonOnOrbit.transform.eulerAngles = PlanetData.PlanetDataList[1].realPlanet.planet.transform.eulerAngles;
+        moonOnOrbit.transform.position = PlanetData.PlanetDataList[1].realPlanet.planet.transform.position;
 
     }
 
@@ -139,32 +138,4 @@ public class MoonOrbitDrawer : EllipseRenderer, IAzalt
         return dret[1];
     }
 
-    public void RotateAzimuth(double rotation)
-    {
-        var rotationVector = transform.localRotation.eulerAngles;
-
-        rotationVector.y = (float)rotation + 180;
-        if (GeoData.ActiveData._northernHemisphere)
-        {
-            //rotationVector.y -= 180;
-            //Debug.Log("northern");
-        }
-
-        transform.localRotation = Quaternion.Euler(rotationVector);
-    }
-
-    //rotates on the Z axis
-    public void RotateAltitude(double rotation)
-    {
-        var rotationVector = transform.localRotation.eulerAngles;
-        rotationVector.z = (float)rotation;
-        transform.localRotation = Quaternion.Euler(rotationVector);
-    }
-
-    void OnDestroy()
-    {
-        EventManager.Instance.OnRecalculationOfGeoData -= CalculateMoonPositions;
-        EventManager.Instance.OnPlanetSelect -= ShowMoonOrbit;
-        EventManager.Instance.OnPlanetBoxClose -= HideMoonOrbit;
-    }
 }

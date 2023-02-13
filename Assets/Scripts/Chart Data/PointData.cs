@@ -155,7 +155,6 @@ public class SpacePoint
         set
         {
             azimuth = value;
-            planet.RotateAzimuth(azimuth);
         }
     }
 
@@ -165,7 +164,6 @@ public class SpacePoint
         set
         {
             trAlt = value;
-            //planet.RotateAltitude(trAlt);
         }
     }
 
@@ -175,10 +173,6 @@ public class SpacePoint
         set
         {
             appAlt = value;
-
-            if (planet.gameObject.activeSelf)
-                planet.RotateAltitude(appAlt);
-
         }
     }
 

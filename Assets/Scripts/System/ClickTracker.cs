@@ -6,16 +6,6 @@ public class ClickTracker : MonoBehaviour
     [SerializeField] Canvas myCanvas;
     Image image;
     bool clicked = false;
-    /*
-    private void OnMouseDown()
-    {
-        clicked = true;
-    }
-
-    private void OnMouseUp()
-    {
-        clicked = false;
-    }*/
 
     private void Start()
     {
@@ -29,7 +19,6 @@ public class ClickTracker : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
- 
             image.enabled = true;
         }
 

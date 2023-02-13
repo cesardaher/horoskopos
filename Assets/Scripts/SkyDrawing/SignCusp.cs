@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using AstroResources;
 
 public class SignCusp : Point3D
 {
@@ -29,6 +30,7 @@ public class SignCusp : Point3D
         {
             appAlt = value;
             RotateAltitude(appAlt);
+            transform.GetChild(0).position = AstroFunctions.HorizontalToCartesian(azimuth, appAlt);
 
         }
     }
