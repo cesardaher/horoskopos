@@ -15,7 +15,6 @@ public class DropdownFieldTracker : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(usingDropdown);
 
         foreach (var dropdownField in _dropdownField)
         {
