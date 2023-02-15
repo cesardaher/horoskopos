@@ -73,8 +73,13 @@ public class HousesDrawer : MonoBehaviour
             {
                 if (areCampanusHousesCalculated) break;
                     cusp.ExtendCuspCampanus();
-                
             }
+             
+            else if(hSys == 'R')
+            {
+                cusp.ExtendCuspRegiomontanus();
+                
+            }                
             else cusp.ExtendHouseCusp(GeoData.ActiveData.HouseCusps[i]);
         }
     }

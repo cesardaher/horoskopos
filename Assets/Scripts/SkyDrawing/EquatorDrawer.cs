@@ -7,6 +7,7 @@ using AstroResources;
 public class EquatorDrawer : EllipseRenderer, IAzalt
 {
     [SerializeField] List<Vector3> equatorPositions = new List<Vector3>();
+    [SerializeField] List<Vector3> equatorPositionsAzAlt = new List<Vector3>();
 
     double[] x2 = new double[6];
     double[] xaz = new double[6];
@@ -41,6 +42,7 @@ public class EquatorDrawer : EllipseRenderer, IAzalt
     void FindEquatorPoints()
     {
         // make sure there's no overflowing positions
+        equatorPositionsAzAlt.Clear();
         equatorPositions.Clear();
 
         float arcStep = 360 / vertexCount;
@@ -56,6 +58,7 @@ public class EquatorDrawer : EllipseRenderer, IAzalt
             double azimuth = xaz[0];
             double appAlt = xaz[2];
 
+            equatorPositionsAzAlt.Add(new Vector3((float)xaz[0], (float)xaz[2]));
             // register value
             equatorPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
 
