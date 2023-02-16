@@ -69,12 +69,12 @@ public class CuspExtender : EllipseRenderer, IAzalt
         cuspPoints.Clear();
         float arcStep = 360 / vertexCount;
 
-        //GetEquatorSliceSize();
+        double altitude = NorthSouthAzimuth();
 
         for (int i = 0; i <= vertexCount; i++) // IMPORTANT: <= instead of <
         {
             double azimuth = i * arcStep;
-            double altitude = GetEquatorAltitude(houseId);
+
             // rotate
             RotateAzimuth(azimuth);
             RotateX((float)altitude);
@@ -82,7 +82,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
             cuspPoints.Add(pointer.position);
 
             // reverse rotation to prepare for next iteration
-            RotateX(-(float)altitude);
+            RotateX((float)-altitude);
             RotateAzimuth(-azimuth);
 
         }
@@ -90,80 +90,37 @@ public class CuspExtender : EllipseRenderer, IAzalt
         lineRenderer.material = houseMat;
         DrawEllipse(cuspPoints);
 
-        double GetAltitude()
+        double NorthSouthAzimuth()
         {
-            double[] eclipticPos = new double[6];
-            eclipticPos[0] = HouseData.instance.houseDataList[houseId].Longitude;
+            double[] cuspPos = new double[6];
+            cuspPos[0] = HouseData.instance.houseDataList[houseId].Longitude;
+            double[] cuspPosHor = new double[6];
 
-            double[] azaltPos = new double[6];
+            // HORIZONTAL COORDINATE FROM ECLIPTIC CUSP
+            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, cuspPos, cuspPosHor);
 
-            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, eclipticPos, azaltPos);
+            // CUSP TO CARTESIAN 
+            Vector3 cartesianCusp = AstroFunctions.HorizontalToCartesian(cuspPosHor[0], cuspPosHor[1]);
 
-            return -azaltPos[1];
-        }
+            // CARTESIAN TO NORTHSOUTH
+            double x, y, z;
+            double r, theta, phi;
 
-        /*
-        double GetEquatorSliceSize()
-        {
-            double size = 0;
+            x = cartesianCusp.x;
+            y = cartesianCusp.y;
+            z = cartesianCusp.z;
 
-            double[] ascPos = new double[6];
-            ascPos[0] = HouseData.instance.houseDataList[10].Longitude;
-            double[] mcPos = new double[6];
-            mcPos[0] = HouseData.instance.houseDataList[7].Longitude;
+            r = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2) + Math.Pow(z, 2));
+            //theta = Math.Atan2(x, z);
+            theta = Math.Atan(y / z);
+            phi = Math.Atan(Math.Sqrt(Math.Pow(y,2) + Math.Pow(z,2))/ x);
 
-            double[] ascEquator = new double[6];
-            double[] mcEquator = new double[6];
+            Debug.Log("house iD: " + houseId);
+            Debug.Log("r: " + r);
+            Debug.Log("theta: " + theta * Mathf.Rad2Deg);
+            Debug.Log("phi: " + phi * Mathf.Rad2Deg);
 
-            SwissEphemerisManager.swe.swe_cotrans(ascPos, ascEquator, -23.437404);
-            SwissEphemerisManager.swe.swe_cotrans(mcPos, mcEquator, -23.437404);
-
-            Debug.Log("asc: " + ascPos[0] + " mc: " + mcPos[0]);
-            Debug.Log("ascEq: " + ascEquator[0] + " mcEq: " + mcEquator[0]);
-            size = ascEquator[0] - mcEquator[0];
-
-            Debug.Log("diff: " + size);
-
-            size /= 3;
-
-            Debug.Log("final: " + size);
-
-            return size;
-        }*/
-
-        double GetEquatorSliceSize()
-        {
-            double[] eastPosHor = new double[6];
-            double[] westPosHor = new double[6];
-            westPosHor[0] = 180;
-
-            double[] eastPos = new double[6];
-            double[] westPos = new double[6];
-
-            SwissEphemerisManager.swe.swe_azalt_rev(GeoData.ActiveData.Tjd_ut, SwissEph.SE_HOR2EQU, GeoData.ActiveData.Geopos, eastPosHor, eastPos);
-            SwissEphemerisManager.swe.swe_azalt_rev(GeoData.ActiveData.Tjd_ut, SwissEph.SE_HOR2EQU, GeoData.ActiveData.Geopos, westPosHor, westPos);
-
-            Debug.Log("east: " + eastPos[0]);
-            Debug.Log("west: " + westPos[0]);
-
-            double size = eastPos[0] - westPos[0];
-
-            Debug.Log("size: " + size);
-            return size;
-        }
-
-        double GetEquatorAltitude(int i)
-        {
-            double[] eastPosHor = new double[6];
-            double[] eastPosEqu = new double[6];
-            SwissEphemerisManager.swe.swe_azalt_rev(GeoData.ActiveData.Tjd_ut, SwissEph.SE_HOR2EQU, GeoData.ActiveData.Geopos, eastPosHor, eastPosEqu);
-
-            double[] posEcl = eastPosEqu;
-            posEcl[0] += i * 30;
-            double[] posEclFinal = new double[6];
-            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_EQU2HOR, GeoData.ActiveData.Geopos, 0, 0, posEcl, posEclFinal);
-
-            return posEclFinal[0];
+            return theta * Mathf.Rad2Deg;
         }
     }
 
