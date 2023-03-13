@@ -1326,6 +1326,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33222453}
   m_CullTransparentMesh: 1
+--- !u!114 &40626189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 1102718378}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &41696165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,7 +2949,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1953071622}
     - target: {fileID: 703026735767471468, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetTransform
       value: 
@@ -3358,7 +3369,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 292896864}
     - target: {fileID: 703026735767471468, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetTransform
       value: 
@@ -3951,6 +3962,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e032839aab5496048b86613c96de0905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &152074848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 1439319414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &159164597
@@ -4892,7 +4914,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 40626189}
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: glowIncrement
       value: 0.5
@@ -5522,7 +5544,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 388543024}
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: glowIncrement
       value: 0.5
@@ -5671,7 +5693,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 401933098}
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: glowIncrement
       value: 0.5
@@ -5850,7 +5872,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1232163163}
     - target: {fileID: 703026735767471468, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetTransform
       value: 
@@ -6034,6 +6056,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4821714108841715968, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
   m_PrefabInstance: {fileID: 1787430481}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &248324257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 82108924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &248788739
 GameObject:
   m_ObjectHideFlags: 0
@@ -6772,6 +6805,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfbcd57bb0edd34c8fc4776cd38fa97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &292896864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 1246534040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &302170588
 GameObject:
   m_ObjectHideFlags: 0
@@ -7432,6 +7476,28 @@ MonoBehaviour:
   moonPhaseData: {fileID: 11400000, guid: 38948aecfaf271849a30a1db4336b7ec, type: 2}
   material: {fileID: 0}
   spriteRenderer: {fileID: 0}
+--- !u!114 &321741785 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 1787430481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &331404028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 673889533692322867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &333053864
 GameObject:
   m_ObjectHideFlags: 0
@@ -8697,6 +8763,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379892909}
   m_CullTransparentMesh: 1
+--- !u!114 &388543024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 564290274}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &390638199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8957,6 +9034,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bafd3e1dc0d0a6b4ba6452dacc4458d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &401933098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 1024385385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &403219139
@@ -15831,6 +15919,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718494584}
   m_CullTransparentMesh: 1
+--- !u!114 &731266655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 497396870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &731787297
 GameObject:
   m_ObjectHideFlags: 0
@@ -24627,7 +24726,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 731266655}
     - target: {fileID: 703026735767471468, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetTransform
       value: 
@@ -25951,6 +26050,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horoscopeBox: {fileID: 1729813455}
   button: {fileID: 1110401187}
+--- !u!114 &1112143315 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 952185246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1118385858 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8057090887932708408, guid: c3208ad91ab407844913a31998e1d834, type: 3}
@@ -28445,6 +28555,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa8abf9465eae941ab84d7cea86e523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1232163163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 2128361463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1234035940
 GameObject:
   m_ObjectHideFlags: 0
@@ -30483,7 +30604,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 321741785}
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: glowIncrement
       value: 0.5
@@ -34958,7 +35079,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 152074848}
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: glowIncrement
       value: 0.5
@@ -43936,7 +44057,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 248324257}
     - target: {fileID: 703026735767471468, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetTransform
       value: 
@@ -44256,6 +44377,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945443451}
   m_CullTransparentMesh: 1
+--- !u!114 &1953071622 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940276559860842696, guid: 007af3b5f11cba744a35996cab24ee0a, type: 3}
+  m_PrefabInstance: {fileID: 1537474512}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064ce20378ca14ca0b33f72ec40b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1956554130
 GameObject:
   m_ObjectHideFlags: 0
@@ -44922,7 +45054,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1112143315}
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: glowIncrement
       value: 0.5
@@ -49380,7 +49512,7 @@ PrefabInstance:
     - target: {fileID: 472225459898487983, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 331404028}
     - target: {fileID: 703026735767471468, guid: c3208ad91ab407844913a31998e1d834, type: 3}
       propertyPath: planetTransform
       value: 
