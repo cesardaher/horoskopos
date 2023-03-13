@@ -110,15 +110,11 @@ public class CuspExtender : EllipseRenderer, IAzalt
             y = cartesianCusp.y;
             z = cartesianCusp.z;
 
-            r = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2) + Math.Pow(z, 2));
+            
             //theta = Math.Atan2(x, z);
-            theta = Math.Atan(y / z);
-            phi = Math.Atan(Math.Sqrt(Math.Pow(y,2) + Math.Pow(z,2))/ x);
-
-            Debug.Log("house iD: " + houseId);
-            Debug.Log("r: " + r);
-            Debug.Log("theta: " + theta * Mathf.Rad2Deg);
-            Debug.Log("phi: " + phi * Mathf.Rad2Deg);
+            theta = Math.Atan2(y , z);
+            //phi = Math.Atan(Math.Sqrt(Math.Pow(y,2) + Math.Pow(z,2))/ x);
+            //r = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2) + Math.Pow(z, 2));
 
             return theta * Mathf.Rad2Deg;
         }
