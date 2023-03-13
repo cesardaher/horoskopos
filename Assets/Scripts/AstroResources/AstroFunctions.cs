@@ -153,5 +153,23 @@ namespace AstroResources
 
             return new Vector3((float)x, (float)y, (float)z);
         }
+
+        // Converts cartesian coordinates to Spherical
+        // Cardinal North/South: POLES
+        // Cardinal East/West plane: EQUATOR
+        public static double[] CartesianToHorizonSpherical(double x, double y, double z)
+        {
+            double[] coordinates = new double[3];
+
+            double r = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2) + Math.Pow(z, 2));
+            double azimuth = Math.Atan2(y, z);
+            double altitude = Math.Atan(Math.Sqrt(Math.Pow(y,2) + Math.Pow(z,2))/ x);
+
+            coordinates[0] = r;
+            coordinates[1] = azimuth;
+            coordinates[2] = altitude;
+
+            return coordinates;
+        }
     }
 }

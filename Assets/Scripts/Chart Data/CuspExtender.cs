@@ -102,21 +102,10 @@ public class CuspExtender : EllipseRenderer, IAzalt
             // CUSP TO CARTESIAN 
             Vector3 cartesianCusp = AstroFunctions.HorizontalToCartesian(cuspPosHor[0], cuspPosHor[1]);
 
-            // CARTESIAN TO NORTHSOUTH
-            double x, y, z;
-            double r, theta, phi;
+            double[] horizontalSphCoordinates = AstroFunctions.CartesianToHorizonSpherical(cartesianCusp.x, cartesianCusp.y, cartesianCusp.z);
 
-            x = cartesianCusp.x;
-            y = cartesianCusp.y;
-            z = cartesianCusp.z;
-
-            
-            //theta = Math.Atan2(x, z);
-            theta = Math.Atan2(y , z);
-            //phi = Math.Atan(Math.Sqrt(Math.Pow(y,2) + Math.Pow(z,2))/ x);
-            //r = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2) + Math.Pow(z, 2));
-
-            return theta * Mathf.Rad2Deg;
+            // take azimuth
+            return horizontalSphCoordinates[1] * Mathf.Rad2Deg;
         }
     }
 

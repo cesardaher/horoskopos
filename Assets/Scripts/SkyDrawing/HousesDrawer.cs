@@ -140,6 +140,21 @@ public class HousesDrawer : MonoBehaviour
             houseMarker.RotateWorldX(xRotation);
         }
 
+        void RotateRegiomontanus(Point3D houseMarker, int i)
+        {
+
+            double[] cuspPos = new double[6];
+            cuspPos[0] = HouseData.instance.houseDataList[i].midLongitude;
+            double[] cuspPosHor = new double[6];
+
+            // HORIZONTAL COORDINATE FROM ECLIPTIC CUSP
+            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, cuspPos, cuspPosHor);
+
+            // CUSP TO CARTESIAN 
+            Vector3 cartesianCusp = AstroFunctions.HorizontalToCartesian(cuspPosHor[0], cuspPosHor[1]);
+
+        }
+
         void CalculateHouseAzAlt(Point3D houseMarker, int i)
         {
 
