@@ -66,10 +66,10 @@ Material:
     - Vector1_e2fea0e22be344a383951df1b3e82f03: 1
     - Vector1_e67a418e9d63484ea9702fc39e874478: 90
     - _LineThickness: 0.002
-    - _SunsetIntensity: 0
+    - _SunsetIntensity: 0.08
     - _UseAtmosphere: 1
     - _UseConstellations: 0
-    - _UseGround: 0
+    - _UseGround: 1
     m_Colors:
     - Color_0197f7de88654ee8b34249a3a7d8f895: {r: 0.9024564, g: 0.9250059, b: 0.9433962, a: 0}
     - Color_2: {r: 0.07247217, g: 0.06087575, b: 0.09433961, a: 0}
@@ -81,8 +81,8 @@ Material:
     - Color_ca613e7633cf4c3b95719c7630770a95: {r: 0.78431374, g: 0.7058824, b: 0.23529412, a: 0}
     - Vector2_0b65553d60624b139dec448bc178e727: {r: 0, g: 1, b: 0, a: 0}
     - Vector2_e2851918c56a42e886f043f816a05d48: {r: 2, g: 1, b: 0, a: 0}
-    - _DayHorizonColor: {r: 0.02, g: 0.02, b: 0.02, a: 0}
-    - _DayZenithColor: {r: 0.02, g: 0.02, b: 0.02, a: 0}
-    - _NightHorizonColor: {r: 0.02, g: 0.02, b: 0.02, a: 0}
-    - _NightZenithColor: {r: 0.02, g: 0.02, b: 0.02, a: 0}
+    - _DayHorizonColor: {r: 0.3131897, g: 0.4597988, b: 0.8018868, a: 0}
+    - _DayZenithColor: {r: 0.02745098, g: 0.1764706, b: 0.7450981, a: 0}
+    - _NightHorizonColor: {r: 0.021568628, g: 0.019607844, b: 0.033333335, a: 0}
+    - _NightZenithColor: {r: 0.012745098, g: 0.0019607844, b: 0.012745098, a: 0}
   m_BuildTextureStacks: []
