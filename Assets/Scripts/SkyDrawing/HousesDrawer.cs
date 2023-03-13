@@ -15,6 +15,7 @@ public class HousesDrawer : MonoBehaviour
     [SerializeField] List<Point3D> houseNumbers = new List<Point3D>();
 
     bool areCampanusHousesCalculated;
+    bool areRegiomontanusHousesCalculated;
     char hSys;
     float houseMarkerRange = 80;
     float campanusHouseMarkerRange = 10;
@@ -39,7 +40,7 @@ public class HousesDrawer : MonoBehaviour
         DrawMidHouses(hSys);
 
         areCampanusHousesCalculated = hSys == 'C' ? true : false;
-
+        areCampanusHousesCalculated = hSys == 'R' ? true : false;
     }
 
     // for when changing house system
@@ -49,6 +50,7 @@ public class HousesDrawer : MonoBehaviour
         DrawMidHouses(hSys);
 
         areCampanusHousesCalculated = hSys == 'C' ? true : false;
+        areCampanusHousesCalculated = hSys == 'R' ? true : false;
     }
 
     void DrawHouseCusps(char hSys)
@@ -74,10 +76,10 @@ public class HousesDrawer : MonoBehaviour
                 if (areCampanusHousesCalculated) break;
                     cusp.ExtendCuspCampanus();
             }
-             
             else if(hSys == 'R')
             {
-                cusp.ExtendCuspRegiomontanus();
+                if (areRegiomontanusHousesCalculated) break;
+                    cusp.ExtendCuspRegiomontanus();
                 
             }                
             else cusp.ExtendHouseCusp(GeoData.ActiveData.HouseCusps[i]);
@@ -110,6 +112,12 @@ public class HousesDrawer : MonoBehaviour
                 AssignTextField(houseMarker, i);
                 RotateCampanus(houseMarker, i);
             }
+            else if (hSys == 'R')
+            {
+                if (areRegiomontanusHousesCalculated) break;
+                AssignTextField(houseMarker, i);
+                RotateRegiomontanus(houseMarker, i);
+            }
             else
             {
                 CalculateHouseAzAlt(houseMarker, i);
@@ -120,39 +128,73 @@ public class HousesDrawer : MonoBehaviour
 
         void RotateCampanus(Point3D houseMarker, int i)
         {
-            int signRange = 30;
-            int midSignRange = signRange/2;
-            int signIncrement = -(signRange * (i));
+            // define default values
+            int defaultRange = 30; // default distance between markers
+            int midRange = defaultRange/2; // midpoint between signs
+            int increment = -(defaultRange * (i));
 
-            // place at correct distance from pole
+            // azimuth rotation is the distance from north direction
             float azimuth = campanusHouseMarkerRange;
-            float xRotation = -midSignRange - signIncrement;
-            
+            // xRotation is the rotation relative to a north/south axis 
+            float xRotation = -midRange - increment;
+
+            // project opposite rotations for the secondary marker
             if (i > 12)
             {
                 azimuth += 180;
                 xRotation += 180;
             }
 
+            // reset markers
             houseMarker.transform.localEulerAngles = Vector3.zero;
             houseMarker.transform.GetChild(0).position = new Vector3(10000,0,0);
+
+            // rotate for final position
             houseMarker.RotateAzimuth(azimuth);
             houseMarker.RotateWorldX(xRotation);
         }
 
         void RotateRegiomontanus(Point3D houseMarker, int i)
         {
+            // normalize to 1 - 12 indexes
+            int index = i > 12 ? i - 12 : i;
 
+            // setup calculation variables
             double[] cuspPos = new double[6];
-            cuspPos[0] = HouseData.instance.houseDataList[i].midLongitude;
             double[] cuspPosHor = new double[6];
+            cuspPos[0] = HouseData.instance.houseDataList[index].midLongitude;
 
-            // HORIZONTAL COORDINATE FROM ECLIPTIC CUSP
+            // get horizontal coordinates of the cusp
             SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, cuspPos, cuspPosHor);
 
-            // CUSP TO CARTESIAN 
+            // convert horizontal coordinates to cartesian
             Vector3 cartesianCusp = AstroFunctions.HorizontalToCartesian(cuspPosHor[0], cuspPosHor[1]);
 
+            // convert coordinates to a secondary spherical coordinate
+            double[] horizontalSphCoordinates = AstroFunctions.CartesianToHorizonSpherical(cartesianCusp.x, cartesianCusp.y, cartesianCusp.z);
+            
+            // setup final rotation values
+            float azimuth, xRotation;
+
+            // azimuth rotation is the distance from north direction
+            azimuth = campanusHouseMarkerRange;
+            // xRotation is the rotation relative to a north/south axis 
+            xRotation = -(float)horizontalSphCoordinates[1] * Mathf.Rad2Deg;
+
+            // project opposite rotations for the secondary marker
+            if (i > 12)
+            {
+                azimuth += 180;
+                xRotation += 180;
+            }
+
+            // reset markers
+            houseMarker.transform.localEulerAngles = Vector3.zero;
+            houseMarker.transform.GetChild(0).position = new Vector3(10000, 0, 0);
+
+            // rotate for final position
+            houseMarker.RotateAzimuth(azimuth);
+            houseMarker.RotateWorldX(xRotation);
         }
 
         void CalculateHouseAzAlt(Point3D houseMarker, int i)
