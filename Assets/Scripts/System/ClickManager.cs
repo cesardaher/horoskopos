@@ -39,9 +39,12 @@ public class ClickManager : MonoBehaviour
         // activate interaction with objects when clicking, not holding
         if (Input.GetMouseButtonUp(0))
         {
+            // prevent clicking when cursor is over UI object
+            if (EventSystem.current.IsPointerOverGameObject()) return;
+
             if (time < 0.25)
             {
-                // check if cursor is over object
+                // check if cursor is over sky object
                 Vector3 pos = Input.mousePosition;
                 Ray ray = Camera.main.ScreenPointToRay(pos);
 
