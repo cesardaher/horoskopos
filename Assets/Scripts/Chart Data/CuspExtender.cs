@@ -1,43 +1,97 @@
-﻿using System;
+﻿using AstroResources;
 using SwissEphNet;
 using System.Collections.Generic;
 using UnityEngine;
-using AstroResources;
 
 public class CuspExtender : EllipseRenderer, IAzalt
 {
+
+    /* This class defines an object that defines points in 3D to draw house cusps using a line renderer.
+     * Normally, this is used within a prefab instantiated by HouseDrawer.
+     */
+
+    // id/name of house
     public int houseId;
-    public static GameObject southPole;
-    public static GameObject northPole;
-    public static GameObject mainPole;
-    public static GameObject oppositePole;
 
+    // material for line renderer
     [SerializeField] Material houseMat;
-
+    
+    // cartesian points given to line renderer
     List<Vector3> cuspPoints = new List<Vector3>();
+
+    // number of vertices used
     [Range(12, 72)]
     [SerializeField] int vertexCount;
 
+    // variables for positional calculations
     double[] x2 = new double[6];
     double[] xaz = new double[6];
 
-    int staticVertexCount = 72;
-    int animVertexCount = 36;
+    // number of points to be used in calculations
+    // half the number is used during animations to reduce strain
+    const int staticVertexCount = 72;
+    const int animVertexCount = 36;
 
     void Start()
     {
+        // assign events to EventManager
         EventManager.Instance.OnAnimationStart += AnimationVertexCount;
         EventManager.Instance.OnAnimationEnd += StaticVertexCount;
 
+        // setup high vertex count from start
         StaticVertexCount();
+
+        // assign appropriate material
+        lineRenderer.material = houseMat;
     }
 
     void OnDestroy()
     {
+        // remove events to EventManager
         EventManager.Instance.OnAnimationStart -= AnimationVertexCount;
         EventManager.Instance.OnAnimationEnd -= StaticVertexCount;
     }
 
+    // Extends House cusp lines (default)
+    // projects the cusp onto the ecliptic sphere
+    // uses longitude as azimuth and altitude from 0 to 360
+    public void ExtendHouseCusp(double longitude)
+    {
+        // clears existing points to avoid overflow
+        cuspPoints.Clear();
+
+        // define the distance between each point of the circle
+        // given the amount of points
+        float arcStep = 360 / vertexCount;
+
+        // iterates through all the vertices
+        // uses <= instead of <, so that the circle is completed
+        for (int i = 0; i <= vertexCount; i++) // IMPORTANT: <= instead of <
+        {
+            // longitude is gotten from cusps
+            // latitude goes from 0 to 360
+            x2[0] = longitude; 
+            x2[1] = i * arcStep;
+
+            // overflowing values go back to the first point
+            if (x2[0] > 360) x2[0] = 0; 
+
+            // calculates horizontal coordinates for each point
+            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, x2, xaz);
+
+            // xaz[0] = azimuth
+            // xaz[1] = true altitude
+            // calculate cartesian position and add to vertices
+            cuspPoints.Add(AstroFunctions.HorizontalToCartesian(xaz[0], xaz[1]));
+        }
+
+        // draws ellipse (from EllipseRenderer class)
+        DrawEllipse(cuspPoints);
+    }
+
+    // Extends House cusp lines (Campanus)
+    // projects the cusp on a sphere with poles on the North/South cardinal directions
+    // the cusps divide this sphere equally (30 degree distance), based on the horizon
     public void ExtendCuspCampanus()
     {
         cuspPoints.Clear();
@@ -60,7 +114,6 @@ public class CuspExtender : EllipseRenderer, IAzalt
 
         }
 
-        lineRenderer.material = houseMat;
         DrawEllipse(cuspPoints);
     }
 
@@ -87,7 +140,6 @@ public class CuspExtender : EllipseRenderer, IAzalt
 
         }
 
-        lineRenderer.material = houseMat;
         DrawEllipse(cuspPoints);
 
         double NorthSouthAzimuth()
@@ -109,32 +161,6 @@ public class CuspExtender : EllipseRenderer, IAzalt
         }
     }
 
-
-    public void ExtendHouseCusp(double longitude)
-    {
-        cuspPoints.Clear();
-
-        float arcStep = 360 / vertexCount;
-
-        for (int i = 0; i <= vertexCount; i++) // IMPORTANT: <= instead of <
-        {
-            x2[0] = longitude; //longitude is gotten from cusps
-            x2[1] = i * arcStep; //latitude
-
-            if (x2[0] > 360) x2[0] = 0; // overflowing values go back to the first point
-
-            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, x2, xaz);
-
-            double azimuth = xaz[0];
-            double trAlt = xaz[1];
-
-            // register value
-            cuspPoints.Add(AstroFunctions.HorizontalToCartesian(azimuth, trAlt));
-        }
-
-        lineRenderer.material = houseMat;
-        DrawEllipse(cuspPoints);
-    }
 
     void AnimationVertexCount()
     {
