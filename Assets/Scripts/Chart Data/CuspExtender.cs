@@ -52,6 +52,11 @@ public class CuspExtender : EllipseRenderer, IAzalt
         EventManager.Instance.OnAnimationEnd -= StaticVertexCount;
     }
 
+    // These functions are used to define the amount of vertices used in the cusp
+    void AnimationVertexCount() => vertexCount = animVertexCount;
+
+    void StaticVertexCount() => vertexCount = staticVertexCount;
+
     // Extends House cusp lines (default)
     // projects the cusp onto the ecliptic sphere
     // uses longitude as azimuth and altitude from 0 to 360
@@ -65,8 +70,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
         float arcStep = 360 / vertexCount;
 
         // iterates through all the vertices
-        // uses <= instead of <, so that the circle is completed
-        for (int i = 0; i <= vertexCount; i++) // IMPORTANT: <= instead of <
+        for (int i = 0; i < vertexCount; i++)
         {
             // longitude is gotten from cusps
             // latitude goes from 0 to 360
@@ -83,6 +87,9 @@ public class CuspExtender : EllipseRenderer, IAzalt
             // xaz[1] = true altitude
             // calculate cartesian position and add to vertices
             cuspPoints.Add(AstroFunctions.HorizontalToCartesian(xaz[0], xaz[1]));
+            
+            // add first point at the end to close circle
+            if(i == vertexCount - 1) cuspPoints.Add(cuspPoints[0]);
         }
 
         // draws ellipse (from EllipseRenderer class)
@@ -94,86 +101,102 @@ public class CuspExtender : EllipseRenderer, IAzalt
     // the cusps divide this sphere equally (30 degree distance), based on the horizon
     public void ExtendCuspCampanus()
     {
+        // clears existing points to avoid overflow
         cuspPoints.Clear();
+        // define the distance between each point of the circle
+        // given the amount of points
         float arcStep = 360 / vertexCount;
 
-        
-        for (int i = 0; i <= vertexCount; i++) // IMPORTANT: <= instead of <
+        // iterates through all the vertices
+        // uses <= instead of <, so that the circle is completed
+        for (int i = 0; i < vertexCount; i++)
         {
+            // in this loop, the rotation on X axis remains constant,
+            // while the azimuth is being increased by each step
             double azimuth = i * arcStep;
 
-            // rotate
+            // rotate point
             RotateAzimuth(azimuth);
             RotateX(30 * houseId);
 
+            // add position to list
             cuspPoints.Add(pointer.position);
 
             // reverse rotation to prepare for next iteration
             RotateX(-30 * houseId);
             RotateAzimuth(-azimuth);
 
+            // add first point at the end to close circle
+            if (i == vertexCount - 1) cuspPoints.Add(cuspPoints[0]);
         }
 
         DrawEllipse(cuspPoints);
     }
 
+    // Extends House cusp lines (Regiomontanus)
+    // projects the cusp on a sphere with poles on the North/South cardinal directions
+    // the cusps divide this sphere equally (30 degree distance), based on the horizon
     public void ExtendCuspRegiomontanus()
     {
+        // clears existing points to avoid overflow
         cuspPoints.Clear();
+        // define the distance between each point of the circle
+        // given the amount of points
         float arcStep = 360 / vertexCount;
 
+        // from the horizontal position of the house cusp,
+        // we find the azimuth of a secondary sphere coordinate
+        // this is used as the X axis rotation, constant for each cusp
         double altitude = NorthSouthAzimuth();
 
-        for (int i = 0; i <= vertexCount; i++) // IMPORTANT: <= instead of <
+        for (int i = 0; i < vertexCount; i++) // IMPORTANT: <= instead of <
         {
+            // in this loop, the rotation on X axis remains constant,
+            // while the azimuth is being increased by each step
             double azimuth = i * arcStep;
 
-            // rotate
+            // rotate point
             RotateAzimuth(azimuth);
             RotateX((float)altitude);
 
+            // add position to list
             cuspPoints.Add(pointer.position);
 
             // reverse rotation to prepare for next iteration
             RotateX((float)-altitude);
             RotateAzimuth(-azimuth);
 
+            // add first point at the end to close circle
+            if (i == vertexCount - 1) cuspPoints.Add(cuspPoints[0]);
+
         }
 
         DrawEllipse(cuspPoints);
 
+        // This function finds the appropriate X axis rotation of the cusp,
+        // from the azimuth of a sphere with poles in North/South horizontal points
         double NorthSouthAzimuth()
         {
+            // setup calculation variables
             double[] cuspPos = new double[6];
             cuspPos[0] = HouseData.instance.houseDataList[houseId].Longitude;
             double[] cuspPosHor = new double[6];
 
-            // HORIZONTAL COORDINATE FROM ECLIPTIC CUSP
+            // get horizontal coordinates of the cusp
             SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, cuspPos, cuspPosHor);
 
-            // CUSP TO CARTESIAN 
+            // convert horizontal coordinates to cartesian
             Vector3 cartesianCusp = AstroFunctions.HorizontalToCartesian(cuspPosHor[0], cuspPosHor[1]);
 
+            // convert coordinates to a secondary spherical coordinate (north/south directional poles)
             double[] horizontalSphCoordinates = AstroFunctions.CartesianToHorizonSpherical(cartesianCusp.x, cartesianCusp.y, cartesianCusp.z);
 
-            // take azimuth
-            return horizontalSphCoordinates[1] * Mathf.Rad2Deg;
+            // return azimuth
+            return horizontalSphCoordinates[1];
         }
     }
 
-
-    void AnimationVertexCount()
-    {
-        vertexCount = animVertexCount;
-    }
-
-    void StaticVertexCount()
-    {
-        vertexCount = staticVertexCount;
-    }
-
-    // rotate on the Y axis
-    // this represents a rotation on
+    // Rotates on the Y axis
     public void RotateAzimuth(double rotation)
     {
         var rotationVector = transform.localRotation.eulerAngles;
@@ -183,7 +206,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
         transform.localRotation = Quaternion.Euler(rotationVector);
     }
 
-    //rotates on the Z axis
+    // Rotates on the Z axis
     public void RotateAltitude(double rotation)
     {
         var rotationVector = transform.localRotation.eulerAngles;
@@ -191,7 +214,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
         transform.localRotation = Quaternion.Euler(rotationVector);
     }
 
-    // rotate on the WORLD'S X axis
+    // Rotates on the WORLD'S X axis
     public void RotateX(float rotation)
     {
         //add new rotation

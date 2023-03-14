@@ -228,7 +228,7 @@ public class HousesDrawer : MonoBehaviour
             // azimuth rotation is the distance from north direction
             azimuth = campanusHouseMarkerRange;
             // xRotation is the rotation relative to a north/south axis 
-            xRotation = -(float)horizontalSphCoordinates[1] * Mathf.Rad2Deg;
+            xRotation = -(float)horizontalSphCoordinates[1];
 
             // project opposite rotations for the secondary marker
             if (i > 12)
