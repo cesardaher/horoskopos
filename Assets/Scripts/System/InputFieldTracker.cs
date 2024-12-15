@@ -11,7 +11,7 @@ public class InputFieldTracker : MonoBehaviour
 
     private void Start()
     {
-        usingInput = false;   
+        usingInput = false;
     }
 
     private void Update()
