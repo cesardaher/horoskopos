@@ -17341,6 +17341,7 @@ MonoBehaviour:
   eclipticPoles: {fileID: 1913666156}
   eclipticDrawer: {fileID: 1871809037}
   childCamera: {fileID: 1935810132}
+  dataPanelOpener: {fileID: 1845965476}
   targetObject: {fileID: 0}
 --- !u!114 &787799956
 MonoBehaviour:
