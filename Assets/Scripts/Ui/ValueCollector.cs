@@ -64,9 +64,9 @@ public class ValueCollector : MonoBehaviour
             string finalLat = Math.Abs(latDegMinSec[0]) + "°" + Math.Abs(latDegMinSec[1]) + "\'" + Math.Abs(latDegMinSec[2]) + "\"";
 
             if(lat >= 0)
-                finalLat += "E";
+                finalLat += "N";
             else
-                finalLat += "W";
+                finalLat += "S";
 
             return finalLat;
         }
@@ -79,9 +79,9 @@ public class ValueCollector : MonoBehaviour
             string finalLon = Math.Abs(lonDegMinSec[0]) + "°" + Math.Abs(lonDegMinSec[1]) + "\'" + Math.Abs(lonDegMinSec[2]) + "\"";
 
             if (lon >= 0)
-                finalLon += "N";
+                finalLon += "E";
             else
-                finalLon += "S";
+                finalLon += "W";
 
             return finalLon;
         }
