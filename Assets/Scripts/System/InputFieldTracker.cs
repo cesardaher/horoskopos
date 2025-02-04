@@ -7,10 +7,11 @@ public class InputFieldTracker : MonoBehaviour
 {
     public static bool usingInput;
     [SerializeField] List<TMP_InputField> _inputFields;
+    [SerializeField] AutoCompleteDropdownHandler _autoComplete;
 
     private void Start()
     {
-        usingInput = false;   
+        usingInput = false;
     }
 
     private void Update()
@@ -22,6 +23,12 @@ public class InputFieldTracker : MonoBehaviour
                 usingInput = true;
                 return;
             }
+        }
+
+        if(_autoComplete.IsDropdownActive)
+        {
+            usingInput = true;
+            return;
         }
 
         usingInput = false;

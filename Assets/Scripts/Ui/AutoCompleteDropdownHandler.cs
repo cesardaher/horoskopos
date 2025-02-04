@@ -18,6 +18,7 @@ public class AutoCompleteDropdownHandler : MonoBehaviour
     public TMP_Dropdown dropdown;
     public RectTransform item;
     public CsvReader database;
+    public bool IsDropdownActive { get; private set; }
 
     private void Start()
     {
@@ -52,6 +53,7 @@ public class AutoCompleteDropdownHandler : MonoBehaviour
     {
         dropdown.ClearOptions();
         dropdown.Hide();
+        IsDropdownActive = false;
         inputField.ActivateInputField();
     }
 
@@ -61,6 +63,7 @@ public class AutoCompleteDropdownHandler : MonoBehaviour
         dropdown.AddOptions(results);            
         dropdown.Show();
         dropdown.captionText.text = "";
+        IsDropdownActive = true;
         inputField.ActivateInputField();
     }
     

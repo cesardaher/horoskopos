@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Globalization;
 
 [CreateAssetMenu]
 [Serializable]
 public class CsvReader : ScriptableObject
 {
     public TextAsset textAssetData;
+    CultureInfo cultureInfo = new CultureInfo("pt-BR");
 
     [System.Serializable]
     public class City
@@ -61,8 +63,12 @@ public class CsvReader : ScriptableObject
             listOfCities.cities[i].cityId = data[19 * (i-1)];
             listOfCities.cities[i].cityName = data[19 * (i-1) + 1];
             listOfCities.cities[i].cityAscii = data[19 * (i - 1) + 2];
-            listOfCities.cities[i].latitude = float.Parse(data[19 * (i - 1) + 4]);
-            listOfCities.cities[i].longitude = float.Parse(data[19 * (i - 1) + 5]);
+  
+            var latitude = float.Parse(data[19 * (i - 1) + 4].Replace('.',','), cultureInfo);
+            var longitude = float.Parse(data[19 * (i - 1) + 5].Replace('.', ','), cultureInfo);
+
+            listOfCities.cities[i].latitude = latitude;
+            listOfCities.cities[i].longitude = longitude;
             listOfCities.cities[i].countryCode = data[19 * (i - 1) + 8];
             listOfCities.cities[i].elevation = int.Parse(data[19 * (i - 1) + 16]);
             listOfCities.cities[i].timezone = data[19 * (i - 1) + 17];

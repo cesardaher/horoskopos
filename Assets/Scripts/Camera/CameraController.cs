@@ -106,6 +106,7 @@ namespace UnityTemplateProjects
         public EclipticPoles eclipticPoles;
         public EclipticDrawer eclipticDrawer;
         public Camera childCamera;
+        [SerializeField] DataPanelOpener dataPanelOpener;
 
         public Transform targetObject;
 
@@ -142,7 +143,7 @@ namespace UnityTemplateProjects
         {
             scrollInput = Input.mouseScrollDelta.y;
 
-            if(scrollInput != 0)
+            if(scrollInput != 0 && !DropdownFieldTracker.usingDropdown)
                 ZoomCamera();
 
             if (Input.GetMouseButtonDown(2))
@@ -161,10 +162,10 @@ namespace UnityTemplateProjects
             inputX = Input.GetAxis("Horizontal");
             inputZ = Input.GetAxis("Vertical");
 
-            if (InputFieldTracker.usingInput) return;
-
             if(inputX != 0 || inputZ != 0)
             {
+                // disables camera movement while data panel is open
+                if (dataPanelOpener.Opened) return;
                 RotateCameraKeys(inputX, inputZ);
             }
 #endif

@@ -22,6 +22,9 @@ public class TargetPlanetTextGlow : TargetSignTextGlow
 
     protected override void OnMouseEnter()
     {
+        // prevent interaction when over UI
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         if (planetMarker != null) planetMarker.material.SetFloat("_GlowIntensity", planetMarker.defaultGlow + planetMarker.glowIncrement);
         base.OnMouseEnter();
     }
@@ -33,6 +36,9 @@ public class TargetPlanetTextGlow : TargetSignTextGlow
 
     public override void OnPointerEnter(PointerEventData eventData)
     {
+        // prevent interaction when over UI
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         if (planetMarker != null) planetMarker.material.SetFloat("_GlowIntensity", planetMarker.defaultGlow + planetMarker.glowIncrement);
         base.OnPointerEnter(eventData);
     }

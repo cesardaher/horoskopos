@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TargetGlow : MonoBehaviour
 {
@@ -49,6 +50,9 @@ public class TargetGlow : MonoBehaviour
 
     public void OnMouseEnter()
     {
+        // prevent interaction when over UI
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         if (targetTextGlow != null) targetTextGlow.material.SetFloat("_GlowPower", targetTextGlow.defaultGlow + targetTextGlow.glowIncrement);
         if (flickerStar != null) flickerStar.Glow = defaultGlow + glowIncrement;
         material.SetFloat("_GlowIntensity", defaultGlow + glowIncrement);
