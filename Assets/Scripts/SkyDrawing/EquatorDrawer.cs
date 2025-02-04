@@ -1,7 +1,8 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using SwissEphNet;
+using AstroResources;
 
 public class EquatorDrawer : EllipseRenderer, IAzalt
 {
@@ -55,15 +56,9 @@ public class EquatorDrawer : EllipseRenderer, IAzalt
             double azimuth = xaz[0];
             double appAlt = xaz[2];
 
-            // rotate this
-            RotateAzimuth(azimuth);
-            RotateAltitude(appAlt);
-
             // register value
-            equatorPositions.Add(pointer.position);
+            equatorPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, appAlt));
 
-            // revert rotation
-            transform.localEulerAngles = Vector3.zero;
         }
 
 
@@ -85,14 +80,14 @@ public class EquatorDrawer : EllipseRenderer, IAzalt
         transform.localRotation = Quaternion.Euler(rotationVector);
     }
 
-        void AnimationVertexCount()
-        {
-            vertexCount = animVertexCount;
-        }
-
-        void StaticVertexCount()
-        {
-            vertexCount = staticVertexCount;
-        }
-
+    void AnimationVertexCount()
+    {
+        vertexCount = animVertexCount;
     }
+
+    void StaticVertexCount()
+    {
+        vertexCount = staticVertexCount;
+    }
+
+}

@@ -147,6 +147,14 @@ public class EventManager : MonoBehaviour
 
     }
 
+    // CLICKING
+
+    public event Action<float, float> OnMainClickHeld;
+    public void HoldClickOnScreen(float horizontal, float vertical)
+    {
+        OnMainClickHeld(horizontal, vertical);
+    }
+
     // SKYBOX
 
     public event Action<bool> OnUseConstellations;
