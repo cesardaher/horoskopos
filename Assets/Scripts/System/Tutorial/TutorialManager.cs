@@ -147,6 +147,9 @@ public class TutorialManager : MonoBehaviour
         backButton.interactable = false;
         // turn on continue button
         continueButton.interactable = true;
+
+        Target.inTutorial = true;
+        SignTarget.inTutorial = true;
     }
 
     // find the sun

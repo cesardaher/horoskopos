@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using AstroResources;
 
 public class MeridianDrawer : EllipseRenderer, IAzalt
 {
@@ -25,8 +23,13 @@ public class MeridianDrawer : EllipseRenderer, IAzalt
         for (int i = 0; i <= vertexCount; i++)
         {
             double rotation = i * arcStep;
+            
+            RotateAltitude(rotation);
 
-            meridianPoints.Add(AstroFunctions.HorizontalToCartesian(0, rotation));
+            // register value
+            meridianPoints.Add(pointer.position);
+
+            RotateAltitude(-rotation);
         }
 
         DrawEllipse(meridianPoints);

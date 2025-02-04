@@ -1,6 +1,5 @@
 using SwissEphNet;
 using UnityEngine;
-using AstroResources;
 
 public class PositionChartModeSymbols : Point3D
 {
@@ -120,7 +119,7 @@ public class PositionChartModeSymbols : Point3D
 
     void RotatePoint(Point3D point, double az, double alt)
     {
-        point.transform.GetChild(0).position = AstroFunctions.HorizontalToCartesian(az, alt);
-
+        point.RotateAzimuth(az);
+        point.RotateAltitude(alt);
     }
 }

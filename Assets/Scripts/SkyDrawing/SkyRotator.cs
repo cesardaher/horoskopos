@@ -1,10 +1,12 @@
 using SwissEphNet;
 using UnityEngine;
-using AstroResources;
 
 public class SkyRotator : MonoBehaviour
 {    
     public Material skybox;
+
+    GameObject northPoleObject;
+    GameObject southPoleObject;
 
     public Vector3 northPolePosition;
     public Vector3 southPolePosition;
@@ -16,6 +18,9 @@ public class SkyRotator : MonoBehaviour
     {
         // tie to chart calculation event
         EventManager.Instance.OnRecalculationOfGeoData += ReRotateSpheres;
+
+        //create poles
+        CreatePoles();
 
         //initialize rotations
         currentAxisRotation = axisRotation;
@@ -49,6 +54,35 @@ public class SkyRotator : MonoBehaviour
         RotateOnArmc();
     }
 
+    void CreatePoles()
+    {
+        CreateNorthPole();
+        CreateSouthPole();
+    }
+
+    void CreateNorthPole()
+    {
+        northPoleObject = new GameObject("North Pole");
+        GameObject child = new GameObject();
+        child.transform.parent = northPoleObject.transform;
+
+        Vector3 posVector = new Vector3{x = 100000 };
+        child.transform.position = posVector;
+    }
+
+    void CreateSouthPole()
+    {
+        southPoleObject = new GameObject("South Pole");
+        GameObject child = new GameObject();
+        child.transform.parent = southPoleObject.transform;
+
+        Vector3 posVector = new Vector3
+        {
+            x = 100000
+        };
+        child.transform.position = posVector;
+    }
+
     public void CalculateSpherePoles()
     {
         CalculateNorthPole();
@@ -70,11 +104,14 @@ public class SkyRotator : MonoBehaviour
         // calculate azalt positions
         SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_EQU2HOR, GeoData.ActiveData.Geopos, 0, 0, northPole, northPoleAzalt);
 
-        // calculates cartesian positions
-        var pos = AstroFunctions.HorizontalToCartesian(northPoleAzalt[0], northPoleAzalt[2]);
+        // generate rotation
+        var rotationVector = transform.localRotation.eulerAngles;
+        rotationVector.y = (float)northPoleAzalt[0] + 180;
+        rotationVector.z = (float)northPoleAzalt[1];
+        northPoleObject.transform.localRotation = Quaternion.Euler(rotationVector);
 
         //retrieve pole position
-        northPolePosition = pos;
+        northPolePosition = northPoleObject.transform.GetChild(0).position;
     }
 
     void CalculateSouthPole()
@@ -91,11 +128,14 @@ public class SkyRotator : MonoBehaviour
         // calculate azalt positions
         SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_EQU2HOR, GeoData.ActiveData.Geopos, 0, 0, southPole, southPoleAzalt);
 
-        // calculates cartesian positions
-        var pos = AstroFunctions.HorizontalToCartesian(southPoleAzalt[0], southPoleAzalt[2]);
+        // generate rotation
+        var rotationVector = transform.localRotation.eulerAngles;
+        rotationVector.y = (float)southPoleAzalt[0] + 180;
+        rotationVector.z = (float)southPoleAzalt[1];
+        southPoleObject.transform.localRotation = Quaternion.Euler(rotationVector);
              
         //retrieve pole position
-        southPolePosition = pos;
+        southPolePosition = southPoleObject.transform.GetChild(0).position;
     }
 
     // find rotation of skybox in relation to poles
@@ -103,6 +143,7 @@ public class SkyRotator : MonoBehaviour
     {
         Quaternion rotation = Quaternion.FromToRotation(Vector3.up, northPolePosition);
         transform.rotation = rotation;
+
     }
 
     public void RotateOnArmc()

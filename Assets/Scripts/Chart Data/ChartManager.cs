@@ -8,13 +8,6 @@ using TimeZoneConverter;
 
 public class ChartManager : MonoBehaviour
 {
-    /* This class is responsible for managing chart calulations.
-     * From the selected GeoData object, it calls for the calculation
-     * of all relevant positions and in the chart and tells each object
-     * to reposition in the sky and in the 2D chart.
-     */
-
-
     //flag to track whether game was started
     bool _wasInitiated = false;
     bool _isWindows;

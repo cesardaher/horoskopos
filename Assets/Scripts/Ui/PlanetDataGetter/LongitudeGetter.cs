@@ -1,5 +1,3 @@
-using AstroResources;
-
 public class LongitudeGetter : PlanetDataGetter
 {
     protected override void GetPlanetInfo(int planetId, PlanetInfoBox box)

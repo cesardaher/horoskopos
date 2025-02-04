@@ -1,8 +1,6 @@
-﻿using System;
-using SwissEphNet;
+﻿using SwissEphNet;
 using System.Collections.Generic;
 using UnityEngine;
-using AstroResources;
 
 public class CuspExtender : EllipseRenderer, IAzalt
 {
@@ -13,6 +11,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
     public static GameObject oppositePole;
 
     [SerializeField] Material houseMat;
+    //[SerializeField] Material signMat;
 
     List<Vector3> cuspPoints = new List<Vector3>();
     [Range(12, 72)]
@@ -20,7 +19,12 @@ public class CuspExtender : EllipseRenderer, IAzalt
 
     double[] x2 = new double[6];
     double[] xaz = new double[6];
+    [SerializeField]  float xRotation;
+    float currentXRotation;
 
+    // width values
+    float houseWidthMultiplier = 100f;
+    float houseWidth = 0.1f;
     int staticVertexCount = 72;
     int animVertexCount = 36;
 
@@ -30,6 +34,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
         EventManager.Instance.OnAnimationEnd += StaticVertexCount;
 
         StaticVertexCount();
+        currentXRotation = xRotation;
     }
 
     void OnDestroy()
@@ -51,6 +56,7 @@ public class CuspExtender : EllipseRenderer, IAzalt
             // rotate
             RotateAzimuth(azimuth);
             RotateX(30 * houseId);
+
 
             cuspPoints.Add(pointer.position);
 
@@ -80,14 +86,63 @@ public class CuspExtender : EllipseRenderer, IAzalt
             SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, x2, xaz);
 
             double azimuth = xaz[0];
-            double trAlt = xaz[1];
+            double appAlt = xaz[2];
+
+            // rotate this
+            RotateAzimuth(azimuth);
+            RotateAltitude(appAlt);
 
             // register value
-            cuspPoints.Add(AstroFunctions.HorizontalToCartesian(azimuth, trAlt));
+            cuspPoints.Add(pointer.position);
+
+            // revert rotation
+            transform.localEulerAngles = Vector3.zero;
         }
 
         lineRenderer.material = houseMat;
         DrawEllipse(cuspPoints);
+    }
+
+    public void CreateSpherePoles(int i)
+    {
+        if (i == 0 && mainPole == null)
+        {
+            mainPole = CreatePolePoint(transform.GetChild(0).position);
+            mainPole.name = "Main Pole";
+            return;
+        }
+
+        if (i == vertexCount/4 && southPole == null)
+        {
+            southPole = CreatePolePoint(transform.GetChild(0).position);
+            southPole.name = "South Pole";
+            return;
+        }
+
+        if (i == vertexCount/2 && oppositePole == null)
+        {
+            oppositePole = CreatePolePoint(transform.GetChild(0).position);
+            oppositePole.name = "Opposite Pole";
+            return;
+        }
+
+        if (i == 3* vertexCount / 4 && northPole == null)
+        {
+            northPole = CreatePolePoint(transform.GetChild(0).position);
+            northPole.name = "North Pole";
+            return;
+        }
+    }
+
+
+    public GameObject CreatePolePoint(Vector3 pos)
+    {
+
+        GameObject obj = new GameObject();
+
+        obj.transform.position = pos;
+
+        return obj;
     }
 
     void AnimationVertexCount()
@@ -126,5 +181,37 @@ public class CuspExtender : EllipseRenderer, IAzalt
         transform.Rotate(Vector3.right, rotation, Space.World);
 
     }
+
+#if UNITY_EDITOR
+    void OnValidate()
+    {
+        if(currentXRotation != xRotation)
+        {
+            RotateX(-currentXRotation);
+            RotateX(xRotation);
+
+            currentXRotation = xRotation;
+        }
+        //SetHouseWidth();
+
+    }
+    void SetHouseWidth()
+    {
+        AnimationCurve curve = new AnimationCurve();
+    
+        //clear keys
+        for (int i = 0; i < curve.length; i++)
+        {
+            curve.RemoveKey(i);
+        }
+
+        // first segment
+        curve.AddKey(0.0f, houseWidth);
+        curve.AddKey(1.0f, houseWidth);
+
+        lineRenderer.widthCurve = curve;
+        lineRenderer.widthMultiplier = houseWidthMultiplier;
+    }
+#endif
 }
 

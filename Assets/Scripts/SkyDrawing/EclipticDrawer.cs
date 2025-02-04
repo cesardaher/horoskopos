@@ -1,51 +1,32 @@
-﻿using System;
-using SwissEphNet;
+﻿using SwissEphNet;
 using System.Collections.Generic;
 using UnityEngine;
 using AstroResources;
 
-public class EclipticDrawer : EllipseRenderer
+public class EclipticDrawer : EllipseRenderer, IAzalt
 {
-    /* This class calculates the positions of half of the ecliptic and draws
-     * a line based on them. It also creates and manages the sign marker objects.
-     * 
-     * This requires two EclipticDrawers, one for each half of the zodiac.
-     * This was to account for the possibility of adding a 12-color gradient to 
-     * the zodiac. Unity's gradient, however only allows up to 8 colors. Therefore,
-     * the ecliptic is divided into 2.
-     
-     */
-
-    // Id defines which EclipticDrawer is in use
     public int objectID;
+    [SerializeField] CuspExtender houseCuspExtender;
+    [SerializeField] CuspExtender signCuspExtender;
+    [SerializeField] GameObject cuspHolder;
+    [SerializeField] GameObject midSignModel;
+    [SerializeField] GameObject midHouseModel;
 
-    // number of signs in half of ecliptic
-    const int signsCount = 6;
+    double[] x2 = new double[6];
+    double[] xaz = new double[6];
 
-    // vertex count: variable
-    public int vertexCount;
-
-    // Total vertex count: 72
-    // 12 cusps, 12 midsigns, 3 parts of signs, 5 degrees step
-    const int staticVertexCount = 36;
-    const int animVertexCount = 12;
-
-    // Auxiliary variables for holding ecliptic and horizontal positions
-    double[] _x2 = new double[6];
-    double[] _xaz = new double[6];
-
-    // Holders of ecliptic positions
-    [SerializeField] List<Vector3> _eclipticPositions = new List<Vector3>();
-    [SerializeField] List<Vector3> _midSignsPositions = new List<Vector3>();
-
-    // Holder of mid sign objects
+    [SerializeField] List<Vector3> eclipticPositions = new List<Vector3>();
+    [SerializeField] List<Vector3> midSignsPositions = new List<Vector3>();
     public static GameObject[] midSignsObjects = new GameObject[13];
 
-    // MidSign prefab
-    [SerializeField] GameObject _midSignModel;
+    // 72 value:
+    // 12 cusps, 12 midsigns, 3 parts of signs, 5 degrees step
+    const int signsCount = 6;
+    public int vertexCount;
 
-    // Subscribes events
-    // Prepares ecliptic objects
+    int staticVertexCount = 36;
+    int animVertexCount = 12;
+
     void Awake()
     {
         EventManager.Instance.OnRecalculationOfGeoData += DrawLines;
@@ -57,7 +38,6 @@ public class EclipticDrawer : EllipseRenderer
         CreateHalfEclipticObjects();
     }
 
-    // Dettaches events
     void OnDestroy()
     {
         EventManager.Instance.OnRecalculationOfGeoData -= DrawLines;
@@ -65,146 +45,135 @@ public class EclipticDrawer : EllipseRenderer
         EventManager.Instance.OnAnimationEnd -= StaticVertexCount;
     }
 
-
-    // Draws ecliptic/zodiac line
-    public void DrawLines()
-    {
+   public void DrawLines()
+   {
         FindHalfEclipticPoints();
-    }
+   }
 
-    // Calculates positions of half of the ecliptic
     public void FindHalfEclipticPoints()
     {
-        // clears existing positions, if there are any
-        _eclipticPositions.Clear();
-        _midSignsPositions.Clear();
+        // make sure there's no overflowing positions
+        eclipticPositions.Clear();
 
-        // defines the step for each calculation based on desired number of vertices
         float arcStep = 180 / vertexCount;
 
-        // secondary index for sign count (from 0 to 12)
+        midSignsPositions.Clear();
+
         int signIndex = 0;
 
-        // iterates through half of the ecliptic
         for (int i = 0; i <= vertexCount; i++) // IMPORTANT: <= instead of <
         {
-            // this loop uses the ecliptic longitude to calculate
-            // the desired positions
-            // 0 - Aries
-            // ...
-            // 180 - Libra
-            // ...
-            // 330 - Pisces
-
-            // selects minimum and maximum angle
-            // based on which EclipticDrawer is in use
             int idIncrement = objectID * 180;
             int maxLong = 180 + idIncrement;
-            
-            // incremets
-            _x2[0] = (i * arcStep) + idIncrement;
+                
+            x2[0] = (i * arcStep) + idIncrement;
 
-            // overflowing values go back to the first point
-            if (_x2[0] > maxLong) _x2[0] = 0;
+            if (x2[0] > maxLong) x2[0] = 0; // overflowing values go back to the first point
 
-            // calculates horizontal coordinates (AzAlt) based on ecliptic positions
-            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, _x2, _xaz);
-            double azimuth = _xaz[0];
-            double trAlt = _xaz[1];
+            SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, x2, xaz);
+
+            double azimuth = xaz[0];
+            double appAlt = xaz[2];
 
             // register values for sign cusps
             // doesn't allow 360
-            if (_x2[0] % 30 == 0 && _x2[0] != 180)
+            if (x2[0] % 30 == 0 && x2[0] != 180)
             {
-                // might be usable in the future for extending sign cusps
+                //rotateCusp(i, azimuth, appAlt);                   
             }
 
-            // register values for mid signs (%15)
-            // this is for positioning the sign symbols
-            if (_x2[0] % 30 == 15)
+            // register values for mid signs
+            if (x2[0] % 30 == 15)
             {
-                // presets current sign position
                 double[] tempxaz = new double[6];
                 double[] tempx2 = new double[6];
-                tempx2[0] = _x2[0];
-
-                // adds 5 to altitude, so that the symbol floats above ecliptic
-                // up or down according to hemisphere
+                tempx2[0] = x2[0];
                 if (GeoData.ActiveData.NorthernHemisphere) tempx2[1] = 5;
                 else tempx2[1] = -5;
-
-                // calculates horizontal coordinates of sign symbol
-                // places midsign object
                 SwissEphemerisManager.swe.swe_azalt(GeoData.ActiveData.Tjd_ut, SwissEph.SE_ECL2HOR, GeoData.ActiveData.Geopos, 0, 0, tempx2, tempxaz);
-                RotateMidSign(signIndex + (6 * objectID), tempxaz[0], tempxaz[1]);
+                RotateMidSign(signIndex + (6 * objectID), tempxaz[0], tempxaz[2]);
 
                 // count next sign index
                 signIndex++;
             }
 
-            // adds horizontal position to list
-            _eclipticPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, trAlt));
+            // rotate this
+            RotateAzimuth(azimuth);
+            RotateAltitude(appAlt);
+
+            // register value
+            eclipticPositions.Add(pointer.position);
         }
 
-        // draws ellipse using calculated ecliptic positions
-        DrawEllipse(_eclipticPositions);
+        DrawEllipse(eclipticPositions);
     }
 
-    // Creates objects for sign symbols
     void CreateHalfEclipticObjects()
     {
-        // set appropriate increment based on appropriate ecliptic half
         int signIncrement = 6 * objectID;
 
-        // for the given ecliptic half, create objects and initialize them
         for (int i = 0; i < signsCount; i++)
         {
-            // gets id of Sign
             int signId = signIncrement + i + 1;
 
-            // creates object
-            var newSign = Instantiate(_midSignModel, transform.parent);
+            var newSign = Instantiate(midSignModel, transform.parent);
             var signPoint = newSign.GetComponent<Point3D>();
 
-            // give proper name in the inspector
             newSign.name = ((SIGN)signId).ToString() + " Mid";
 
-            // initalize sign Info
-            StartMidSigns(signPoint, signId);
+            StartPoints(signPoint, signId);
 
-            // add to array
             midSignsObjects[signId] = newSign;
         }
 
-        // Stats the midSigns objects
-        // assigns the desired info
-        void StartMidSigns(Point3D point, int i)
-        {
-            var newPoint = (MidSign)point;
+    }
 
-            newPoint.assignSprite(i);
-            newPoint.signName = ((SIGN)i).ToString();
-            newPoint.signID = i;
+    void StartPoints(Point3D point, int i)
+    {
+        var newPoint = (MidSign)point;
 
-        }
+        newPoint.assignSprite(i);
+        newPoint.signName = ((SIGN)i).ToString();
+        newPoint.signID = i;
+
     }
      
-    // Positions MidSign objects for symbols
-    void RotateMidSign(int i, double azimuth, double trAlt)
+    void RotateMidSign(int i, double azimuth, double appAlt)
     {
-        midSignsObjects[i + 1].transform.position = AstroFunctions.HorizontalToCartesian(azimuth, trAlt);
-        _midSignsPositions.Add(AstroFunctions.HorizontalToCartesian(azimuth, trAlt));
+        // rotate
+        midSignsObjects[i + 1].GetComponent<Point3D>().RotateAzimuth(azimuth);
+        midSignsObjects[i + 1].GetComponent<Point3D>().RotateAltitude(appAlt);
+
+        midSignsPositions.Add(midSignsObjects[i + 1].transform.GetChild(0).position);
     }
 
-    // Lowers number of vertices to be used/calculated when animation is used
-    // for performance
+    public void RotateAzimuth(double rotation)
+    {
+        var rotationVector = transform.localRotation.eulerAngles;
+
+        rotationVector.y = (float)rotation + 180;
+        if (GeoData.ActiveData._northernHemisphere)
+        {
+            //rotationVector.y -= 180;
+            //Debug.Log("northern");
+        }
+
+        transform.localRotation = Quaternion.Euler(rotationVector);
+    }
+
+    //rotates on the Z axis
+    public void RotateAltitude(double rotation)
+    {
+        var rotationVector = transform.localRotation.eulerAngles;
+        rotationVector.z = (float)rotation;
+        transform.localRotation = Quaternion.Euler(rotationVector);
+    }
+
     void AnimationVertexCount()
     {
         vertexCount = animVertexCount;
     }
 
-    // Raises number of vertices to be used/calculated when animation is used
-    // for performance
     void StaticVertexCount()
     {
         vertexCount = staticVertexCount;

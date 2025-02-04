@@ -1,5 +1,3 @@
-using AstroResources;
-
 public class CurrentSpeedGetter : PlanetDataGetter
 {
     protected override void GetPlanetInfo(int planetId, PlanetInfoBox box)

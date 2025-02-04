@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using AstroResources;
 
 public class HorizonDrawer : EllipseRenderer, IAzalt
 {
@@ -26,7 +24,10 @@ public class HorizonDrawer : EllipseRenderer, IAzalt
         {
             double rotation = i * arcStep;
 
-            horizonPoints.Add(AstroFunctions.HorizontalToCartesian(rotation, 0));
+            RotateAzimuth(rotation);
+
+            // register value
+            horizonPoints.Add(pointer.position);
         }
 
         DrawEllipse(horizonPoints);

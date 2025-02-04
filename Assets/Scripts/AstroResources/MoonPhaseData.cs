@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu] [Serializable]
 public class MoonPhaseData : ScriptableObject
 {
-    const double newMoonMin = 0;
-    const double newMoonMax = 0.01;
-    const double fullMoonMin = 0.99;
-    const double fullMoonMax = 1;
+    double newMoonMin = 0;
+    double newMoonMax = 0.01;
+    double fullMoonMin = 0.99;
+    double fullMoonMax = 1;
 
     double phaseIncrement = 0.07; // 0.98 / 14 phases
 

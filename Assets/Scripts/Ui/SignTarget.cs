@@ -1,23 +1,55 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SignTarget : MonoBehaviour, IClickable
+public class SignTarget : MonoBehaviour
 {
-    /* This class manages interaction with 3D sky signs. It's responsible for opening information boxes when called. */
+    public static bool inTutorial;
 
+    Collider coll;
     public SignInfoBox infoBox;
     [SerializeField] MidSign sign;
 
-    // Interaction from IClickable interface
-    // called when planet is clicked
-    public void Interact(Vector3 pos)
+    private void OnEnable()
     {
-        ToggleInfoBox(true, pos);
+        infoBox = FindObjectOfType<SignInfoBox>();
+        coll = GetComponent<Collider>();
     }
 
-    // Opens/closes information box
-    // value: open/close
-    // pos: cursor position, to postiion information box
+    private void Start()
+    {
+        EventManager.Instance.OnTutorialToggle += ToggleTutorialNonStatic;
+
+        //ToggleInfoBox(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            //cancel interaction on tutorial
+            if (inTutorial) return;
+
+            // cancel interaction when something is on top
+            if (EventSystem.current.IsPointerOverGameObject()) return;
+
+            // get ray and check for collider
+            // open info box
+            {
+                Vector3 pos = Input.mousePosition;
+                Ray ray = Camera.main.ScreenPointToRay(pos);
+
+                if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity))
+                {
+                    if (hitInfo.collider == coll)
+                    {
+                        ToggleInfoBox(true, pos);
+                    }
+                }
+            }
+
+        }
+    }
+
     void ToggleInfoBox(bool value, Vector3 pos)
     {
         if (value)
@@ -33,5 +65,19 @@ public class SignTarget : MonoBehaviour, IClickable
             infoBox.gameObject.SetActive(false);
             return;
         }
+    }
+
+    void ToggleTutorialNonStatic(bool val)
+    {
+        if (inTutorial != val) ToggleTutorial(val);
+    }
+    static void ToggleTutorial(bool val)
+    {
+        inTutorial = val;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.OnTutorialToggle -= ToggleTutorialNonStatic;
     }
 }
