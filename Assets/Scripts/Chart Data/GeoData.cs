@@ -101,12 +101,22 @@ public class GeoData : ScriptableObject
     public double Mc { get { return _mc; } private set { _mc = value; } }
 
     public Observer observer = new Observer();
+    public AstroTime astroTime;
 
     private void InitializeObserver()
     {
         observer = new Observer(Geolat, Geolon, Height);
     }
 
+    private void InitializeAstroTime(DateTime dt)
+    {
+        astroTime = new AstroTime(dt);
+    }
+
+    private void InitializeAstroTime()
+    {
+        astroTime = new AstroTime(Iyear, Imon, Iday, Ihour, Imin, Dsec);
+    }
 
     private void OnValidate()
     {
@@ -135,6 +145,7 @@ public class GeoData : ScriptableObject
         DaylightSavings = daylight;
         CheckHemisphere();
         InitializeObserver();
+        InitializeAstroTime();
 
         ResetCalculations();
 
@@ -165,6 +176,7 @@ public class GeoData : ScriptableObject
         DaylightSavings = daylight;
         CheckHemisphere();
         InitializeObserver();
+        InitializeAstroTime(dateTime);
 
         ResetCalculationsWithoutDateTime();
 
@@ -192,6 +204,8 @@ public class GeoData : ScriptableObject
         CityId = cityId;
         Hsys = houseSys;
         DaylightSavings = daylight;
+
+        InitializeAstroTime(dateTime);
 
         CheckHemisphere();
         CheckTimezone();
