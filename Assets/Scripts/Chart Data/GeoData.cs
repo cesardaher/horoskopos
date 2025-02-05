@@ -1,6 +1,7 @@
 ﻿using SwissEphNet;
 using System;
 using UnityEngine;
+using CosineKitty;
 
 [CreateAssetMenu] [Serializable]
 public class GeoData : ScriptableObject
@@ -99,6 +100,12 @@ public class GeoData : ScriptableObject
     public double Asc { get { return _asc; } private set { _asc = value; } }
     public double Mc { get { return _mc; } private set { _mc = value; } }
 
+    public Observer observer = new Observer();
+
+    private void InitializeObserver()
+    {
+        observer = new Observer(Geolat, Geolon, Height);
+    }
 
 
     private void OnValidate()
@@ -127,6 +134,7 @@ public class GeoData : ScriptableObject
         Hsys = houseSys;
         DaylightSavings = daylight;
         CheckHemisphere();
+        InitializeObserver();
 
         ResetCalculations();
 
@@ -156,6 +164,7 @@ public class GeoData : ScriptableObject
         Hsys = houseSys;
         DaylightSavings = daylight;
         CheckHemisphere();
+        InitializeObserver();
 
         ResetCalculationsWithoutDateTime();
 
@@ -164,6 +173,7 @@ public class GeoData : ScriptableObject
             EventManager.Instance.GeoDataRecalculateEvent();
     }
 
+    // GeoLon/GeoLat are set through CityId property
     public void InitializeDataWithCityIdDateTime(string name, DateTime dateTime, int cityId, char houseSys, bool daylight)
     {
         if (cityDatabase is null) cityDatabase = Resources.Load<CsvReader>("CityDatabase/CityDatabase");
@@ -293,6 +303,8 @@ public class GeoData : ScriptableObject
         _geopos[0] = Geolon;
         _geopos[1] = Geolat;
         _geopos[2] = Height;
+
+        InitializeObserver();
     }
 
     void GetCoordinatesFromCity(int id)
