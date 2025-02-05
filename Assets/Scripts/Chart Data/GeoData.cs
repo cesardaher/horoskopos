@@ -273,6 +273,11 @@ public class GeoData : ScriptableObject
 
     public void CalculateTime()
     {
+        //_tjd_et = astroTime.tt;
+        //_tjd_ut = astroTime.ut;
+
+        //return;
+
         Int32 retval;
 
         Int32 gregflag = SwissEph.SE_GREG_CAL;

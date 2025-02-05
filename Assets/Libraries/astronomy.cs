@@ -94,6 +94,16 @@ namespace CosineKitty
         Invalid = -1,
 
         /// <summary>
+        /// The Sun.
+        /// </summary>
+        Sun,
+
+        /// <summary>
+        /// The Earth's natural satellite, the Moon.
+        /// </summary>
+        Moon,
+
+        /// <summary>
         /// The planet Mercury.
         /// </summary>
         Mercury,
@@ -140,16 +150,6 @@ namespace CosineKitty
         /// The planet Pluto.
         /// </summary>
         Pluto,
-
-        /// <summary>
-        /// The Sun.
-        /// </summary>
-        Sun,
-
-        /// <summary>
-        /// The Earth's natural satellite, the Moon.
-        /// </summary>
-        Moon,
 
         /// <summary>
         /// The Earth/Moon Barycenter.

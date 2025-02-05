@@ -5,6 +5,7 @@ using System;
 using UnityEngine;
 using AstroResources;
 using TimeZoneConverter;
+using CosineKitty;
 
 public class ChartManager : MonoBehaviour
 {
@@ -210,6 +211,33 @@ public class ChartManager : MonoBehaviour
         // Calculates the planetary positions
         void CalculatePlanets()
         {
+            
+            
+            for (var p = Body.Sun; p <= Body.Saturn; p++)
+            {
+               Equatorial equ_ofdate = Astronomy.Equator(p, _geodata.astroTime, _geodata.observer, EquatorEpoch.J2000, Aberration.Corrected);
+               Ecliptic ecliptic = Astronomy.EquatorialToEcliptic(equ_ofdate.vec);
+               Topocentric hor = Astronomy.Horizon(_geodata.astroTime, _geodata.observer, equ_ofdate.ra, equ_ofdate.dec, Refraction.Normal);
+
+                // for the given planet, assign ecliptic and horizontal positions
+                PlanetData planet = PlanetData.PlanetDataList[(int)p];
+                double[] tempX2 = { ecliptic.elat, ecliptic.elon, equ_ofdate.dist, 0, 0, 0};
+                double[] tempXaz = { hor.azimuth, hor.altitude, hor.altitude, 0, 0, 0};
+                double[] tempSecXaz = { _secAz[0], _secAz[1], _secAz[2], _secAz[3], _secAz[4], _secAz[5] };
+                planet.X2 = tempX2;
+                planet.Xaz = tempXaz;
+                planet.ChartAz = tempSecXaz;
+
+                // apply planetary info to relevant objects
+                EventManager.Instance.ApplyPlanetInfo((int)p);
+
+                // calculate south node mirroring north node
+                if (planet is NorthNodeData)
+                    CalculateSouthNode(planet);
+            }
+
+            return;
+
             // calculate planetary positions
             for (var p = SwissEph.SE_SUN; p <= SwissEph.SE_MEAN_NODE; p++)
             {
